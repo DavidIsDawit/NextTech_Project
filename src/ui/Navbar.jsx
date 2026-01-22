@@ -45,7 +45,7 @@ const Navbar = () => {
       
         {/* --- TOP BAR --- */}
         {!isSticky && (
-          <div className="bg-secondary text-white py-4 px-8 md:px-12 lg:flex justify-between items-center text-[16px] hidden">
+          <div className="bg-secondary  text-white py-4 px-8 md:px-12 lg:flex justify-between items-center text-[16px] hidden">
             <div className="lg:flex items-center gap-8">
               <div className="flex items-center gap-3">
                 <span className="font-light">location: Addis Ababa, bole, Ethiopia</span>
