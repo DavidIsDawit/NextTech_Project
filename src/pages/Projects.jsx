@@ -1,5 +1,9 @@
+import UnderMentinance from "../ui/UnderMentinance";
+
 function Projects() {
-  return <div>Project Page</div>;
+  return <div>
+     <UnderMentinance/>
+</div>;;
 }
 
 export default Projects;

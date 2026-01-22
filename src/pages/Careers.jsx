@@ -1,5 +1,9 @@
+import UnderMentinance from "../ui/UnderMentinance";
+
 function Careers() {
-  return <div>Careers Page</div>;
+  return<div>
+  <UnderMentinance/>
+</div>;;
 }
 
 export default Careers;

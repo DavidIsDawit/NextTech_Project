@@ -1,5 +1,9 @@
+import UnderMentinance from "../ui/UnderMentinance";
+
 function PageNotFound() {
-  return <div>404 Page Not Found</div>;
+  return <div>
+         <UnderMentinance/>
+        </div>;
 }
 
 export default PageNotFound;

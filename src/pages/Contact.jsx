@@ -1,5 +1,9 @@
+import UnderMentinance from "../ui/UnderMentinance";
+
 function Contact() {
-  return <div>Contact Page</div>;
+  return <div>
+  <UnderMentinance/>
+</div>;;
 }
 
 export default Contact;

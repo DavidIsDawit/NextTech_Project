@@ -1,5 +1,9 @@
+import UnderMentinance from "../ui/UnderMentinance";
+
 function Blogs() {
-  return <div>Blogs Page</div>;
+  return <div>
+  <UnderMentinance/>
+</div>;;
 }
 
 export default Blogs;

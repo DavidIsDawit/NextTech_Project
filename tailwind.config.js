@@ -6,7 +6,14 @@ export default {
       sans: "Roboto Mono",
     },
 
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#00A3E0",     
+        secondary: "#0B162C",
+        tertiary :"#B6BFDA"   
+      },
+      
+    },
   },
   plugins: [],
 };

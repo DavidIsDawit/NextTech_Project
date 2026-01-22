@@ -1,5 +1,9 @@
+import UnderMentinance from "../ui/UnderMentinance";
+
 function Teams() {
-  return <div>Teams Page</div>;
+  return <div>
+  <UnderMentinance/>
+</div>;;
 }
 
 export default Teams;

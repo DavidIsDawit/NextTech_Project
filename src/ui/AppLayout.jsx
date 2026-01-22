@@ -1,15 +1,25 @@
+
+
+
+
 import { Outlet } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "./Home Page/Footer";
 
 function AppLayout() {
   return (
-    <div className="relative grid grid-rows-[auto_1fr_auto]">
-      <header className="h-16 bg-blue-400">
-        <div>Header + Navbar</div>
+    <div className="relative min-h-screen">
+      
+      {/* Navbar overlays content */}
+      <header className="absolute top-0 left-0 w-full z-50">
+        <Navbar />
       </header>
-      <main className="h-screen">
+
+      {/* Page content */}
+      <main>
         <Outlet />
       </main>
-      <footer className="h-56 bg-neutral-500">Footer</footer>
+   <Footer/>
     </div>
   );
 }
