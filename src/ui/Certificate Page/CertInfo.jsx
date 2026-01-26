@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 export default function CertificateInfo({ client, project, category, issuedate }) {
-  return (
-    
+  return (    
      <div className="bg-[#F4F5FB] w-full  lg:w-1/2 lg:h-1/2  shadow-sm ">
               <h2 className="text-xl md:text-xl lg:text-2xl xl:text-3xl  2xl:text-4xl  font-extrabold px-8 2xl:px-12 pt-6 lg:pt-6 xl:pt-8 2xl:pt-10 2xl:pb-2 text-gray-900 ">
                 Certificate Info
@@ -13,28 +12,24 @@ export default function CertificateInfo({ client, project, category, issuedate }
                     {client }
                   </span>
                 </div>
-
                 <div className="flex justify-between border-b border-gray-200 pb-1 lg:pb-1 xl:pb-4">
                   <span className=" text-gray-900 text-base md:text-base lg:text-lg 2xl:text-2xl font-extrabold">Project:</span>
                   <span className="text-gray-600 text-end md:text-sm lg:text-base 2xl:text-xl">
                     {project }
                   </span>
                 </div>
-
                 <div className="flex justify-between border-b border-gray-200 pb-1 lg:pb-1 xl:pb-4">
                   <span className=" text-gray-900  text-base md:text-base lg:text-lg 2xl:text-2xl font-extrabold">Category:</span>
                   <span className="text-gray-600 text-end md:text-sm lg:text-base 2xl:text-xl">
                     {category }
                   </span>
                 </div>
-
                 <div className="flex justify-between  border-gray-200 pb-1 lg:pb-1 ">
                   <span className=" text-gray-900 text-base md:text-base lg:text-lg 2xl:text-2xl font-extrabold">Issue Date:</span>
                   <span className=" text-gray-600 text-end md:text-sm lg:text-base 2xl:text-xl">
                     {issuedate }
                   </span>
-                </div>
-                
+                </div>                
               </div>
             </div>
   );

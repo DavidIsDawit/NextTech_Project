@@ -8,7 +8,6 @@ import PortfolioDetail from "./pages/PortfolioDetail";
 import ServiceDetails from "./pages/ServiceDetail";
 import ServicesPage from "./pages/Service";
 import Gallery from "./pages/Gallery";
-import CareerDetail from "./pages/CareerDetail";
 import Certificates from "./pages/Certificates";
 import CertificateDetail from "./pages/CertificateDetail";
 import BlogDetail from "./pages/NewsDetail";
@@ -34,7 +33,6 @@ function App() {
           <Route path="/service/:id" element={<ServiceDetails />} />
 
           <Route path="gallery" element={<Gallery />} />
-          <Route path="/careers/:id" element={<CareerDetail />} />
           <Route path="certificates" element={<Certificates />} />
           <Route path="/certificate/:id" element={<CertificateDetail />} /> 
           <Route path="/blogs/:id" element={<BlogDetail />} />
