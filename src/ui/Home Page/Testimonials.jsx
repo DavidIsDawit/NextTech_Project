@@ -65,52 +65,50 @@ const Testimonials = () => {
         >
           {/* Changed: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 to show 2 cards on tablet */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-[40px] w-full max-w-[450px] md:max-w-full">
-            {currentItems.map((item) => (
-              <div 
-                key={item.id} 
-                className="bg-white p-8 lg:p-[45px] rounded-[25px] lg:rounded-[35px] shadow-[0_15px_50px_rgba(0,0,0,0.05)] text-left border border-transparent hover:border-blue-50 transition-all duration-300 transform animate-fadeInUp"
-              >
-                {/* Profile Header */}
-                <div className="flex items-center gap-5 mb-6 lg:mb-8">
-                  <div className="relative flex-shrink-0">
-                    
-                    {/* Changed: Added conic-gradient for the Half-Circle border effect */}
-             
-<div 
-  className="w-16 h-16 lg:w-[85px] lg:h-[85px] rounded-full flex items-center justify-center shadow-sm"
-  style={{ 
-    background: `conic-gradient(#00AEEF 0deg 180deg, #d1d5db 180deg 360deg)` 
-  }}
->
-  <div className="w-[92%] h-[92%] rounded-full bg-white flex items-center justify-center">
-    <div className="w-[88%] h-[88%] rounded-full overflow-hidden">
-      <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+          {currentItems.map((item) => (
+  <div 
+    key={item.id} 
+    className="bg-white p-8 lg:p-[45px] rounded-[25px] lg:rounded-[35px] shadow-[0_15px_50px_rgba(0,0,0,0.05)] text-left border border-transparent hover:border-blue-50 transition-all duration-300 transform animate-fadeInUp flex flex-col h-full" // Added: flex flex-col h-full
+  >
+    {/* Profile Header */}
+    <div className="flex items-center gap-5 mb-6 lg:mb-8">
+      <div className="relative flex-shrink-0">
+        <div 
+          className="w-16 h-16 lg:w-[85px] lg:h-[85px] rounded-full flex items-center justify-center shadow-sm"
+          style={{ 
+            background: `conic-gradient(#00AEEF 0deg 180deg, #d1d5db 180deg 360deg)` 
+          }}
+        >
+          <div className="w-[92%] h-[92%] rounded-full bg-white flex items-center justify-center">
+            <div className="w-[88%] h-[88%] rounded-full overflow-hidden">
+              <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4 className="font-bold text-[#0a1128] text-lg lg:text-[22px] leading-tight">
+          {item.name}
+        </h4>
+        <p className="text-[#00AEEF] text-sm lg:text-[16px] font-semibold mt-1">
+          {item.role}
+        </p>
+      </div>
+    </div>
+
+    {/* Testimonial Text */}
+    <p className="text-secondary text-[15px] lg:text-[18px] leading-relaxed italic mb-6">
+      &quot;{item.text}&quot;
+    </p>
+
+    {/* Stars Section - Pushed to the bottom */}
+    <div className="flex gap-1 mt-auto  border-t border-gray-50"> {/* Added: mt-auto and a subtle top border/padding */}
+      {[...Array(item.stars)].map((_, i) => (
+        <span key={i} className="text-[#FFA800] text-lg lg:text-[20px]">★</span>
+      ))}
     </div>
   </div>
-</div>
-
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-[#0a1128] text-lg lg:text-[22px] leading-tight">
-                      {item.name}
-                    </h4>
-                    <p className="text-[#00AEEF] text-sm lg:text-[16px] font-semibold mt-1">
-                      {item.role}
-                    </p>
-                  </div>
-                </div>
-
-                <p className="text-secondary text-[15px] lg:text-[18px] leading-relaxed mb-3 lg:mb-3 italic">
-                  &quot;{item.text}&quot;
-                </p>
-
-                <div className="flex gap-1">
-                  {[...Array(item.stars)].map((_, i) => (
-                    <span key={i} className="text-[#FFA800] text-lg lg:text-[20px]">★</span>
-                  ))}
-                </div>
-              </div>
-            ))}
+))}
           </div>
         </div>
 

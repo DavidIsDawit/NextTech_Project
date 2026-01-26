@@ -4,7 +4,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 export default function FooterCard() {
   return (
-    <section className="px-4 py-12">
+    <section className="px-4 py-11">
       <div className="max-w-7xl mx-auto bg-[#0A142F] rounded-[40px] overflow-hidden relative min-h-[300px] flex items-center translate-y-[102px] md:translate-y-30">
         
        

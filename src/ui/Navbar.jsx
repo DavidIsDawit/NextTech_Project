@@ -4,11 +4,14 @@ import { HiOutlineMailOpen } from "react-icons/hi";
 import { LiaTimesSolid } from "react-icons/lia";
 import { MdLocationOn } from 'react-icons/md';
 import NextTechLogo from "/NavBarImages/NextTechLogo.png";
-import {  NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const location = useLocation();
+
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,18 +38,24 @@ const Navbar = () => {
   ];
 
   return (
-    /* ADDED PADDING HERE: pb-36 lg:pb-[240px] md:pb-[140px] */
-    <div className={`w-full  z-50 transition-all duration-300 pb-36 lg:pb-[260px] md:pb-[140px] ${isSticky ? 'fixed top-0 left-0' : 'relative lg:pt-8 lg:px-12'}`}>
+   
+    <div className={`w-full z-50 transition-all duration-300 
+
+      ${isHomePage ? 'pb-36 lg:pb-[260px] md:pb-[140px]' : 'pb-36 lg:pb-24 md:pb-[140px]'}
+      ${(!isHomePage) 
+          ? 'lg:fixed lg:top-0 lg:left-0 lg:pt-0 lg:px-0' 
+          : (isSticky ? 'fixed top-0 left-0 pt-0 px-0' : 'relative lg:pt-8 lg:px-12')
+      }`}>
       
       <nav className={`w-full transition-all duration-300 shadow-xl 
-        ${isSticky 
+        ${(isSticky || !isHomePage) 
           ? 'lg:max-w-full lg:rounded-none' 
-          : 'lg:max-w-[1500px] lg:mx-auto lg:rounded-[35px] overflow-hidden' 
+          : 'lg:max-w-[1700px] lg:mx-auto lg:rounded-[35px] overflow-hidden' 
         }`}>
       
-        {/* --- TOP BAR --- */}
-        {!isSticky && (
-          <div className="bg-secondary  text-white py-4 px-8 md:px-12 lg:flex justify-between items-center text-[16px] hidden">
+        {/* --- TOP BAR (Only visible on Home page) --- */}
+        {(!isSticky && isHomePage) && (
+          <div className="bg-secondary text-white py-4 px-8 md:px-12 lg:flex justify-between items-center text-[16px] hidden">
             <div className="lg:flex items-center gap-8">
               <div className="flex items-center gap-3">
                 <span className="font-light">location: Addis Ababa, bole, Ethiopia</span>
@@ -57,17 +66,17 @@ const Navbar = () => {
             </div>
             
             <div className="flex items-center gap-6 text-white ml-auto lg:ml-0">
-              <FaFacebookF className="cursor-pointer hover:text-primary  text-lg" />
-              <FaInstagram className="cursor-pointer hover:text-primary  text-lg" />
-              <FaTwitter className="cursor-pointer  hover:text-primary text-lg" />
-              <FaGlobe className="cursor-pointer    hover:text-primary text-lg" />
+              <FaFacebookF className="cursor-pointer hover:text-primary text-lg" />
+              <FaInstagram className="cursor-pointer hover:text-primary text-lg" />
+              <FaTwitter className="cursor-pointer   hover:text-primary text-lg" />
+              <FaGlobe className="cursor-pointer     hover:text-primary text-lg" />
             </div>
           </div>
         )}
 
         {/* --- MAIN NAVBAR --- */}
-        <div className={`bg-white px-8 lg:px-12 transition-all duration-300 flex justify-between items-center 
-          ${isSticky ? 'lg:py-3 py-4' : 'lg:py-2 py-4'}`}>
+        <div className={`bg-white px-4 lg:px-12 transition-all duration-300 flex justify-between items-center 
+          ${(isSticky || !isHomePage) ? 'lg:py-3 py-4' : 'lg:py-2 py-4'}`}>
           
           <div className="flex items-center gap-4">
             <img src={NextTechLogo} alt="NextTech Logo" className="lg:h-20 lg:w-44 object-contain w-[200px] h-[55px]"/>
@@ -89,13 +98,13 @@ const Navbar = () => {
             ))}
           </div>
 
-          <button onClick={() => setIsOpen(true)} className="lg:hidden p-3 text-[#0a1128]">
+          <button onClick={() => setIsOpen(true)} className="lg:hidden p-3 text-secondary">
             <FaBars size={32} />
           </button>
         </div>
       </nav>
 
-      {/* --- MOBILE SIDEBAR --- */}
+      {/* --- MOBILE SIDEBAR (EXACTLY AS YOUR ORIGINAL) --- */}
       {isOpen && (
         <div className="fixed inset-0 bg-white z-[100] flex flex-col overflow-y-auto">
           <div className="p-8 flex justify-between items-center">
@@ -115,8 +124,8 @@ const Navbar = () => {
                 to={link.href}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  `uppercase font-black text-lg border-b pb-2 transition-all ${
-                    isActive ? 'text-primary border-primary' : 'text-[#0a1128] border-gray-100'
+                  `uppercase font-black text-lg  pb-2 transition-all ${
+                    isActive ? 'text-primary ' : 'text-secondary '
                   }`
                 }
               >
@@ -126,7 +135,8 @@ const Navbar = () => {
           </div>
 
           <div className="mt-auto bg-[#eafcff] p-12 space-y-8">
-            <h3 className="text-[#0a1128] text-3xl mb-4 text-center font-bold">Contact Info</h3>
+            
+            <h3 className="text-[#0a1128] text-3xl mb-4 text-center font-normal">Contact Info</h3>
             <div className="flex gap-5 items-start">
               <div className="min-w-[48px] h-[48px] border-2 border-primary rounded-lg flex items-center justify-center text-primary bg-white">
                 <MdLocationOn size={26} />

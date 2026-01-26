@@ -18,7 +18,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#0B162C] text-gray-400 py-12 lg:py-20 px-6 font-sans">
+    <footer className="bg-secondary text-gray-400 py-12 lg:py-16 px-6 font-sans">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           
@@ -90,7 +90,7 @@ const Footer = () => {
               <input 
                 type="email" 
                 placeholder="Enter Your Email" 
-                className="w-full bg-[#1A2332] border-none rounded-lg py-5 px-5 text-sm text-white focus:ring-1 focus:ring-primary outline-none"
+                className="w-full bg-secondary border-none rounded-lg py-5 px-5 text-sm text-white focus:ring-1 focus:ring-primary outline-none"
               />
               <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#0A1128] p-3.5 rounded-lg text-white hover:bg-[#00AEEF] transition-all">
                 <FaPaperPlane />
@@ -100,7 +100,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Copyright */}
-        <div className="border-t border-gray-600 mt-16 pt-8 text-center text-sm">
+        <div className="border-t border-gray-600 mt-16 pt-4 text-center text-sm">
           <p>
             2026 © All rights reserved by <span className="text-primary font-semibold">Next-Tech</span>
           </p>

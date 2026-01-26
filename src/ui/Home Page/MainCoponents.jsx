@@ -28,7 +28,7 @@ const Hero = () => {
       }}
     >
       
-      <div className="max-w-6xl lg:max-w-[1400px] mx-auto px-6 lg:px-6">
+      <div className="max-w-6xl lg:max-w-[1400px] mx-auto px-6 lg:px-10 xl:max-w-[1650px]">
         <div className="flex flex-col md:flex-row justify-between md:items-center gap-16 lg:gap-24">
           
           {/* LEFT CONTENT */}
@@ -43,7 +43,7 @@ const Hero = () => {
             </p>
 
             <div className="pt-4 lg:pt-6">
-              <button className="group flex items-center gap-2 lg:gap-4 bg-primary text-white px-6 py-4 lg:px-8 lg:py-6 rounded-full font-bold text-sm lg:text-lg uppercase tracking-widest shadow-xl hover:shadow-cyan-200/50 hover:bg-[#0097a7] transition-all duration-300">
+              <button className="group flex items-center gap-2 lg:gap-4 bg-primary text-white px-6 py-4 lg:px-8 lg:py-5 rounded-full font-bold text-sm lg:text-lg uppercase tracking-widest shadow-xl hover:shadow-cyan-200/50 hover:bg-[#0097a7] transition-all duration-300">
                 Get Started 
                 <IoIosArrowForward size={22} className="lg:scale-125 group-hover:translate-x-2 transition-transform" />
               </button>
@@ -54,7 +54,7 @@ const Hero = () => {
           {/* RIGHT IMAGE SLIDER */}
           <div className="w-[90%] lg:w-[30%] relative mt-2 lg:mt-0 flex flex-col items-center lg:mr-2">
             
-            <div className="relative z-10 w-full aspect-[5/5] md:aspect-[4/5] rounded-[25px] lg:rounded-[60px] overflow-hidden shadow-2xl">
+            <div className="relative z-10 w-full aspect-[5/5] md:aspect-[4/5] rounded-[19px] lg:rounded-[35px] overflow-hidden shadow-2xl">
               <img 
                 key={currentIndex}
                 src={heroSlides[currentIndex]} 
@@ -71,14 +71,14 @@ const Hero = () => {
                 w-full lg:w-[120%] 
                 bg-primary/60  
                 py-4 px-6 lg:py-10 lg:px-14 
-                rounded-[22px] lg:rounded-[50px] 
+                rounded-[22px] lg:rounded-[30px] 
                 flex items-center justify-between 
                 z-20
               "
             >
               <div className="text-white">
                 <p className="text-xs lg:text-2xl font-bold">We have</p>
-                <p className="text-3xl lg:text-5x text-secondary font-bold">25k+</p>
+                <p className="text-2xl lg:text-5x text-secondary font-bold">25k+</p>
                 <p className="text-[10px] lg:text-xl font-bold">World Wide Customer</p>
               </div>
 
@@ -100,14 +100,14 @@ const Hero = () => {
 
             <button
               onClick={prevSlide}
-              className="absolute left-2 lg:left-1 top-1/2 -translate-y-1/2 z-30 w-12 h-12 lg:w-14 lg:h-14 md:bg-primary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+              className="absolute left-1 lg:left-1 top-1/2 -translate-y-1/2 z-30 w-12 h-12 lg:w-14 lg:h-14 md:bg-primary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"
             >
               <FaArrowLeft size={20} />
             </button>
             
             <button
               onClick={nextSlide}
-              className="absolute right-2 lg:right-1 top-1/2 -translate-y-1/2 z-30 w-12 h-12 lg:w-14 lg:h-14 md:bg-primary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+              className="absolute right-1 lg:right-1 top-1/2 -translate-y-1/2 z-30 w-12 h-12 lg:w-14 lg:h-14 md:bg-primary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"
             >
               <FaArrowRight size={20} />
             </button>

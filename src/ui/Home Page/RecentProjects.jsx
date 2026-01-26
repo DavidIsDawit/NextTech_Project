@@ -8,11 +8,8 @@ const RecentProjects = () => {
   return (
     /* Increased vertical padding for that spacious 'zoomed' feel */
     <section className="py-12 md:py-20 lg:py-[120px] px-6 md:px-12 bg-white ">
-      {/* Container:
-          - Mobile: Items centered via flex-col items-center
-          - Large: Max-width bumped to 1400px for 110% zoom feel
-      */}
-      <div className="max-w-7xl lg:max-w-[1400px] mx-auto flex flex-col lg:flex-row  lg:items-start gap-10 lg:gap-24">
+     
+      <div className="max-w-7xl lg:max-w-[1600px] mx-auto flex flex-col lg:flex-row  lg:items-start gap-10 lg:gap-24">
         
         {/* LEFT SIDE: CONTENT */}
         <div className="w-full lg:w-[45%] text-start lg:text-left flex flex-col items-start lg:items-start">
@@ -34,7 +31,7 @@ const RecentProjects = () => {
             ))}
           </div>
 
-          <button className="mt-4 bg-primary hover:bg-sky-500 text-white font-bold py-4 lg:py-5 px-10 lg:px-14 rounded-full flex items-center gap-3 transition-all shadow-xl shadow-sky-200 uppercase text-xs lg:text-[15px] tracking-widest">
+          <button className="mt-4 bg-primary hover:bg-sky-500 text-white font-bold py-4 lg:py-5 px-10 lg:px-10 rounded-full flex items-center gap-3 transition-all shadow-xl shadow-sky-200 uppercase text-xs lg:text-[15px] tracking-widest">
             READ MORE 
             <span className="text-xl"><IoIosArrowForward/></span>
           </button>

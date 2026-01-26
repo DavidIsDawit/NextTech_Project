@@ -5,21 +5,21 @@ import aboutUsImage from "/AboutUsPageImages/aboutUsHeroImage.jpg";
 const AboutUs = () => {
   return (
     // Increased vertical padding to give that "larger" section feel
-    <section className="bg-white pt-20">
+    <section className="bg-gray-50 pt-10 md:pt-10 lg:pt-20">
       {/* Increased max-width from 7xl (1280px) to [1380px] 
          This mimics the extra width a 110% zoom would occupy.
       */}
-      <div className="max-w-7xl lg:max-w-[1540px] mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl lg:max-w-[1700px] mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-28 items-center">
           
           {/* LEFT SIDE: IMAGE */}
           <div className="w-full">
-            <div className="space-y-4 lg:space-y-5">
-              <span className="text-primary font-bold text-sm lg:text-[17px] tracking-wider uppercase">
+            <div className="space-y-4 lg:space-y-7">
+              <span className="text-primary font-bold text-sm lg:text-[17px]  uppercase ">
                 {aboutData.subtitle}
               </span>
               {/* Bumped text-5xl to text-[54px] for a true 110% feel */}
-              <h2 className="text-3xl md:text-4xl lg:text-[51px] font-bold text-secondary leading-[1.1] pb-4 md:pb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-secondary  pb-4 md:pb-6">
                 {aboutData.title}
               </h2>
             </div>
@@ -27,7 +27,7 @@ const AboutUs = () => {
             <img 
               src={aboutUsImage}
               alt="Our Team" 
-              className="md:max-w-md lg:max-w-[520px] w-full h-auto rounded-[40px] shadow-2xl object-cover"
+              className="md:max-w-md lg:max-w-[520px] w-full h-auto rounded-[20px] shadow-2xl object-cover"
             />
           </div>
 

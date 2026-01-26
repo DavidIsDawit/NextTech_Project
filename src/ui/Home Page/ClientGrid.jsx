@@ -5,13 +5,13 @@ const LogoCard = ({ logo }) => (
   <div 
     className="
       /* Mobile: Fixed size, perfectly centered in their own space */
-      w-[155px] h-[80px]   
+      w-[155px] h-[70px]   
       
       /* Tablet: Scaling up slightly */
-      md:w-[180px] md:h-[110px] 
+      md:w-[180px] md:h-[100px] 
       
       /* Large Screen: Your 110% Zoom layout */
-      lg:w-[295px] lg:h-[110px] lg:p-[18px] 
+      lg:w-[295px] lg:h-[100px] lg:p-[18px] 
       
       bg-white shadow-xl lg:shadow-xl
       border border-gray-50 flex items-center justify-center"
@@ -36,7 +36,7 @@ const Clients = () => {
   const { subtitle, title, blogTitle, logos } = clientsData;
 
   return (
-    <section className="py-2 md:py-0 lg:py-[30px] bg-white overflow-hidden">
+    <section className="py-1 md:py-0 lg:py-[20px] bg-white overflow-hidden">
       {/* Container centered with mx-auto */}
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
         

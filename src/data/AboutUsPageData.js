@@ -58,6 +58,14 @@ export const workflowData = {
       icon: "/AboutUsPageImages/headset_icons.png",
       stepColor: "bg-gray-100 text-gray-800"
     }
+    ,
+    {
+      id: "04",
+      title: "Planning",
+      text: "We create a detailed strategy to ensure smooth execution.",
+      icon: "/AboutUsPageImages/headset_icons.png",
+      stepColor: "bg-gray-100 text-gray-800"
+    }
 
   ]
 };

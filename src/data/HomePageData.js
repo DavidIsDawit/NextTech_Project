@@ -45,10 +45,24 @@ export const workData = {
   description1: "NextTech is a private company established in 2010. We specialize in Providing Better Services for Supply And Installation Works of",
   description2: "Electro-Mechanical and related Equipment In the world. NextTech is a private company established in 2010.",
   features: [
-    { id: 1, icon: FaCheckCircle, text: "Supply design, Installation, test & commissioning work" },
-    { id: 2, icon: FaCheckCircle, text: "Telecom & Communication systems" },
-    { id: 3, icon: FaCheckCircle, text: "Electromechanical work" },
-    { id: 4, icon: FaCheckCircle, text: "Audio Visual Solutions" },
+    { id: 1, icon: FaCheckCircle, text: "Smart Airport,sea port,Dry port systems  " },
+    { id: 2, icon: FaCheckCircle, text: "Installation and configuration of HVAC, fire safety, and CCTV systems" },
+    { id: 3, icon: FaCheckCircle, text: "IT Infrastructure  data center Building" },
+    { id: 4, icon: FaCheckCircle, text: "smart BMS System" },
+    { id: 5, icon: FaCheckCircle, text: "Supply of conveyor belts " },
+    { id: 6, icon: FaCheckCircle, text: "Audiovisual system " },
+    { id: 7, icon: FaCheckCircle, text: "Telecom and Communication Systems " },
+    { id: 8, icon: FaCheckCircle, text: "Ware house Building " },
+    { id: 9, icon: FaCheckCircle, text: "Ware house Building" },
+    { id: 10, icon: FaCheckCircle, text: "supply and instillation of Advertising materials and machineries " },
+    { id: 11, icon: FaCheckCircle, text: "Smart traffic management system " },
+
+    
+
+    
+
+
+
 
 
   ]
@@ -77,7 +91,6 @@ export const clientsData = {
     { id: 13, src: "/HomePageImages/FANA.png",  alt: "Ethiopian" },
   ]
 };
-
 
 export const recentProjects = {
   subtitle: "04 - RECENT PROJECTS",
