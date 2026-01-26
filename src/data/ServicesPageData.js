@@ -6,7 +6,7 @@ const services = [
     heroImage: "/ServicesPageImage/service.png",
     content: {
       paragraphs: [
-        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum is simply free text used by copytyping refreshing.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "Duis aute irure dolor in reprehenderit in voluptate.",
         "Excepteur sint occaecat cupidatat non proident.",
@@ -40,7 +40,7 @@ const services = [
     heroImage: "/ServicesPageImage/service.png",
     content: {
       paragraphs: [
-        "Strategic consulting for scalable systems.",
+        "Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
         "Architecture planning and optimization.",
         "Enterprise-grade solutions.",
         "Performance-driven technology choices.",
@@ -262,7 +262,676 @@ const services = [
         "Data Visualization"
       ]
     }
-  }
+  },
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 1,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+
+
+  
 ];
 
 export default services;

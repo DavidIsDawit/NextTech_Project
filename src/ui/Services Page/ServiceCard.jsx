@@ -12,6 +12,7 @@ export default function ServiceCard({ service }) {
         shadow-sm
       "
     >
+      {/* <div className="bg-white p-8 lg:p-9 rounded-xl shadow-xl flex items-center gap-6 lg:gap-7 min-h-[100px] lg:min-h-[10px]  justify-center"></div> */}
       <div className="relative aspect-[4/3]  xs:aspect-[16/10] sm:aspect-[4/3] md:aspect-[16/9] overflow-hidden">
         <img
           src={service.heroImage}
