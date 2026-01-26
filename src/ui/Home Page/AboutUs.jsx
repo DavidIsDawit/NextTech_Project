@@ -1,6 +1,6 @@
-import { aboutData } from "../../data/data";
+import { aboutData } from "../../data/HomePageData";
 import { HiChevronRight } from "react-icons/hi"; 
-import aboutUsImage from "/aboutUsHeroImage.jpg";
+import aboutUsImage from "/AboutUsPageImages/aboutUsHeroImage.jpg";
 
 const AboutUs = () => {
   return (

@@ -7,10 +7,14 @@ export default {
     },
 
     extend: {
+      scale: {
+        120: "1.2",
+      },
       colors: {
         primary: "#00A3E0",     
         secondary: "#0B162C",
-        tertiary :"#B6BFDA"   
+        tertiary :"#B6BFDA",
+        primaryHover: "#0d1476ff", 
       },
       
     },

@@ -1,5 +1,5 @@
 
-import { ctaData } from '../../data/data';
+import { ctaData } from '../../data/HomePageData';
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 export default function FooterCard() {

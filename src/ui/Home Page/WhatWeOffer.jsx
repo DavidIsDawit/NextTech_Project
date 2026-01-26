@@ -1,4 +1,4 @@
-import { workData } from "../../data/data";
+import { workData } from "../../data/HomePageData";
 import { HiChevronRight } from "react-icons/hi";
 
 export default function WhyWeOffer() {

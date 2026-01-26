@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaGlobe, FaBars, FaPhone } from 'r
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { LiaTimesSolid } from "react-icons/lia";
 import { MdLocationOn } from 'react-icons/md';
-import NextTechLogo from "/NextTechLogo.png";
+import NextTechLogo from "/NavBarImages/NextTechLogo.png";
 import {  NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -26,16 +26,17 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/aboutus' },
-    { name: 'Teams', href: '/teams' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Blogs', href: '/blogs' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Service', href: '/service' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Certificates', href: '/certificates' },
+    { name: 'News', href: '/news' },
+    { name: 'Contacts', href: '/contacts' }
   ];
 
   return (
     /* ADDED PADDING HERE: pb-36 lg:pb-[240px] md:pb-[140px] */
-    <div className={`w-full z-50 transition-all duration-300 pb-36 lg:pb-[260px] md:pb-[140px] ${isSticky ? 'fixed top-0 left-0' : 'relative lg:pt-8 lg:px-12'}`}>
+    <div className={`w-full  z-50 transition-all duration-300 pb-36 lg:pb-[260px] md:pb-[140px] ${isSticky ? 'fixed top-0 left-0' : 'relative lg:pt-8 lg:px-12'}`}>
       
       <nav className={`w-full transition-all duration-300 shadow-xl 
         ${isSticky 

@@ -46,7 +46,7 @@ const UnderMentinance = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f7fafc] flex flex-col items-center justify-center p-6 font-sans flex-grow pt-28 lg:pt-52">
+    <div className="min-h-screen bg-[#f7fafc] flex flex-col items-center justify-center p-6 font-sans flex-grow">
       <div className="max-w-3xl w-full text-center space-y-8">
         
         {/* Main Illustration */}

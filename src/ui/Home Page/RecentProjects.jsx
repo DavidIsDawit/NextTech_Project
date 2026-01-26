@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { recentProjects } from '../../data/data';
+import { recentProjects } from '../../data/HomePageData';
 import { IoIosArrowForward } from "react-icons/io";
 
 const RecentProjects = () => {

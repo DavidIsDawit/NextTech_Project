@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { statsData } from "../../data/data";
+import { statsData } from "../../data/HomePageData";
 
 const StatCard = ({ item }) => {
   const Icon = item.icon;

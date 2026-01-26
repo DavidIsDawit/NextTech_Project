@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { heroSlides } from '../../data/data.js'; 
+import { heroSlides } from '../../data/HomePageData.js'; 
 import { IoIosArrowForward } from "react-icons/io";
-import heroBg from "/Home-Hero-Section-Cover-Image.png";
+import heroBg from "/HomePageImages/Home-Hero-Section-Cover-Image.png";
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

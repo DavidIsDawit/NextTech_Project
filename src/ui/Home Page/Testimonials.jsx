@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { testimonialsData } from '../../data/data';
+import { testimonialsData } from '../../data/HomePageData';
 
 const Testimonials = () => {
   const { subtitle, title, items } = testimonialsData;

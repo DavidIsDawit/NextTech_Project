@@ -1,5 +1,5 @@
 
-import { footerData } from '../../data/data';
+import { footerData } from '../data/FooterData';
 import { 
   FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaPaperPlane, 
   FaFacebookF, FaTwitter, FaBehance, FaInstagram, FaGlobe 

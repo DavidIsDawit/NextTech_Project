@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { clientsData } from "../../data/data";
+import { clientsData } from "../../data/HomePageData";
 
 const LogoCard = ({ logo }) => (
   <div 

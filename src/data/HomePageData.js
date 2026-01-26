@@ -1,9 +1,9 @@
 
 export const heroSlides = [
-    "/Home-Hero-Section-Cover-Image.jpg",
-    "/cricleImage2.jpg",
-    "/cricleImage1.jpg",
-    "/cricleImage3.jpg"
+    "/HomePageImages/Home-Hero-Section-Cover-Image.jpg",
+    "/HomePageImages/cricleImage2.jpg",
+    "/HomePageImages/cricleImage1.jpg",
+    "/HomePageImages/cricleImage3.jpg"
 
   ];
 
@@ -54,6 +54,31 @@ export const workData = {
   ]
 };
 
+export const clientsData = {
+  subtitle: "03 - OUR CLIENTS",
+  title: "Our Latest News & Articles",
+  blogTitle: "From The Blog",
+  logos: [
+    // Row 1 (4 items)
+    { id: 1, src: "/HomePageImages/ovid.png",        alt: "Ovid" },
+    { id: 2, src: "/HomePageImages/ethiopian.png",   alt: "Ethiopian" },
+    { id: 3, src: "/HomePageImages/tele.png",        alt: "Ethio Telecom" },
+    { id: 4, src: "/HomePageImages/ethiopian.png",   alt: "Ethiopian" },
+    // Row 2 (5 items)
+    { id: 5, src: "/HomePageImages/esl.png",                 alt: "Ethio Telecom" },
+    { id: 6, src: "/HomePageImages/BaltonCp.png",            alt: "Ovid" },
+    { id: 7, src: "/HomePageImages/Amiran.png",              alt: "Ethiopian" },
+    { id: 8, src: "/HomePageImages/LeadCom.jpeg",            alt: "Ovid" },
+    { id: 9, src: "/HomePageImages/DireDewaUniversity.jpeg", alt: "Ethio Telecom" },
+    // Row 3 (4 items)
+    { id: 10, src: "/HomePageImages/Rama.jpeg", alt: "Ethiopian" },
+    { id: 11, src: "/HomePageImages/Etv.png",   alt: "Ovid" },
+    { id: 12, src: "/HomePageImages/YYM.jpg",   alt: "Ethio Telecom" },
+    { id: 13, src: "/HomePageImages/FANA.png",  alt: "Ethiopian" },
+  ]
+};
+
+
 export const recentProjects = {
   subtitle: "04 - RECENT PROJECTS",
   title: "Technology with Passion",
@@ -63,10 +88,10 @@ export const recentProjects = {
   ],
   
   images: {
-    mainLeft: "/working.jpg",
-    mainRight: "/VR Technology.jpg",
-    bottomLeft: "/construction.jpg",
-    bottomRight: "/technology.jpeg"
+    mainLeft:    "/HomePageImages/working.jpg",
+    mainRight:   "/HomePageImages/VR Technology.jpg",
+    bottomLeft:  "/HomePageImages/construction.jpg",
+    bottomRight: "/HomePageImages/technology.jpeg"
   }
 };
 
@@ -78,7 +103,7 @@ export const testimonialsData = {
       id: 1,
       name: "Ethiopian Shipping Lines ",
       role: "Company",
-      image: "/esl.png",
+      image: "/HomePageImages/esl.png",
       text: "We commend GA Soft for their excellent performance in executing the project, showcasing quality service and effective health and safety management. We are satisfied with their work in Supply, Installation, Testing, and Commissioning, and we recommend the company for similar projects.",
       stars: 5
     },
@@ -86,7 +111,7 @@ export const testimonialsData = {
       id: 2,
       name: "Ethiopian Civil Service University",
       role: "Company",
-      image: "/ecsu.jpeg",
+      image: "/HomePageImages/ecsu.jpeg",
       text: "They acted in accordance with their duties in due time, so we are delighted to recommend their service and endeavor whoever want to use all their professional abilities.",
       stars: 5
     },
@@ -94,7 +119,7 @@ export const testimonialsData = {
       id: 3,
       name: "G.A. Engineering Group ",
       role: "Company",
-      image: "/Ga logo.png",
+      image: "/HomePageImages/Ga logo.png",
       text: "Next Tech delivered reliable, high-quality solutions tailored to our needs. Their technical expertise, responsiveness, and commitment to excellence made them a valuable partner in our digital transformation.",
       stars: 5
     }
@@ -105,64 +130,7 @@ export const testimonialsData = {
 export const ctaData = {
   title: "Do You Want to Get In Touch ?",
   buttonText: "CONATCT US",
-  image: "/FooterImg.png" // Replace with your actual path
+  image: "/HomePageImages/FooterImg.png" 
 };
 
-export const clientsData = {
-  subtitle: "03 - OUR CLIENTS",
-  title: "Our Latest News & Articles",
-  blogTitle: "From The Blog",
-  logos: [
-    // Row 1 (4 items)
-    { id: 1, src: "/ovid.png", alt: "Ovid" },
-    { id: 2, src: "/ethiopian.png", alt: "Ethiopian" },
-    { id: 3, src: "/tele.png", alt: "Ethio Telecom" },
-    { id: 4, src: "/ethiopian.png", alt: "Ethiopian" },
-    // Row 2 (5 items)
-    { id: 5, src: "/esl.png", alt: "Ethio Telecom" },
-    { id: 6, src: "/BaltonCp.png", alt: "Ovid" },
-    { id: 7, src: "/Amiran.png", alt: "Ethiopian" },
-    { id: 8, src: "/LeadCom.jpeg", alt: "Ovid" },
-    { id: 9, src: "/DireDewaUniversity.jpeg", alt: "Ethio Telecom" },
-    // Row 3 (4 items)
-    { id: 10, src: "/Rama.jpeg", alt: "Ethiopian" },
-    { id: 11, src: "/Etv.png", alt: "Ovid" },
-    { id: 12, src: "/YYM.jpg", alt: "Ethio Telecom" },
-    { id: 13, src: "/FANA.png", alt: "Ethiopian" },
-  ]
-};
 
-export const footerData = {
-  logo: "/NextTechLogo.png",
-  description: {
-    address: "Addis Ababa, Bole, Mexico",
-    country: "Ethiopia",
-    phone: "+2519999999",
-    email: "nexttech@gmail.com"
-  },
-  socials: [
-    { id: 1, icon: "FaFacebookF", link: "#" },
-    { id: 2, icon: "FaTwitter", link: "#" },
-    { id: 3, icon: "FaBehance", link: "#" },
-    { id: 4, icon: "FaInstagram", link: "#" },
-    { id: 5, icon: "FaGlobe", link: "#" }
-  ],
-  categories: [
-    { id: 1, name: "Engineering Solutions", link: "#" },
-    { id: 2, name: "Technology Services", link: "#" },
-    { id: 3, name: "ERP Systems", link: "#" },
-    { id: 4, name: "Service 4", link: "#" },
-    { id: 5, name: "Service 5", link: "#" }
-  ],
-  quickLinks: [
-    { id: 1, name: "Home", link: "#" },
-    { id: 2, name: "About Us", link: "#" },
-    { id: 3, name: "Service", link: "#" },
-    { id: 4, name: "Project", link: "#" },
-    { id: 5, name: "News", link: "#" }
-  ],
-  newsletter: {
-    title: "Subscribe now",
-    subtitle: "Get early access to new features and exclusive service"
-  }
-};
