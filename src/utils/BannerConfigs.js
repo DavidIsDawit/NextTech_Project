@@ -6,7 +6,7 @@ export const BANNER_CONFIGS = {
         backgroundImage: SHARED_BANNER_IMAGE,
         breadcrumbs: [{ label: "Home", path: "/" }, { label: "About Us" }],
     },
-    "/service": {
+    "/Service": {
         title: "Our Services",
         backgroundImage: SHARED_BANNER_IMAGE,
         breadcrumbs: [{ label: "Home", path: "/" }, { label: "Services" }],
@@ -39,52 +39,70 @@ export const BANNER_CONFIGS = {
 };
 
 export const getBannerConfig = (pathname) => {
+    // Exact match (case-sensitive check first for performance if standard, but here we might want to be robust)
     if (BANNER_CONFIGS[pathname]) return BANNER_CONFIGS[pathname];
 
-    if (pathname.startsWith("/blogs/")) {
+    // Case-insensitive fallback for main routes
+    const normalPath = pathname.toLowerCase();
+    const configKey = Object.keys(BANNER_CONFIGS).find(key => key.toLowerCase() === normalPath);
+    if (configKey) return BANNER_CONFIGS[configKey];
+
+    if (normalPath.startsWith("/blogs/") || normalPath.startsWith("/news/")) {
         return {
             title: "News",
             backgroundImage: SHARED_BANNER_IMAGE,
             breadcrumbs: [
                 { label: "Home", path: "/" },
-                { label: "News", path: "/blogs" },
+                { label: "News", path: "/news" },
                 { label: "News Detail" },
             ],
         };
     }
 
-    if (pathname.startsWith("/service/")) {
+    if (normalPath.startsWith("/service/")) {
         return {
             title: "Service Detail",
             backgroundImage: SHARED_BANNER_IMAGE,
             breadcrumbs: [
                 { label: "Home", path: "/" },
-                { label: "Services", path: "/services" },
+                { label: "Services", path: "/Service" },
                 { label: "Detail" },
             ],
         };
     }
 
-    if (pathname.startsWith("/certificate/")) {
+    if (normalPath.startsWith("/certificate/") || normalPath.startsWith("/certificates/")) {
+        // App.jsx uses /certificate/:id
         return {
-            title: "Certificate Detail",
+            title: "Certificate",
             backgroundImage: SHARED_BANNER_IMAGE,
             breadcrumbs: [
                 { label: "Home", path: "/" },
-                { label: "Certificate", path: "/certificate" },
+                { label: "Certificates", path: "/certificates" },
                 { label: "Certificate Detail" },
             ],
         };
     }
 
-
-    if (pathname.startsWith("/portfolio/")) {
+    if (normalPath.startsWith("/portfolio/")) {
         return {
-            title: "portfolio Detail",
+            title: "Our Portfolio",
             backgroundImage: SHARED_BANNER_IMAGE,
             breadcrumbs: [
                 { label: "Home", path: "/" },
-                { label: "portfolio", path: "/portfolio" },
+                { label: "Portfolio", path: "/portfolio" },
+                { label: "Detail" },
+            ],
+        };
+    }
+
+    if (normalPath.startsWith("/careers/")) {
+        return {
+            title: "Career Detail",
+            backgroundImage: SHARED_BANNER_IMAGE,
+            breadcrumbs: [
+                { label: "Home", path: "/" },
+                { label: "Careers", path: "/careers" }, // Assuming a /careers page exists or is planned
                 { label: "Detail" },
             ],
         };

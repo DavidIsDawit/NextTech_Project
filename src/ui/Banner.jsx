@@ -9,16 +9,16 @@ function CoverImage({ title, backgroundImage, breadcrumbs }) {
         >
             {/* Specific Gradient Overlay: Dark Blue (#1A215E) -> Light Blue/Gray (#C6C7D7) -> White (#FFFFFF) */}
             <div className="absolute inset-0 bg-[#1e3873]/40 md:bg-gradient-to-r md:from-[#1A215E]/85 md:via-[#C6C7D7]/10 md:to-[#FFFFFF]/10" />
-            <div className="relative z-10 flex h-full flex-col items-start justify-center px-6 lg:px-40">
-                <h1 className="mb-2 text-4xl font-bold text-white md:text-5xl font-sans">
+            <div className="relative z-[60] flex h-full flex-col items-start justify-center px-6 lg:px-40 pointer-events-none">
+                <h1 className="mb-2 text-4xl font-bold text-white md:text-5xl font-sans pointer-events-auto">
                     {title}
                 </h1>
 
                 {/* Breadcrumbs */}
                 {breadcrumbs && breadcrumbs.length > 0 && (
-                    <div className="flex items-center space-x-2 text-sm font-medium text-white/90 font-sans">
+                    <div className="flex items-center gap-3 text-base font-medium text-white/90 font-sans pointer-events-auto">
                         {breadcrumbs.map((crumb, index) => (
-                            <div key={index} className="flex items-center">
+                            <div key={index} className="flex items-center gap-3">
                                 {crumb.path ? (
                                     <Link to={crumb.path} className="hover:text-white">
                                         {crumb.label}
@@ -27,7 +27,7 @@ function CoverImage({ title, backgroundImage, breadcrumbs }) {
                                     <span>{crumb.label}</span>
                                 )}
                                 {index < breadcrumbs.length - 1 && (
-                                    <span className="mx-2 text-white/60">/</span>
+                                    <span className="text-white/60">/</span>
                                 )}
                             </div>
                         ))}
