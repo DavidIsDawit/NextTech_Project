@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 export default function CertificateCard({ item, index  }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();

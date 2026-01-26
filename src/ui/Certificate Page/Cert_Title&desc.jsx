@@ -1,9 +1,6 @@
 // src/components/certificate/CertificateHero.jsx
-
 import PropTypes from 'prop-types';
-
-export default function CertificateContent({ title, description }) {
-   
+export default function CertificateContent({ title, description }) {   
     return (
     <div className=" lg:w-full flex flex-col justify-between ">
             {/* Title */}
@@ -19,12 +16,7 @@ export default function CertificateContent({ title, description }) {
     <p key={i} className="mb-6">
       {text}
     </p>
-  ))}
-
-            </div>
-              </div>         
-         
-          </div>
+  ))}</div></div></div>
   );
 }
 CertificateContent.propTypes = {  
