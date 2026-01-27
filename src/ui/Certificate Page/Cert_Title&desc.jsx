@@ -4,7 +4,7 @@ export default function CertificateContent({ title, description }) {
     <div className=" lg:w-full flex flex-col justify-between ">
             {/* Title */}
             <div className="w-full">
-                  <h1 className="text-3xl md:text-4xl lg:text-5x1  2xl:text-6xl font-sans font-bold text-gray-900 mb-5">
+                  <h1 className="text-3xl md:text-4xl lg:text-5x1  2xl:text-6xl font-sans font-extrabold text-gray-900 mb-5">
               {title}
             </h1>
             {/* Description */}

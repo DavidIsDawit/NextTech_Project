@@ -41,9 +41,6 @@ export default function CertificateCard({ item, index }) {
           group-hover:scale-110          
         "        loading="lazy"
         />
-
-
-
         {/* Subtle hover overlay */}
         {/* THUMBNAIL OVERLAY */}
         {imgicon && (
