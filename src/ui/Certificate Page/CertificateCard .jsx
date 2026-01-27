@@ -60,7 +60,7 @@ export default function CertificateCard({ item, index }) {
         <h1 className="font-extrabold  
       text-base sm:text-base md:text-lg lg:text-base xl:text-xl   2xl:text-2xl  text-[#151515] group-hover:text-[#00A3E0] pb-1">
           {title}  </h1>
-        <p className="font-normal text-xs sm:text-xs md:text-sm  lg:text-xs xl:text-base 2xl:text-xl text-[#666666]">{truncateWords(description, 5)}</p>
+        <p className="font-normal text-sm sm:text-sm md:text-sm  lg:text-sm xl:text-base 2xl:text-xl text-[#666666]">{truncateWords(description, 5)}</p>
       </div>
     </div>
 
