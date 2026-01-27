@@ -8,9 +8,9 @@ function BlogCard({ post }) {
 
     return (
         <div
-            className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-transform"
+            className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-transform w-full"
         >
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden aspect-[16/10] w-full">
                 <img
                     src={post.image}
                     alt={post.title}

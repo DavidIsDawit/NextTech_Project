@@ -25,8 +25,8 @@ export default function PortfolioCard({ item }) {
       />
 
       {/* Floating Action Button (Center) */}
-<div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-  <div className={`
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className={`
     flex items-center justify-center rounded-full 
     bg-[#00acc1] text-white 
     h-10 w-10 sm:h-8 sm:w-8 md:h-8 md:w-8 lg:h-8 lg:w-8 xl:h-9 xl:w-9 2xl:h-10 2xl:w-10 
@@ -38,16 +38,16 @@ export default function PortfolioCard({ item }) {
     group-hover:scale-100 lg:group-hover:scale-125 
     pointer-events-auto
   `}>
-    <ArrowUpRight 
-      size={20} 
-      className="xs:size-[22] sm:size-24 md:size-7 lg:size-8" 
-      strokeWidth={2.5} 
-    />
-  </div>
-</div>
+          <ArrowUpRight
+            size={20}
+            className="xs:size-[22] sm:size-24 md:size-7 lg:size-8"
+            strokeWidth={2.5}
+          />
+        </div>
+      </div>
 
-{/* Bottom Info Panel */}
-<div className={`
+      {/* Bottom Info Panel */}
+      <div className={`
   absolute bottom-0 left-0 right-0 
   h-24 xs:h-28 sm:h-32 md:h-36 lg:h-32 xl:h-28 2xl:h-32 
   rounded-xl bg-[#00acc1] 
@@ -59,22 +59,22 @@ export default function PortfolioCard({ item }) {
   transition-transform duration-500 ease-out 
   lg:group-hover:translate-y-0
 `}>
-  <p className="
+        <p className="
     mb-1 text-sm xs:text-base sm:text-base md:text-lg 
     font-medium opacity-90 tracking-wider uppercase
   ">
-    {item.category}
-  </p>
-  <h3 className="
+          {item.category}
+        </p>
+        <h3 className="
     text-lg xs:text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-xl 
     font-bold leading-tight line-clamp-2
   ">
-    {item.title}
-  </h3>
-</div>
+          {item.title}
+        </h3>
+      </div>
 
-{/* Subtle Overlay on Hover */}
-<div className={`
+      {/* Subtle Overlay on Hover */}
+      <div className={`
   absolute inset-0 bg-black/10 
   opacity-0 lg:opacity-0 
   transition-opacity duration-400 ease-out 
