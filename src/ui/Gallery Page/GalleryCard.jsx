@@ -45,7 +45,7 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
        {hasMultipleImages && (
       <button
         onClick={prev}
-        className="absolute left-3 top-1/2 -translate-y-1/2 bg-[#00A3E0] hover:bg-blue-600  text-white pt-2 px-1  "
+        className="absolute left-3 top-1/2 -translate-y-1/2 bg-[#00A3E0] hover:bg-[#0097a7]  text-white pt-2 px-1  "
       > 
         <img
                   src={LeftArrow }
@@ -58,7 +58,7 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
        {hasMultipleImages && (
       <button
         onClick={next}
-        className="absolute right-3 top-1/2 -translate-y-1/2 hover:bg-blue-600 bg-[#00A3E0]   text-white pt-2 px-1    "
+        className="absolute right-3 top-1/2 -translate-y-1/2 hover:bg-[#0097a7] bg-[#00A3E0]   text-white pt-2 px-1    "
       >
          <img
                   src={RightArrow }
@@ -77,20 +77,22 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
           className="
             absolute bottom-0 left-0 right-0 z-10
             bg-black/60 
-            px-3 pb-5 pt-3
+            px-3 pb-5 pt-3 
           "
         >
-          <div className={`flex ${
+          {/* <div className={`flex ${
     images.length < 3 ? "gap-20" : images.length < 4 ? "gap-6" : "gap-2"
-  }`}>
-            {images.slice(0, 5).map((img, index) => (
+  }`}> */}
+  <div className=" flex justify-start gap-2 overflow-x-auto flex-nowrap scrollbar-hide ">
+            {/* {images.slice(0, 4).map((img, index) => ( */}
+            {images.map((img, index) => (
               <button
                 key={index}
                 onClick={(e) => {
                   e.stopPropagation();
                   setCurrentIndex(index);
                 }}
-                className={`h-[10vh] sm:h-[10vh]  w-full rounded-sm overflow-hidden border
+                className={`h-[10vh] w-[12vh] sm:h-[10vh] flex-shrink-0  rounded-sm overflow-hidden border
                   ${
                     index === currentIndex 
                       ? "border-blue-500"
@@ -99,7 +101,7 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
               >
                 <img
                   src={img}
-                  className="h-full w-full object-cover"
+                  className="h-[10vh] w-[12vh] sm:h-[10vh]  object-cover"
                   alt=""
                 />
               </button>

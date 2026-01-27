@@ -36,12 +36,12 @@ export default function CertificateHero({ images}) {
                 </div>
                 <div className="px-20 pt-10 2xl:pt-16 pb-20">
                    {totalPages > 1 && (
-    <div className="flex justify-center gap-3">
+    <div className="flex justify-center gap-2">
       {Array.from({ length: totalPages }).map((_, idx) => (
         <button
           key={idx}
           onClick={() => setCurrentPage(idx)}
-          className={`w-2 h-2 2xl:w-3 2xl:h-3 rounded-full transition-all ${
+          className={`w-1.5 h-1.5 2xl:w-2.5 2xl:h-2.5 rounded-full transition-all ${
             idx === currentPage
               ? "bg-black "
               : "bg-sky-200"
