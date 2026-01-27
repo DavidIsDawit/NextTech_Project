@@ -1,4 +1,3 @@
-// data/images.js
 import certificate_pic from "/CertificatePageImage/certificate_pic.png";
 import img_icon from "/CertificatePageImage/Certificate_Icon.png";
 export default [

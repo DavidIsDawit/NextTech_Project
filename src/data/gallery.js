@@ -1,5 +1,3 @@
-
-// data/images.js
 import project1 from "/GalleryPageImage/project1.png";
 import project from "/GalleryPageImage/project.png";
 export default [
@@ -7,8 +5,7 @@ export default [
     id: 1,
     images: [
        project1,
-       
-       
+       project,        
     ]
   },
   {
@@ -45,8 +42,7 @@ export default [
        project,
        project1,
     ]
-  },
- 
+  }, 
      {
     id: 6,
       images: [

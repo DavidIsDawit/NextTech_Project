@@ -1,4 +1,3 @@
-// src/components/certificate/CertificateHero.jsx
 import PropTypes from 'prop-types';
 export default function CertificateContent({ title, description }) {   
     return (

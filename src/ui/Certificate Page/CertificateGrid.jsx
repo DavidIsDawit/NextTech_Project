@@ -1,4 +1,3 @@
-// src/ui/GalleryGrid.jsx
 import PropTypes from 'prop-types';
 import CertificateCard from './CertificateCard ';
 
