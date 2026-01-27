@@ -40,11 +40,9 @@ const Navbar = () => {
   return (
    
     <div className={`w-full z-50 transition-all duration-300 
-
-      ${isHomePage ? 'pb-36 lg:pb-[260px] md:pb-[140px]' : 'pb-36 lg:pb-24 md:pb-[140px]'}
-      ${(!isHomePage) 
-          ? 'lg:fixed lg:top-0 lg:left-0 lg:pt-0 lg:px-0' 
-          : (isSticky ? 'fixed top-0 left-0 pt-0 px-0' : 'relative lg:pt-8 lg:px-12')
+      ${(!isHomePage || isSticky) 
+          ? 'fixed top-0 left-0 pt-0 px-0' 
+          : 'relative pt-4 px-4 lg:pt-8 lg:px-12'
       }`}>
       
       <nav className={`w-full transition-all duration-300 shadow-xl 
