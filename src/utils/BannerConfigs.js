@@ -102,7 +102,7 @@ export const getBannerConfig = (pathname) => {
             backgroundImage: SHARED_BANNER_IMAGE,
             breadcrumbs: [
                 { label: "Home", path: "/" },
-                { label: "Careers", path: "/careers" }, // Assuming a /careers page exists or is planned
+                { label: "Careers", path: "/careers" },
                 { label: "Detail" },
             ],
         };

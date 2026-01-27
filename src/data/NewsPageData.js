@@ -2,55 +2,57 @@ const blogData = {
     "posts": [
         {
             "id": 1,
-            "title": "Sustainable Urban Design: Building the Cities of Tomorrow",
+            "title": "GA engineering receives an award",
             "image": "/NewsPageImages/service.png",
-            "date": "12 Oct 2026",
+            "date": "23 May 2026",
             "author": "Admin",
-            "category": "Construction",
-            "fullDate": "October 12, 2026",
-            "content": [
-                "Urban sustainability is no longer a luxury; it's a necessity for the growing global population. Our latest project focuses on integrating green spaces with industrial architecture to reduce the carbon footprint of city centers.",
-                "The project utilizes permeable pavements and solar-integrated facades, setting a new benchmark for environmental responsibility in modern construction."
-            ],
+            "category": "construction",
+            "fullDate": "May 23, 2026",
+            "content1": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
+            "content2": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
             "detailImages": [
                 "/NewsPageImages/service.png",
                 "/NewsPageImages/service.png"
             ],
-            "bottomContent": [
-                "By 2030, we aim to have 50% of our projects certified as carbon-neutral. This initiative is the first step toward that goal, demonstrating that efficiency and ecology can go hand-in-hand.",
-                "Innovation in materials science—such as self-healing concrete—is also being trialed on-site."
-            ],
+            "bottomContent1": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
+            "bottomContent2": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
             "tags": [
-                "Sustainability",
-                "Urban Design",
-                "Green Building",
-                "Innovation"
+                "software",
+                "Consulting",
+                "construction",
+                "higher education",
+                "university",
+                "kau",
+                "atp",
+                "software",
+                "technology"
             ]
         },
         {
             "id": 2,
-            "title": "The Impact of Artificial Intelligence on Civil Engineering",
+            "title": "GA engineering receives an award",
             "image": "/NewsPageImages/service.png",
-            "date": "15 Oct 2026",
-            "author": "Tech Team",
-            "category": "Technology",
-            "fullDate": "October 15, 2026",
-            "content": [
-                "Artificial Intelligence is revolutionizing how we plan, design, and maintain critical infrastructure. From predictive maintenance to generative design, AI tools are helping engineers solve complex problems faster than ever.",
-                "We are currently implementing AI-driven monitoring systems for structural health, allowing for real-time data analysis of bridge stress and load-bearing capacities."
-            ],
+            "date": "23 May 2026",
+            "author": "Admin",
+            "category": "technology",
+            "fullDate": "May 23, 2026",
+            "content1": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
+            "content2": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
             "detailImages": [
                 "/NewsPageImages/service.png"
             ],
-            "bottomContent": [
-                "The integration of AI isn't just about speed; it's about safety. By identifying potential failures before they happen, we can prevent accidents and save lives.",
-                "Our team is also exploring how AI can optimize resource allocation to reduce waste on large-scale construction sites."
-            ],
+            "bottomContent1": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
+            "bottomContent2": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
             "tags": [
-                "AI",
-                "Engineering",
-                "Tech Trends",
-                "Safety"
+                "software",
+                "Consulting",
+                "construction",
+                "higher education",
+                "university",
+                "kau",
+                "atp",
+                "software",
+                "technology"
             ]
         },
         {
@@ -59,7 +61,7 @@ const blogData = {
             "image": "/NewsPageImages/service.png",
             "date": "20 Oct 2026",
             "author": "Project Mgr",
-            "category": "Construction",
+            "category": "construction",
             "fullDate": "October 20, 2026",
             "content": [
                 "After three years of meticulous labor, the Heritage Bridge Project has reached completion. This landmark project restores a vital transport link while preserving the historical aesthetic of the region.",
@@ -86,7 +88,7 @@ const blogData = {
             "image": "/NewsPageImages/service.png",
             "date": "22 Oct 2026",
             "author": "IT Solutions",
-            "category": "Technology",
+            "category": "technology",
             "fullDate": "October 22, 2026",
             "content": [
                 "Managing multi-million dollar projects requires precision and transparency. We've transitioned to a new software suite that offers real-time tracking of budgets, materials, and labor hours.",
@@ -112,7 +114,7 @@ const blogData = {
             "image": "/NewsPageImages/service.png",
             "date": "25 Oct 2026",
             "author": "Admin",
-            "category": "University",
+            "category": "university",
             "fullDate": "October 25, 2026",
             "content": [
                 "We are proud to announce our partnership in the expansion of the Global University campus. The project includes three new research labs and a 500-seat lecture hall designed for collaboration.",
@@ -139,7 +141,7 @@ const blogData = {
             "image": "/NewsPageImages/service.png",
             "date": "30 Oct 2026",
             "author": "Design Principal",
-            "category": "Construction",
+            "category": "construction",
             "fullDate": "October 30, 2026",
             "content": [
                 "Biophilic design, which incorporates nature into the built environment, is reshaping the skylines of major cities. Vertical forests and rooftop ecosystems are becoming standard in high-rise developments.",
@@ -165,7 +167,7 @@ const blogData = {
             "image": "/NewsPageImages/service.png",
             "date": "02 Nov 2026",
             "author": "Tech Lead",
-            "category": "Technology",
+            "category": "technology",
             "fullDate": "November 02, 2026",
             "content": [
                 "Smart cities are leveraging IoT sensors to optimize traffic flow and energy usage. We are at the forefront of this revolution.",
@@ -181,7 +183,7 @@ const blogData = {
             "image": "/NewsPageImages/service.png",
             "date": "05 Nov 2026",
             "author": "Green Team",
-            "category": "Construction",
+            "category": "construction",
             "fullDate": "November 05, 2026",
             "content": [
                 "Exploring alternatives to traditional concrete, such as bamboo-reinforced composites and recycled plastics.",
@@ -197,7 +199,7 @@ const blogData = {
             "image": "/NewsPageImages/service.png",
             "date": "08 Nov 2026",
             "author": "HR Dept",
-            "category": "Management",
+            "category": "management",
             "fullDate": "November 08, 2026",
             "content": [
                 "Remote work utilizing VR site inspections is becoming a reality. Engineers can now tour a site halfway across the world without leaving their office.",
@@ -213,7 +215,7 @@ const blogData = {
             "image": "/NewsPageImages/service.png",
             "date": "12 Nov 2026",
             "author": "Energy Div",
-            "category": "Construction",
+            "category": "construction",
             "fullDate": "November 12, 2026",
             "content": [
                 "Integrating solar films into window glass allows skyscrapers to generate their own power.",
@@ -229,7 +231,7 @@ const blogData = {
             "image": "/NewsPageImages/service.png",
             "date": "15 Nov 2026",
             "author": "Security Ops",
-            "category": "Technology",
+            "category": "technology",
             "fullDate": "November 15, 2026",
             "content": [
                 "As infrastructure becomes more connected, the risk of cyberattacks increases. We are implementing military-grade encryption.",
@@ -245,7 +247,7 @@ const blogData = {
             "image": "/NewsPageImages/service.png",
             "date": "18 Nov 2026",
             "author": "Ops Lead",
-            "category": "Construction",
+            "category": "construction",
             "fullDate": "November 18, 2026",
             "content": [
                 "Prefabricated modules allow for rapid assembly on-site, reducing construction time by up to 50%.",
@@ -277,7 +279,7 @@ const blogData = {
             "image": "/NewsPageImages/service.png",
             "date": "22 Nov 2026",
             "author": "Legal Team",
-            "category": "University",
+            "category": "university",
             "fullDate": "November 22, 2026",
             "content": [
                 "Understanding local regulations is crucial for international expansion. Our legal team shares insights.",
@@ -293,7 +295,7 @@ const blogData = {
             "image": "/NewsPageImages/service.png",
             "date": "25 Nov 2026",
             "author": "R&D",
-            "category": "Technology",
+            "category": "technology",
             "fullDate": "November 25, 2026",
             "content": [
                 "Using robots for demolition and toxic waste cleanup keeps human workers safe.",

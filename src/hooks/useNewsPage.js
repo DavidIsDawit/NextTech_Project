@@ -39,7 +39,7 @@ function useBlog() {
             }
             return acc;
         }, new Set());
-        return Array.from(allTags);
+        return Array.from(allTags).sort();
     }, [posts]);
 
     // Get recent posts (sorted by date, take top 3)
