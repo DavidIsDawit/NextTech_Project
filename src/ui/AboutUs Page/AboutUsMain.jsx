@@ -35,7 +35,7 @@ const AboutUs = () => {
               {aboutData.features.map((item, index) => (
                 <div 
                   key={item.id} 
-                  className={`flex flex-col items-start text-start md:items-center lg:flex-row lg:items-start lg:text-left gap-5 ${
+                  className={`flex flex-row items-center text-start md:items-center lg:flex-row lg:items-start lg:text-left gap-5 ${
                     index === 0 
                       ? "md:col-span-2 md:flex-col md:items-center md:text-center lg:flex-row lg:items-start lg:text-left lg:ml-16" 
                       : ""
