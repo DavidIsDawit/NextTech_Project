@@ -23,7 +23,7 @@ function RecentPosts({ posts }) {
     };
 
     return (
-        <section className="bg-[#f8faff] p-8">
+        <section className="bg-[#f4f7fa] p-8">
             <h3 className="mb-6 text-xl font-bold text-[#1a1a1a]">
                 Recent Posts
             </h3>

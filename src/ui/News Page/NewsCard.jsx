@@ -1,16 +1,16 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { MdPerson, MdDateRange } from "react-icons/md";
-import Button from "../Button";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 function BlogCard({ post }) {
     if (!post) return null;
 
     return (
         <div
-            className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-transform"
+            className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-transform w-full"
         >
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden aspect-[16/10] w-full">
                 <img
                     src={post.image}
                     alt={post.title}
@@ -19,8 +19,8 @@ function BlogCard({ post }) {
             </div>
 
             <div className="flex w-full bg-white p-6 2xl:p-8">
-                <div className="flex w-full flex-col items-start lg:w-2/3">
-                    <div className="mb-4 flex flex-nowrap items-center gap-x-4 gap-y-2 text-[13px] 2xl:text-base">
+                <div className="flex w-full flex-col items-start">
+                    <div className="mb-4 flex flex-nowrap items-center gap-x-2 gap-y-2 text-xs 2xl:text-base">
                         <div className="flex items-center">
                             <MdPerson className="mr-1 text-lg text-sky-500" />
                             <span>{post.author}.</span>
@@ -35,16 +35,19 @@ function BlogCard({ post }) {
                         {post.title}
                     </h1>
 
-                    <Button
-                        as={Link}
+                    <Link
                         to={`/blogs/${post.id}`}
-                        variant="text"
+                        className="
+                            mt-2
+                            text-sm xs:text-base sm:text-base md:text-lg 
+                            inline-flex items-center font-semibold gap-1.5 sm:gap-2 
+                            text-[#00A3E0] transition-colors
+                        "
                     >
-                        READ MORE
-                    </Button>
+                        Read More
+                        <IoIosArrowRoundForward size={22} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
                 </div>
-
-                <div className="hidden w-1/3 lg:block"></div>
             </div>
         </div>
     );

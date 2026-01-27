@@ -9,7 +9,7 @@ export default function CertificateContent({ title, description }) {
               {title}
             </h1>
             {/* Description */}
-            <div className="text-base md:text-sm lg:text-lg 2xl:text-xl w-full text-gray-600  leading-relaxed mb-10 whitespace-pre-line">
+            <div className="text-lg md:text-sm lg:text-lg 2xl:text-xl w-full text-gray-600  leading-relaxed mb-10 whitespace-pre-line">
               {description
   .split(/ {2,}/)
   .map((text, i) => (

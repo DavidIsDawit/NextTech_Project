@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function ServiceCard({ service }) {
   return (
-    <Link 
+    <Link
       to={`/service/${service.id}`} // The entire card is now a link
       className=" 
         group bg-white rounded-t-xl

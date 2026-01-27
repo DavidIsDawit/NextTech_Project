@@ -44,7 +44,7 @@ function BlogSearch({ value, onChange }) {
     };
 
     return (
-        <div className="bg-[#f8faff] py-12 px-6">
+        <div className="bg-[#f4f7fa] py-12 px-6">
             <div className="relative" ref={searchRef}>
                 <div className="relative flex items-center bg-white p-1 border border-gray-100 shadow-sm">
                     <input
