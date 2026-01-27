@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 export default function CertificateInfo({ client, project, category, issuedate }) {
   return (    
      <div className="bg-[#F4F5FB] w-full  lg:w-1/2 lg:h-1/2 pb-7 shadow-sm ">
-              <h2 className="text-xl md:text-xl lg:text-2xl xl:text-3xl  2xl:text-4xl  font-bold px-8 2xl:px-12 pt-8 lg:pt-6 xl:pt-8 2xl:pt-10 2xl:pb-2 text-gray-900 ">
+              <h2 className="text-xl md:text-xl lg:text-2xl xl:text-3xl  2xl:text-4xl  font-extrabold px-8 2xl:px-12 pt-8 lg:pt-6 xl:pt-8 2xl:pt-10 2xl:pb-2 text-gray-900 ">
                 Certificate Info
               </h2>
               <div className="space-y-1 sm:space-y-2 md:space-y-3 lg:space-y-4 xl:space-y-5 2xl:space-y-6 px-8 2xl:px-10 pb-4 pt-6 xl:pt-8 2xl:pt-10">
