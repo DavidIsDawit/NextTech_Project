@@ -1,10 +1,12 @@
 
-import UnderMentinance from '../ui/UnderMentinance'
+// import UnderMentinance from '../ui/UnderMentinance'
+import Contact from '../ui/Contact Page/Contact.jsx'
 
 export default function Contacts() {
   return (
     <div>
-      <UnderMentinance/>
+      {/* <UnderMentinance/> */}
+      <Contact/>
     </div>
   )
 }

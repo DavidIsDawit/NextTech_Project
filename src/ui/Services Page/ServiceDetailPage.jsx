@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import Faq from "../Faq/Faq";
+import Faq from "../Faq Page/Faq";
 import services from "../../data/ServicesPageData";
 
 export default function ServiceDetail() {
