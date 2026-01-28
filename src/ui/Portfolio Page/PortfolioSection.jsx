@@ -272,8 +272,7 @@
 // }
 
 
-
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, useMemo } from "react" // Added useMemo
 import PortfolioCard from "./PortfolioCard"
 import Pagination from "../Pagination";
 import { portfolioProjects } from "../../data/PortfolioPageData";
@@ -281,10 +280,11 @@ import { portfolioProjects } from "../../data/PortfolioPageData";
 export default function PortfolioSection() {
   const scrollRef = useRef(null); 
   
-  const projectCategories = [
+  // FIXED: Wrapped in useMemo to prevent unnecessary re-renders and fix the warning
+  const projectCategories = useMemo(() => [
     "All", 
     ...new Set(portfolioProjects.map((item) => item.category))
-  ];
+  ], []);
 
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [currentPage, setCurrentPage] = useState(1)
@@ -324,8 +324,6 @@ export default function PortfolioSection() {
         const buttonLeft = activeButton.offsetLeft;
         const buttonWidth = activeButton.offsetWidth;
 
-        // Calculate the center position
-        // This moves the scrollbar so the active item is centered
         const targetScroll = buttonLeft - (containerWidth / 2) + (buttonWidth / 2);
         
         container.scrollTo({
@@ -334,7 +332,7 @@ export default function PortfolioSection() {
         });
       }
     }
-  }, [selectedCategory]);
+  }, [selectedCategory, projectCategories]); // Warning fixed here
 
   const filteredItems =
     selectedCategory === "All"
@@ -374,7 +372,7 @@ export default function PortfolioSection() {
         </div>
       </div>
 
-      <div className="mb-12 flex justify-center w-full">
+      <div className="mb-10 sm:mb-14 md:mb-16 lg:mb-20 xl:mb-10 2xl:mb-12 sm:px-28 md:px-36 lg:px-48 xl:px-52 2xl:px-56 flex justify-center">
         <div 
           ref={scrollRef}
           className="w-full max-w-4xl flex overflow-x-auto gap-4 pb-4 

@@ -24,7 +24,7 @@ export default function ServiceCard({ service }) {
 
       <div className="p-4 xs:p-5 sm:p-6 md:p-7 lg:p-8">
         <h3 className="
-          text-lg xs:text-xl sm:text-xl md:text-2xl
+          text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-3xl
           font-bold text-gray-900 line-clamp-1 
           group-hover:text-[#00A3E0] transition-colors duration-300
         ">
@@ -32,7 +32,7 @@ export default function ServiceCard({ service }) {
         </h3>
 
         <p className="
-          text-sm xs:text-base sm:text-base md:text-lg lg:text-lg xl:text-xl 
+          text-base sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl
           text-gray-600 mt-2 xs:mt-3 sm:mt-3 md:mt-4 
           line-clamp-2 md:line-clamp-3 break-words
         ">
