@@ -1,8 +1,7 @@
-import UnderMentinance from "../ui/UnderMentinance";
 
 function PageNotFound() {
   return <div>
-         <UnderMentinance/>
+        this is sample 
         </div>;
 }
 
