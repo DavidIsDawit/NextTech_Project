@@ -6,6 +6,7 @@ import { MdLocationOn } from 'react-icons/md';
 import NextTechLogo from "/NavBarImages/NextTechLogo.png";
 import { NavLink, useLocation } from 'react-router-dom';
 import Button from './Button';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -157,12 +158,13 @@ const Navbar = () => {
             
           </div>
           <div className="flex justify-center py-4">
-            <Button
-              type="submit"
-              variant="primary"
-              size="xl">
-               Send Message
-            </Button>
+          <Button
+            as={Link}
+            to="/contacts"
+            variant="primary"
+            size="xl">
+              Send Message
+          </Button>
             </div>
         </div>
       )}
