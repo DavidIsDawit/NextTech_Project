@@ -9,7 +9,6 @@ import PageNotFound from "../pages/PageNotFound";
 
 export default function CertificateDetailPage() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const certificate = certificateItems.find(c => c.id === Number(id));
   if (!certificate) {
     return (
