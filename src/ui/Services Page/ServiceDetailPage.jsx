@@ -28,10 +28,10 @@ export default function ServiceDetail() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8 xl:gap-0">
 
           {/* ================= LEFT CONTENT (Main) ================= */}
-          <div className="lg:col-span-2 space-y-8 md:space-y-12 ml-0 xl:ml-8 ">
+          <div className="lg:col-span-2 space-y-8 md:space-y-10 ml-0 xl:ml-8 ">
 
             {/* Hero Image: Height scales from 256px up to 512px */}
-            <div className="w-full h-64 xs:h-72 sm:h-80 md:h-[28rem] lg:h-[30rem] xl:h-[32rem] 2xl:h-[33rem] rounded-lg overflow-hidden">
+            <div className="w-full h-64 xs:h-72 sm:h-80 md:h-[28rem] lg:h-[30rem] xl:h-[32rem] 2xl:h-[33rem] rounded-lg overflow-hidden mb-16 md:mb-24">
               <img
                 src={service.heroImage}
                 alt={service.title}
@@ -40,7 +40,7 @@ export default function ServiceDetail() {
             </div>
 
             {/* Text Content: Text size grows with screen size */}
-            <div className="space-y-6 text-gray-600 leading-relaxed text-sm xs:text-base md:text-lg">
+            <div className="space-y-6  text-gray-600 leading-relaxed text-sm xs:text-base md:text-lg">
               {service.content.paragraphs.map((text, index) => (
                 <p key={index} className="first-letter:text-gray-900">
                   {text}
@@ -55,7 +55,7 @@ export default function ServiceDetail() {
                    <img
                     src={img}
                     alt="Service detail"
-                    className="w-full h-64 xs:h-72 md:h-80 object-cover hover:scale-110 transition-duration-500"
+                    className="w-full h-64 xs:h-72 md:h-80 object-cover"
                   />
                 </div>
               ))}
@@ -73,29 +73,55 @@ export default function ServiceDetail() {
           <aside className="space-y-8  lg:top-10 h-fit flex flex-col  mb-28 md:mb-0 ml-0 xl:ml-14">
 
             {/* Services List */}
-            <div className="bg-white py-8 rounded-2xl p-6 sm:p-5  flex flex-col border border-gray-600 border-opacity-20 shadow-lg ring-1 ring-gray-900/5">
-              <h3 className="font-sans text-2xl xs:text-3xl 2xl:text-3xl font-bold text-gray-900 mb-6">
+            {/* <div className="bg-white py-8 rounded-2xl p-6 sm:p-6  flex flex-col border border-gray-600 border-opacity-20 shadow-lg ring-1 ring-gray-900/5">
+              <h3 className="font-sans text-2xl xs:text-3xl 2xl:text-4xl font-bold text-gray-900 mb-6">
                 Services List
               </h3>
 
               <div className="flex flex-col space-y-3">
-                {service.sidebar.servicesList.map((item, index) => (
+                 {services.map((service) => (
                   <div
-                    key={index}
+                    key={service.title}
                     className="hover:bg-[#101010] rounded-xl px-6 py-4 flex items-center justify-between border border-gray-600 border-opacity-20 transition-all duration-300 cursor-pointer group"
                   >
                       <span className="text-sm xs:text-base  lg:text-lg  xl:text-lg  2xl:text-lg text-gray-800 group-hover:text-white transition-colors">
-                      {item}
+                      {service.title}
                     </span>
                     <IoIosArrowRoundForward className="text-2xl text-gray-800 group-hover:text-white transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
+
+            {/* Services List */}
+<div className="bg-white py-8 rounded-2xl p-6 sm:p-6 flex flex-col border border-gray-600 border-opacity-20 shadow-lg ring-1 ring-gray-900/5">
+  <h3 className="font-sans text-2xl xs:text-3xl 2xl:text-4xl font-bold text-gray-900 mb-6">
+    Services List
+  </h3>
+
+  {/* Scrollable Container: 
+      - max-h-[480px]: Limits height to roughly 6 items 
+      - overflow-y-auto: Enables vertical scrolling
+      - pr-2: Adds a little gap for the scrollbar
+  */}
+  <div className="flex flex-col space-y-3 h-[26rem] overflow-y-auto pr-2 custom-scrollbar">
+    {services.map((service) => (
+      <div
+        key={service.title}
+        className="hover:bg-[#101010] rounded-xl px-6 py-4 flex items-center justify-between border border-gray-600 border-opacity-20 transition-all duration-300 cursor-pointer group shrink-0"
+      >
+        <span className="text-sm xs:text-base lg:text-lg xl:text-lg 2xl:text-lg text-gray-800 group-hover:text-white transition-colors">
+          {service.title}
+        </span>
+        <IoIosArrowRoundForward className="text-2xl text-gray-800 group-hover:text-white transition-transform duration-300 group-hover:translate-x-1" />
+      </div>
+    ))}
+  </div>
+</div>
 
             {/* Need Help Form */}
             <div className="bg-white rounded-2xl p-6 xs:p-8 border border-gray-100 shadow-sm ring-1 ring-gray-900/5">
-              <h3 className="text-2xl xs:text-3xl font-bold text-gray-900 mb-8">
+              <h3 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-8">
                 Need help?
               </h3>
 

@@ -1,6 +1,6 @@
 
 // src/data/faq_data.js
-export const faqImage = "/Faq.png"; // points to public/Faq.png
+export const faqImage = "/FaqPageImages/Faq.png"; 
 const faqData = [
   {
     question: "How can I contact customer support?",
