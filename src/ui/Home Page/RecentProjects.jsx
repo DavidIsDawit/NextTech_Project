@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { recentProjects } from '../../data/HomePageData';
 import { IoIosArrowForward } from "react-icons/io";
-
+import { Link } from "react-router-dom";
+import Button from "../Button"
 const RecentProjects = () => {
   const { subtitle, title, description, images } = recentProjects;
 
@@ -31,10 +32,14 @@ const RecentProjects = () => {
             ))}
           </div>
 
-          <button className="mt-4 bg-primary hover:bg-sky-500 text-white font-bold py-4 lg:py-5 px-10 lg:px-10 rounded-full flex items-center gap-3 transition-all shadow-xl shadow-sky-200 uppercase text-xs lg:text-[15px] tracking-widest">
-            READ MORE 
-            <span className="text-xl"><IoIosArrowForward/></span>
-          </button>
+          <Button
+            as={Link}
+            to="/portfolio"
+            variant="primary"
+            size="xl"
+            iconAfter={IoIosArrowForward}>
+               Read More
+          </Button>
         </div>
 
         {/* RIGHT SIDE: IMAGE COLLAGE */}

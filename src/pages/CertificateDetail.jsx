@@ -1,6 +1,6 @@
 // src/pages/CertificateDetailPage.jsx
 import { useParams, useNavigate } from "react-router-dom";
-import certificateItems from "../data/certificate";
+import certificateItems from "../data/CertificatePageData";
 import CertificateHero from "../ui/Certificate Page/Cert_ImageSlider";
 import CertificateContent from "../ui/Certificate Page/Cert_Title&desc";
 import CertificateInfo from "../ui/Certificate Page/CertInfo";

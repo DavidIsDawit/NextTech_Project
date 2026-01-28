@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function CertificateCard({ item, index }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex] = useState(0);
   const navigate = useNavigate();
   const images = item.images;
   const description = item.description;
@@ -41,16 +41,8 @@ export default function CertificateCard({ item, index }) {
           group-hover:scale-110          
         "        loading="lazy"
         />
-
-
-
         {/* Subtle hover overlay */}
         {/* THUMBNAIL OVERLAY */}
-
-
-        {/* <div className="flex gap-2">
-            {imgicon}
-          </div> */}
         {imgicon && (
           <div className="absolute -top-6  sm:-top-2 lg:-top-4  2xl:-top-6 right-0  w-20 h-28 sm:w-12 sm:h-14 md:w-14 md:h-16 lg:w-16 lg:h-20 xl:min-h-24 xl:min-w-20 xl:max-h-32 2xl:min-h-32 2xl:min-w-24 xl:max-w-28   bg-black/30 rounded-bl-3xl p-0 shadow-lg ">
             <img
@@ -65,17 +57,12 @@ export default function CertificateCard({ item, index }) {
         <h1 className="font-extrabold  
       text-base sm:text-base md:text-lg lg:text-base xl:text-xl   2xl:text-2xl  text-[#151515] group-hover:text-[#00A3E0] pb-1">
           {title}  </h1>
-        <p className="font-normal text-xs sm:text-xs md:text-sm  lg:text-xs xl:text-base 2xl:text-xl text-[#666666]">{truncateWords(description, 5)}</p>
+        <p className="font-normal text-sm sm:text-sm md:text-sm  lg:text-sm xl:text-base 2xl:text-xl text-[#666666]">{truncateWords(description, 5)}</p>
       </div>
     </div>
 
   );
 }
-
-// CertificateCard.propTypes = {
-//   src: PropTypes.string.isRequired,
-//   index: PropTypes.number.isRequired,
-// };
 CertificateCard.propTypes = {
   item: PropTypes.shape({
     images: PropTypes.arrayOf(PropTypes.string),

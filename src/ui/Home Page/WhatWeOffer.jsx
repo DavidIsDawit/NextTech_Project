@@ -6,6 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Link } from "react-router-dom";
+import Button from "../Button";
+
 
 export default function WhyWeOffer() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -61,10 +64,18 @@ export default function WhyWeOffer() {
               <p className="text-gray-400 text-base lg:text-[18px] leading-relaxed max-w-2xl">
                 {workData.description1}
               </p>
+              <p className="text-gray-400 text-base lg:text-[18px] leading-relaxed max-w-2xl">
+                {workData.description2}
+              </p>
             </div>
-            <button className="flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-[#0097a7] transition-all shadow-lg">
-              Read More <HiChevronRight size={22} />
-            </button>
+            <Button
+              as={Link}
+              to="/Service"
+              variant="primary"
+              size="xl"
+              iconAfter={HiChevronRight}>
+             Read More
+           </Button>
           </div>
 
       {/* RIGHT SLIDER SECTION */}
@@ -159,7 +170,7 @@ function FeatureCard({ feature, isMobile, stagger = false, isActive = false }) {
       <div className="text-primary text-2xl lg:text-[34px] flex-shrink-0">
         <Icon />
       </div>
-      <p className="text-secondary font-bold text-sm lg:text-[19px]">
+      <p className="text-secondary font-bold text-md lg:text-[20px]">
         {feature.text}
       </p>
     </div>

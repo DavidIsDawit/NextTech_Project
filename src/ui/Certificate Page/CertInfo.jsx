@@ -7,25 +7,25 @@ export default function CertificateInfo({ client, project, category, issuedate }
               </h2>
               <div className="space-y-1 sm:space-y-2 md:space-y-3 lg:space-y-4 xl:space-y-5 2xl:space-y-6 px-8 2xl:px-10 pb-4 pt-6 xl:pt-8 2xl:pt-10">
                 <div className="flex justify-between border-b border-gray-200 pb-1 lg:pb-1 xl:pb-4">
-                  <span className="text-gray-900 text-base md:text-base lg:text-lg 2xl:text-2xl font-extrabold">Client:</span>
+                  <span className="text-gray-900 text-base md:text-base lg:text-lg 2xl:text-2xl font-bold">Client:</span>
                   <span className="text-gray-600 text-end md:text-sm lg:text-base 2xl:text-xl ">
                     {client }
                   </span>
                 </div>
                 <div className="flex justify-between border-b border-gray-200 pb-1 lg:pb-1 xl:pb-4">
-                  <span className=" text-gray-900 text-base md:text-base lg:text-lg 2xl:text-2xl font-extrabold">Project:</span>
+                  <span className=" text-gray-900 text-base md:text-base lg:text-lg 2xl:text-2xl font-bold">Project:</span>
                   <span className="text-gray-600 text-end md:text-sm lg:text-base 2xl:text-xl">
                     {project }
                   </span>
                 </div>
                 <div className="flex justify-between border-b border-gray-200 pb-1 lg:pb-1 xl:pb-4">
-                  <span className=" text-gray-900  text-base md:text-base lg:text-lg 2xl:text-2xl font-extrabold">Category:</span>
+                  <span className=" text-gray-900  text-base md:text-base lg:text-lg 2xl:text-2xl font-bold">Category:</span>
                   <span className="text-gray-600 text-end md:text-sm lg:text-base 2xl:text-xl">
                     {category }
                   </span>
                 </div>
                 <div className="flex justify-between border-b  border-gray-200 pb-1 lg:pb-1 xl:pb-4 ">
-                  <span className=" text-gray-900 text-base md:text-base lg:text-lg 2xl:text-2xl font-extrabold">Issue Date:</span>
+                  <span className=" text-gray-900 text-base md:text-base lg:text-lg 2xl:text-2xl font-bold">Issue Date:</span>
                   <span className=" text-gray-600 text-end md:text-sm lg:text-base 2xl:text-xl">
                     {issuedate }
                   </span>
