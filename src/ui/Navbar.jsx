@@ -64,10 +64,10 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center gap-6 text-white ml-auto lg:ml-0">
-              <FaFacebookF className="cursor-pointer hover:text-primary text-lg" />
-              <FaInstagram className="cursor-pointer hover:text-primary text-lg" />
-              <FaTwitter className="cursor-pointer   hover:text-primary text-lg" />
-              <FaGlobe className="cursor-pointer     hover:text-primary text-lg" />
+              <FaFacebookF className="cursor-pointer  hover:text-primary text-lg" />
+              <FaInstagram className="cursor-pointer  hover:text-primary text-lg" />
+              <FaTwitter className="cursor-pointer    hover:text-primary text-lg" />
+              <FaGlobe className="cursor-pointer      hover:text-primary text-lg" />
             </div>
           </div>
         )}
