@@ -5,6 +5,7 @@ import { LiaTimesSolid } from "react-icons/lia";
 import { MdLocationOn } from 'react-icons/md';
 import NextTechLogo from "/NavBarImages/NextTechLogo.png";
 import { NavLink, useLocation } from 'react-router-dom';
+import Button from './Button';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -103,11 +104,11 @@ const Navbar = () => {
       {/* --- MOBILE SIDEBAR (EXACTLY AS YOUR ORIGINAL) --- */}
       {isOpen && (
         <div className="fixed inset-0 bg-white z-[100] flex flex-col overflow-y-auto">
-          <div className="p-8 flex justify-between items-center">
+          <div className="px-2 py-4 flex justify-between items-center">
             <img src={NextTechLogo} alt="NextTech Logo" className="w-[200px] h-[50px]" />
             <button
               onClick={() => setIsOpen(false)}
-              className="bg-primary p-3 text-white rounded-lg flex items-center justify-center w-14 h-14"
+              className="bg-primary p-3 text-white rounded-lg flex items-center justify-center w-13 h-12"
             >
               <LiaTimesSolid size={24} />
             </button>
@@ -129,7 +130,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="mt-auto bg-[#eafcff] p-12 space-y-8">
+          <div className="mt-auto bg-[#eafcff] px-10 py-4 space-y-8">
 
             <h3 className="text-[#0a1128] text-3xl mb-4 text-center font-normal">Contact Info</h3>
             <div className="flex gap-5 items-start">
@@ -153,12 +154,16 @@ const Navbar = () => {
               <p className="text-lg text-gray-700 font-medium">info@gaenginering.et</p>
             </div>
 
-            <div className="flex justify-center pt-4">
-              <button className="w-52 bg-primary text-white py-4 rounded-full font-bold text-lg shadow-lg hover:brightness-110 transition-all">
-                Send Message
-              </button>
-            </div>
+            
           </div>
+          <div className="flex justify-center py-4">
+            <Button
+              type="submit"
+              variant="primary"
+              size="xl">
+               Send Message
+            </Button>
+            </div>
         </div>
       )}
     </div>
