@@ -37,18 +37,6 @@ export default function PortfolioDetail() {
     }
   }, [itemsPerView, project?.teamMembers.length, currentIndex])
 
-  if (!project) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center px-4 py-16">
-        <div className="text-center">
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
-            Project not found
-          </h1>
-        </div>
-      </div>
-    )
-  }
-
   const totalMembers = project.teamMembers.length
   const totalSlides = Math.ceil(totalMembers / itemsPerView)
   const showDots = totalMembers > itemsPerView
