@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import certificateItems from '../../data/certificate'; 
+import certificateItems from '../../data/CertificatePageData'; 
 import CertificateGrid from './CertificateGrid';
 import Pagination from "../Pagination";
 

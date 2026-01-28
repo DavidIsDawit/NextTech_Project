@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import galleryItems from '../../data/gallery'; 
+import galleryItems from '../../data/GalleryPageData'; 
 import GalleryGrid from './GallaryGrid';
 import Pagination from "../Pagination";
 const ITEMS_PER_PAGE = 6;
