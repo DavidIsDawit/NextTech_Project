@@ -77,7 +77,7 @@ export default function PortfolioDetail() {
   {project.description.map((para, index) => (
     <p
       key={index}
-      className="text-gray-500 text-base md:text-lg font-sans  leading-relaxed"
+      className="text-gray-500 text-base md:text-lg 2xl:text-xl font-sans  leading-relaxed"
     >
       {para}
     </p>
@@ -193,7 +193,7 @@ export default function PortfolioDetail() {
           <div className="
             space-y-5 xs:space-y-6 sm:space-y-7 md:space-y-8 
             text-gray-500 leading-relaxed 
-            text-base xs:text-base sm:text-lg md:text-lg lg:text-xl
+            text-base xs:text-base sm:text-lg md:text-lg 2xl:text-xl
           ">
             {project.results.map((paragraph, index) => (
               <p key={index}>

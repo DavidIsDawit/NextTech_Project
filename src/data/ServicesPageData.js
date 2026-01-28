@@ -265,7 +265,7 @@ const services = [
   },
 
   {
-    id: 1,
+    id: 9,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -300,7 +300,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 10,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -335,7 +335,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 11,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -370,7 +370,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 12,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -405,7 +405,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 13,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -440,7 +440,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 14,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -475,7 +475,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 15,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -510,7 +510,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 16,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -545,7 +545,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 17,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -580,7 +580,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 18,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -615,7 +615,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 19,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -650,7 +650,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 20,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -685,7 +685,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 21,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -720,7 +720,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 22,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -755,7 +755,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 23,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -790,7 +790,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 24,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -825,7 +825,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 25,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -860,7 +860,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 26,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -895,7 +895,7 @@ const services = [
 
 
   {
-    id: 1,
+    id: 27,
     title: "Software Products",
     subtitle: "We focus on the best practices IT solutions and services",
     heroImage: "/ServicesPageImage/service.png",
@@ -928,7 +928,466 @@ const services = [
     }
   },
 
+{
+    id: 28,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
 
+  {
+    id: 29,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+
+  {
+    id: 30,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 31,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 32,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+
+  {
+    id: 33,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+
+  {
+    id: 34,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+
+  {
+    id: 35,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+
+  {
+    id: 36,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+
+  {
+    id: 37,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+
+  {
+    id: 38,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+
+  {
+    id: 39,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
+
+
+  {
+    id: 40,
+    title: "Software Products",
+    subtitle: "We focus on the best practices IT solutions and services",
+    heroImage: "/ServicesPageImage/service.png",
+    content: {
+      paragraphs: [
+        "Lorem ipsum is simply free text used by copytyping refreshing.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.Strategic consulting for scalable systems.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Duis aute irure dolor in reprehenderit in voluptate.",
+        "Excepteur sint occaecat cupidatat non proident.",
+        "Sed ut perspiciatis unde omnis iste natus error."
+      ],
+      gallery: ["/ServicesPageImage/feature1.png", "/ServicesPageImage/feature.png"],
+      subparagraphs: [
+        "Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.Neque porro est qui dolorem ipsum quia quaed inventore.",
+        "Ut enim ad minima veniam quis nostrum exercitationem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit.",
+        "Temporibus autem quibusdam et aut officiis.",
+        "Itaque earum rerum hic tenetur a sapiente."
+      ]
+    },
+    sidebar: {
+      servicesList: [
+        "Project & Strategy",
+        "Technology Consulting",
+        "Software Development",
+        "Software Production",
+        "Cybersecurity & IT",
+        "IT Infrastructure"
+      ]
+    }
+  },
 
 
   
