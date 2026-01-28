@@ -38,7 +38,7 @@ const Clients = () => {
   return (
     <section className="py-1 md:py-0 lg:py-[20px] bg-white overflow-hidden">
       {/* Container centered with mx-auto */}
-      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
+      <div className="max-w-8xl mx-auto px-4 flex flex-col items-center">
         
         {/* Header Section */}
         <div className="text-center mb-10 md:mb-12 lg:mb-[80px] space-y-3 lg:space-y-6">
