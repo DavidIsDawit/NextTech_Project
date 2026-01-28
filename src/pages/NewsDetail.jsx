@@ -13,7 +13,7 @@ function BlogDetail() {
   const post = posts.find((p) => p.id === parseInt(id)) || posts[0];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col pt-10 mb-6 lg:mb-16">
       <main className="px-4 py-12 sm:px-6 lg:px-8 lg:mx-16 xl:mx-20 2xl:mx-32">
         <div className="flex flex-col gap-6 lg:flex-row lg:gap-6 xl:gap-8 2xl:gap-10">
           {/* Main Content */}

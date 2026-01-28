@@ -1,4 +1,3 @@
-// src/ui/GalleryCard.jsx
 import PropTypes from 'prop-types';
 import { useState } from "react";
 import RightArrow from "/GalleryPageImage/RightArrow.png";
@@ -7,18 +6,13 @@ import LeftArrow from "/GalleryPageImage/LeftArrow.png";
 export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = src.images;
-
-  const hasMultipleImages = images.length > 1;
-  
+  const hasMultipleImages = images.length > 1;  
   const prev = () => {
-    setCurrentIndex((i) => (i === 0 ? images.length - 1 : i - 1));
-    
+    setCurrentIndex((i) => (i === 0 ? images.length - 1 : i - 1));    
   };
-
   const next = () => {
     setCurrentIndex((i) => (i === images.length - 1 ? 0 : i + 1));
   };
-
   
   return (
     <div 
@@ -30,42 +24,32 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
       onClick={onClick}
     >
       <img
-        // src={src}
         src={images[currentIndex]}
         alt={alt} 
         className="
           w-full  h-full object-cover object-top
-          transition-transform duration-700 
-                   
-        "
+          transition-transform duration-700"
         loading="lazy"
-      />
-      
+      />      
        {/* Prev / Next buttons */}
        {hasMultipleImages && (
       <button
         onClick={prev}
-        className="absolute left-3 top-1/2 -translate-y-1/2 bg-[#00A3E0] hover:bg-blue-600  text-white pt-2 px-1  "
+        className="absolute left-3 top-1/2 -translate-y-1/2 bg-[#00A3E0] hover:bg-[#0097a7]  text-white pt-2 px-1  "
       > 
-        <img
-                  src={LeftArrow }
-                  className="h-6 w-6 lg:h-5 lg:w-5 xl:w-7 xl:h-8 object-cover"
-                  alt=""
-                />
-       
+        <img src={LeftArrow }
+             className="h-6 w-6 lg:h-5 lg:w-5 xl:w-7 xl:h-8 object-cover"
+            alt=""/>       
       </button>
       )}
        {hasMultipleImages && (
       <button
         onClick={next}
-        className="absolute right-3 top-1/2 -translate-y-1/2 hover:bg-blue-600 bg-[#00A3E0]   text-white pt-2 px-1    "
+        className="absolute right-3 top-1/2 -translate-y-1/2 hover:bg-[#0097a7] bg-[#00A3E0]   text-white pt-2 px-1    "
       >
-         <img
-                  src={RightArrow }
-                  className=" h-6 w-6 lg:h-5 lg:w-5 xl:w-8 xl:h-8 object-cover "
-                  alt=""
-                />
-      
+         <img src={RightArrow }
+              className=" h-6 w-6 lg:h-5 lg:w-5 xl:w-8 xl:h-8 object-cover "
+              alt=""/>      
       </button>
       )}
        
@@ -77,20 +61,18 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
           className="
             absolute bottom-0 left-0 right-0 z-10
             bg-black/60 
-            px-3 pb-5 pt-3
+            px-3 pb-5 pt-3 
           "
         >
-          <div className={`flex ${
-    images.length < 3 ? "gap-20" : images.length < 4 ? "gap-6" : "gap-2"
-  }`}>
-            {images.slice(0, 5).map((img, index) => (
+  <div className=" flex justify-start gap-2 overflow-x-auto flex-nowrap scrollbar-hide ">
+            {images.map((img, index) => (
               <button
                 key={index}
                 onClick={(e) => {
                   e.stopPropagation();
                   setCurrentIndex(index);
                 }}
-                className={`h-[10vh] sm:h-[10vh]  w-full rounded-sm overflow-hidden border
+                className={`h-[10vh] w-[12vh] sm:h-[10vh] flex-shrink-0  rounded-sm overflow-hidden border
                   ${
                     index === currentIndex 
                       ? "border-blue-500"
@@ -99,7 +81,7 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
               >
                 <img
                   src={img}
-                  className="h-full w-full object-cover"
+                  className="h-[10vh] w-[12vh] sm:h-[10vh]  object-cover"
                   alt=""
                 />
               </button>
