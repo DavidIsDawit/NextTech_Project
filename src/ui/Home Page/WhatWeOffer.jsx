@@ -64,6 +64,9 @@ export default function WhyWeOffer() {
               <p className="text-gray-400 text-base lg:text-[18px] leading-relaxed max-w-2xl">
                 {workData.description1}
               </p>
+              <p className="text-gray-400 text-base lg:text-[18px] leading-relaxed max-w-2xl">
+                {workData.description2}
+              </p>
             </div>
             <Button
               as={Link}
@@ -167,7 +170,7 @@ function FeatureCard({ feature, isMobile, stagger = false, isActive = false }) {
       <div className="text-primary text-2xl lg:text-[34px] flex-shrink-0">
         <Icon />
       </div>
-      <p className="text-secondary font-bold text-sm lg:text-[19px]">
+      <p className="text-secondary font-bold text-md lg:text-[20px]">
         {feature.text}
       </p>
     </div>
