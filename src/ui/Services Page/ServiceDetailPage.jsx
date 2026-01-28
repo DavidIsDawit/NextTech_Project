@@ -3,6 +3,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Faq from "../Faq Page/Faq";
 import services from "../../data/ServicesPageData";
+import Button from "../Button.jsx";
 
 export default function ServiceDetail() {
   const { id } = useParams();
@@ -23,13 +24,22 @@ export default function ServiceDetail() {
           <div className="lg:col-span-2 space-y-8 md:space-y-10 ml-0 xl:ml-8 ">
 
             {/* Hero Image: Height scales from 256px up to 512px */}
-            <div className="w-full h-64 xs:h-72 sm:h-80 md:h-[28rem] lg:h-[30rem] xl:h-[32rem] 2xl:h-[33rem] rounded-lg overflow-hidden mb-16 md:mb-24">
+            <div className="w-full h-64 xs:h-72 sm:h-80 md:h-[28rem] lg:h-[30rem] xl:h-[32rem] 2xl:h-[33rem] rounded-lg overflow-hidden">
               <img
                 src={service.heroImage}
                 alt={service.title}
                 className="w-full h-full object-cover transition-transform duration-700"
               />
             </div>
+
+          <h3 className="
+          text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-3xl
+          font-bold text-gray-900 line-clamp-1 
+          group-hover:text-[#00A3E0] transition-colors duration-300
+        ">
+          {service.title}
+        </h3>
+
 
             {/* Text Content: Text size grows with screen size */}
             <div className="space-y-6  text-gray-600 leading-relaxed text-sm xs:text-base md:text-lg">
@@ -116,13 +126,24 @@ export default function ServiceDetail() {
                   className="w-full px-5 py-4 border border-gray-200 rounded-xl text-base focus:ring-2 focus:ring-[#00A3E0] outline-none transition resize-none"
                 />
 
-                <button
+                {/* <button
                   type="submit"
                   className="w-full group flex items-center justify-center gap-2 px-8 py-4 text-white font-bold text-xs xs:text-sm tracking-widest uppercase bg-[#00A3E0] rounded-full shadow-lg shadow-blue-200 hover:bg-[#0092c9] active:scale-95 transition-all duration-300"
                 >
                   <span>SEND MESSAGE</span>
                   <MdKeyboardArrowRight className="text-xl transition-transform duration-300 group-hover:translate-x-1" />
-                </button>
+                </button> */}
+
+                <div className="pt-4 lg:pt-6 flex justify-center ">
+                            <Button
+                                as={Link}
+                                to=""
+                                variant="primary"
+                                size="lg"
+                                iconAfter={MdKeyboardArrowRight}>
+                              SEND MESSAGE
+                            </Button>
+                   </div>
               </form>
             </div>
 
