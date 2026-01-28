@@ -15,7 +15,7 @@ export default function ServicesPage() {
   const handlePageChange = (page) => {
     setCurrentPage(page);
     // Optional: Smooth scroll to top of services when changing pages
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
