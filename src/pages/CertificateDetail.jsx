@@ -4,6 +4,8 @@ import certificateItems from "../data/CertificatePageData";
 import CertificateHero from "../ui/Certificate Page/Cert_ImageSlider";
 import CertificateContent from "../ui/Certificate Page/Cert_Title&desc";
 import CertificateInfo from "../ui/Certificate Page/CertInfo";
+import PageNotFound from "../pages/PageNotFound";
+
 
 export default function CertificateDetailPage() {
   const { id } = useParams();
@@ -13,13 +15,7 @@ export default function CertificateDetailPage() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-red-600 mb-4">Certificate Not Found</h1>
-          <button
-            onClick={() => navigate("/certificate")}
-            className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-          >
-            Back to Certificates
-          </button>
+          <PageNotFound/>
         </div>
       </div>
     );
