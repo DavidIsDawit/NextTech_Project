@@ -7,8 +7,9 @@ function BlogCard({ post }) {
     if (!post) return null;
 
     return (
-        <div
-            className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-transform w-full"
+        <Link
+            to={`/blogs/${post.id}`}
+            className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-transform w-full cursor-pointer"
         >
             <div className="relative overflow-hidden aspect-[16/10] w-full">
                 <img
@@ -35,8 +36,7 @@ function BlogCard({ post }) {
                         {post.title}
                     </h1>
 
-                    <Link
-                        to={`/blogs/${post.id}`}
+                    <span
                         className="
                             mt-2
                             text-sm xs:text-base sm:text-base md:text-lg 
@@ -46,10 +46,10 @@ function BlogCard({ post }) {
                     >
                         Read More
                         <IoIosArrowRoundForward size={22} className="group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    </span>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
 
