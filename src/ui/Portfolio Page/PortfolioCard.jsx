@@ -18,7 +18,7 @@ export default function PortfolioCard({ item }) {
         alt={item.title}
         className="
           w-full object-cover 
-          h-72 sm:h-80 md:h-96 lg:h-[25rem] xl:h-[25rem] 2xl:h-[25rem]
+          h-72 sm:h-80 md:h-96 lg:h-[25rem]  2xl:h-[25rem]
           transition-transform duration-700 ease-out 
           group-hover:scale-105 group-hover:duration-1000
         "
@@ -61,7 +61,7 @@ export default function PortfolioCard({ item }) {
 `}>
         <p className="
     mb-1 text-sm xs:text-base sm:text-base md:text-lg 
-    font-medium opacity-90 tracking-wider uppercase
+    font-medium opacity-90 tracking-wider
   ">
           {item.category}
         </p>

@@ -1,26 +1,19 @@
-// src/ui/certificateui.jsx
 import { useState } from 'react';
-import { useParams } from "react-router-dom";
-import certificateItems from '../../data/certificate'; 
+import certificateItems from '../../data/CertificatePageData'; 
 import CertificateGrid from './CertificateGrid';
 import Pagination from "../Pagination";
 
 const ITEMS_PER_PAGE = 6;
 
 export default function CertificateUI() {
-  const { id } = useParams();
-  const certificate = certificateItems[id];
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [setSelectedImage] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);   
-  // NEW: State to hold the 6 items for the current page
   const [currentItems, setCurrentItems] = useState([]);
 
   return (
     <div className="bg-gray-50/50  px-4 sm:px-6 lg:px-8">
       <div className=" mx-[1%] sm:mx-[6%]"> 
-       
-        {/* Grid uses the state updated by Pagination */}
-        <CertificateGrid 
+       <CertificateGrid 
           items={currentItems} 
           onItemClick={setSelectedImage}
         />

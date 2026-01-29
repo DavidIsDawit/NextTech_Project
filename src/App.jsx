@@ -40,6 +40,7 @@ function App() {
           <Route path="contacts" element={<Contact />} />
         </Route>
 
+
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

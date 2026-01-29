@@ -3,7 +3,8 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { heroSlides } from '../../data/HomePageData.js'; 
 import { IoIosArrowForward } from "react-icons/io";
 import heroBg from "/HomePageImages/Home-Hero-Section-Cover-Image.png";
-
+import { Link } from "react-router-dom";
+import Button from "../Button.jsx";
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -43,10 +44,14 @@ const Hero = () => {
             </p>
 
             <div className="pt-4 lg:pt-6">
-              <button className="group flex items-center gap-2 lg:gap-4 bg-primary text-white px-6 py-4 lg:px-8 lg:py-5 rounded-full font-bold text-sm lg:text-lg uppercase tracking-widest shadow-xl hover:shadow-cyan-200/50 hover:bg-[#0097a7] transition-all duration-300">
-                Get Started 
-                <IoIosArrowForward size={22} className="lg:scale-125 group-hover:translate-x-2 transition-transform" />
-              </button>
+            <Button
+                as={Link}
+                to="/contacts"
+                variant="primary"
+                size="xl"
+                iconAfter={IoIosArrowForward}>
+              Get Started
+            </Button>
             </div>
 
           </div>

@@ -1,10 +1,10 @@
 
 import { ctaData } from '../../data/HomePageData';
 import { MdKeyboardArrowRight } from "react-icons/md";
-
+import { Link } from "react-router-dom";
 export default function FooterCard() {
   return (
-    <section className="px-4 py-11">
+    <section className="px-4 pb-12 lg:pb-[90px]">
       <div className="max-w-7xl mx-auto bg-[#0A142F] rounded-[40px] overflow-hidden relative min-h-[300px] flex items-center translate-y-[102px] md:translate-y-30">
         
        
@@ -17,10 +17,14 @@ export default function FooterCard() {
               {ctaData.title}
             </h2>
             
-            <button className="group flex items-center gap-3 border-2 border-[#00AEEF] px-8 py-3.5 rounded-full text-white font-bold tracking-wider hover:bg-[#00AEEF] transition-all duration-300 shadow-[0_0_20px_rgba(0,174,239,0.3)]">
-              {ctaData.buttonText}
-              <span className="text-xl group-hover:translate-x-1 transition-transform"><MdKeyboardArrowRight/></span>
-            </button>
+                <Link to="/contacts">
+                  <button className="group flex items-center gap-3 border-2 border-[#00AEEF] px-8 py-3.5 rounded-full text-white font-bold tracking-wider hover:bg-[#00AEEF] transition-all duration-300 shadow-[0_0_20px_rgba(0,174,239,0.3)]">
+                    {ctaData.buttonText}
+                    <span className="text-xl group-hover:translate-x-1 transition-transform">
+                      <MdKeyboardArrowRight />
+                    </span>
+                  </button>
+                </Link>
           </div>
 
           {/* Right Side: Image with Blob Shape */}

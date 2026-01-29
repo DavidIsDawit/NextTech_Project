@@ -60,7 +60,7 @@ export const workflowData = {
     }
     ,
     {
-      id: "04",
+      id: "05",
       title: "Planning",
       text: "We create a detailed strategy to ensure smooth execution.",
       icon: "/AboutUsPageImages/headset_icons.png",

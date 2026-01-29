@@ -42,8 +42,8 @@ import { FaCheckCircle } from 'react-icons/fa';
 export const workData = {
   subtitle: "02 - SOME OF OUR WORK",
   title: "Technology with Passion",
-  description1: "NextTech is a private company established in 2010. We specialize in Providing Better Services for Supply And Installation Works of",
-  description2: "Electro-Mechanical and related Equipment In the world. NextTech is a private company established in 2010.",
+  description1: "Established in 2010, NextTech has spent over a decade at the forefront of the industry, specializing in the precision supply and expert installation of advanced electro-mechanical systems. We bridge the gap between complex engineering and seamless operational efficiency.",
+  description2: "Operating with a global perspective, we deliver world class infrastructure solutions from high security ports to intelligent building management. Our commitment is to provide integrated, turnkey services that empower modern industries to thrive.",
   features: [
     { id: 1, icon: FaCheckCircle, text: "Smart Airport,sea port,Dry port systems  " },
     { id: 2, icon: FaCheckCircle, text: "Installation and configuration of HVAC, fire safety, and CCTV systems" },

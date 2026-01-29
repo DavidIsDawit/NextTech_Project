@@ -10,18 +10,18 @@ export default function Faq() {
   };
 
   return (
-    <section className="py-12 xs:py-16 md:py-24 lg:py-32 bg-white overflow-hidden">
+    <section className="py-12 xs:py-16 md:py-10 lg:py-16 bg-white overflow-hidden">
       <div className="font-sans mx-auto px-5 xs:px-6 sm:px-10 lg:px-12 xl:pl-32 xl:pr-24">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xs:gap-14 lg:gap-20 items-start">
           
           {/* ================= LEFT SIDE: Header & Image ================= */}
           <div className="flex flex-col lg:sticky lg:top-10">
-            <p className="text-xs  xs:text-sm font-semibold text-[#00A3E0] uppercase tracking-[0.2em] mb-3 xs:mb-4">
+            <p className="text-xs  xs:text-sm font-semibold text-[#00A3E0] uppercase mb-3 xs:mb-4">
               Frequently Asked Questions
             </p>
             <h2 className="text-3xl xs:text-4xl md:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
-              What People Want <br className="xs:block" /> to Know
+              What People Want  to Know
             </h2>
 
             {/* Illustration: Hidden on very small screens or resized to save space */}
@@ -61,7 +61,7 @@ export default function Faq() {
                 </button>
 
                 {openIndex === index && (
-                  <div className="px-6 py-8 bg-white text-gray-600 text-base leading-relaxed border-t border-gray-100">
+                  <div className="px-6 py-8 bg-white text-gray-600 text-lg leading-relaxed border-t border-gray-100">
                     {item.answer}
                   </div>
                 )}

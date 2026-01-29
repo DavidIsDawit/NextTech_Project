@@ -1,6 +1,8 @@
 import { aboutData } from "../../data/HomePageData";
 import { HiChevronRight } from "react-icons/hi"; 
 import aboutUsImage from "/AboutUsPageImages/aboutUsHeroImage.jpg";
+import { Link } from "react-router-dom";
+import Button from "../Button.jsx";
 
 const AboutUs = () => {
   return (
@@ -59,10 +61,14 @@ const AboutUs = () => {
             {/* BUTTON */}
             <div className="pt-6 lg:pt-8">
               {/* Scaled padding and font size for a "bigger" button */}
-              <button className="flex items-center gap-2 bg-primary text-white px-7 py-4 lg:px-7 lg:py-5 rounded-full font-bold text-xs lg:text-[16px] uppercase tracking-widest hover:bg-[#0097a7] transition-all shadow-xl shadow-cyan-200/50">
-                Read More 
-                <HiChevronRight size={22} />
-              </button>
+              <Button
+                as={Link}
+                to="/aboutus"
+                variant="primary"
+                size="xl"
+                iconAfter={HiChevronRight}>
+                   Read More
+              </Button>
             </div>
           </div>
 

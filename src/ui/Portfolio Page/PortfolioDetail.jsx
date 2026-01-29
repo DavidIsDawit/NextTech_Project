@@ -37,18 +37,6 @@ export default function PortfolioDetail() {
     }
   }, [itemsPerView, project?.teamMembers.length, currentIndex])
 
-  if (!project) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center px-4 py-16">
-        <div className="text-center">
-          <h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
-            Project not found
-          </h1>
-        </div>
-      </div>
-    )
-  }
-
   const totalMembers = project.teamMembers.length
   const totalSlides = Math.ceil(totalMembers / itemsPerView)
   const showDots = totalMembers > itemsPerView
@@ -77,7 +65,7 @@ export default function PortfolioDetail() {
   {project.description.map((para, index) => (
     <p
       key={index}
-      className="text-gray-500 text-base md:text-lg font-sans  leading-relaxed"
+      className="text-gray-500 text-base md:text-lg 2xl:text-xl font-sans  leading-relaxed"
     >
       {para}
     </p>
@@ -193,7 +181,7 @@ export default function PortfolioDetail() {
           <div className="
             space-y-5 xs:space-y-6 sm:space-y-7 md:space-y-8 
             text-gray-500 leading-relaxed 
-            text-base xs:text-base sm:text-lg md:text-lg lg:text-xl
+            text-base xs:text-base sm:text-lg md:text-lg 2xl:text-xl
           ">
             {project.results.map((paragraph, index) => (
               <p key={index}>
