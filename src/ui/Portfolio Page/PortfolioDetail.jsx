@@ -14,7 +14,7 @@ export default function PortfolioDetail() {
   useEffect(() => {
     const updateView = () => {
       if (window.innerWidth >= 1280) {
-        setItemsPerView(3)      // xl & above → up to 4 members
+        setItemsPerView(3)      // xl & above → up to 4 
       } else if (window.innerWidth >= 1024) {
         setItemsPerView(3)      // lg → 3
       } else if (window.innerWidth >= 640) {
@@ -40,6 +40,11 @@ export default function PortfolioDetail() {
   const totalMembers = project.teamMembers.length
   const totalSlides = Math.ceil(totalMembers / itemsPerView)
   const showDots = totalMembers > itemsPerView
+
+
+  // Gap as percentage for translation calculation (Tailwind gap-x-4 = 1rem)
+  const gapRem = 1; // 1rem gap
+  const gapPercent = (gapRem / window.innerWidth) * 100;
 
   return (
     <div className="min-h-screen bg-white">
@@ -102,58 +107,58 @@ export default function PortfolioDetail() {
 
         {/* Team Members - Clean responsive slider */}
         <div className="mb-12 xs:mb-14 sm:mb-16 md:mb-20 lg:mb-24">
-          <div className="relative overflow-hidden rounded-xl">
+  <div className="relative overflow-hidden rounded-xl">
+        {/* Slides container */}
+        <div
+          className="flex transition-transform duration-700 ease-out gap-x-4 md:gap-x-4 xl:gap-x-6"
+          style={{
+            transform: `translateX(-${
+              currentIndex * (100 + gapPercent * itemsPerView)
+            }%)`,
+          }}
+        >
+          {project.teamMembers.map((member) => (
             <div
-              className="flex transition-transform duration-700 ease-out gap-5"
-              style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}
+              key={member.id}
+              className="flex-none"
+              style={{
+                width: `calc(${100 / itemsPerView}% - 1rem)`, // subtract gap
+              }}
             >
-              {project.teamMembers.map(member => (
-                <div
-                  key={member.id}
-                  className="
-                    flex-shrink-0 
-                    w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 
-                  "
-                >
-                  <div className="
-                    bg-white rounded-lg sm:rounded-xl overflow-hidden 
-                  ">
-                    <img
-                      src={member.image || "/placeholder.svg"}
-                      alt="Team member"
-                      className="
-                        w-full 
-                        h-48 sm:h-56 md:h-60 lg:h-64 xl:h-72 
-                        object-cover
-                      "
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Cyan Dots Navigation */}
-          {showDots && (
-            <div className="flex justify-center gap-3 xs:gap-3.5 sm:gap-4 mt-10 xs:mt-12 sm:mt-14 md:mt-16">
-              {Array.from({ length: totalSlides }).map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`
-                    w-2.5 xs:w-3 h-2.5 xs:h-3 rounded-full 
-                    transition-all duration-300
-                    ${currentIndex === idx 
-                      ? "bg-gray-600 scale-125 shadow-md" 
-                      : "bg-gray-300 hover:bg-gray-400 hover:scale-110"
-                    }
-                  `}
-                  aria-label={`Go to slide ${idx + 1}`}
+              <div className="bg-white rounded-lg sm:rounded-xl overflow-hidden">
+                <img
+                  src={member.image || "/placeholder.svg"}
+                  alt="Team member"
+                  className="w-full h-48 sm:h-56 md:h-60 lg:h-64 xl:h-72 object-cover"
                 />
-              ))}
+              </div>
             </div>
-          )}
+          ))}
         </div>
+      </div>
+
+
+    {/* Cyan Dots Navigation */}
+    {showDots && (
+      <div className="flex justify-center gap-3 mt-16">
+        {Array.from({ length: totalSlides }).map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentIndex(idx)}
+            className={`
+              w-2.5 xs:w-3 h-2.5 xs:h-3 rounded-full 
+              transition-all duration-300
+              ${currentIndex === idx 
+                 ? "bg-gray-600 scale-125 shadow-md" 
+                 : "bg-gray-300 hover:bg-gray-400 hover:scale-110"
+              }
+            `}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
+        ))}
+      </div>
+    )}
+  </div>
 
         {/* Requirements */}
         <div className="mb-12">
