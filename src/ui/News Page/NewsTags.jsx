@@ -3,7 +3,14 @@ import PropTypes from "prop-types";
 
 function BlogTags({ tags }) {
     const [currentPage, setCurrentPage] = useState(1);
+    const [copiedTag, setCopiedTag] = useState(null);
     const tagsPerPage = 12;
+
+    const handleCopy = (tag) => {
+        navigator.clipboard.writeText(tag);
+        setCopiedTag(tag);
+        setTimeout(() => setCopiedTag(null), 1500);
+    };
 
     if (!tags || tags.length === 0) return null;
 
@@ -19,12 +26,17 @@ function BlogTags({ tags }) {
             </h3>
             <div className="flex flex-wrap gap-2">
                 {currentTags.map((tag) => (
-                    <span
+                    <button
                         key={tag}
-                        className="bg-white px-4 py-2 text-[13px] text-[#1a1a1a] border border-gray-100 rounded-sm shadow-sm"
+                        onClick={() => handleCopy(tag)}
+                        className="bg-white px-4 py-2 text-[13px] text-[#1a1a1a] border border-gray-100 rounded-sm shadow-sm transition-all duration-200 hover:border-gray-300 cursor-pointer active:scale-95"
                     >
-                        {tag}
-                    </span>
+                        {copiedTag === tag ? (
+                            <span className="text-sky-500 font-bold">Copied!</span>
+                        ) : (
+                            tag
+                        )}
+                    </button>
                 ))}
             </div>
 
