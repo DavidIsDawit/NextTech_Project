@@ -1,13 +1,10 @@
-
-
-
-
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import CoverImage from "./Banner";
 import { getBannerConfig } from "../utils/BannerConfigs";
 import ScrollToTop from "./ScrollToTop";
+import UpArrow from "../ui/UpArrow";
 
 function AppLayout() {
   const location = useLocation();
@@ -18,6 +15,7 @@ function AppLayout() {
       {/* Navbar overlays content */}
       <header className="absolute top-0 left-0 w-full z-50">
         <ScrollToTop />
+        <UpArrow/>
         <Navbar />
       </header>
 
