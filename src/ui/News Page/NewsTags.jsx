@@ -29,12 +29,15 @@ function BlogTags({ tags }) {
                     <button
                         key={tag}
                         onClick={() => handleCopy(tag)}
-                        className="bg-white px-4 py-2 text-[13px] text-[#1a1a1a] border border-gray-100 rounded-sm shadow-sm transition-all duration-200 hover:border-gray-300 cursor-pointer active:scale-95"
+                        className={`relative bg-white px-4 py-2 text-[13px] text-[#1a1a1a] border border-gray-100 rounded-sm shadow-sm transition-all duration-200 cursor-pointer group ${copiedTag === tag ? "" : "hover:border-gray-300"}`}
                     >
-                        {copiedTag === tag ? (
-                            <span className="text-sky-500 font-bold">Copied!</span>
-                        ) : (
-                            tag
+                        {tag}
+                        {copiedTag === tag && (
+                            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#1a1a1a] text-white text-[10px] py-1 px-2 rounded-md whitespace-nowrap animate-in fade-in zoom-in slide-in-from-bottom-2 duration-300">
+                                Copied!
+                                {/* Small Triangle Arrow */}
+                                <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1a1a1a]" />
+                            </span>
                         )}
                     </button>
                 ))}
