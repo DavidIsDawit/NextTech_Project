@@ -73,33 +73,40 @@ const Navbar = () => {
           </div>
         )}
 
-        {/* --- MAIN NAVBAR --- */}
-        <div className={`bg-white px-4 lg:px-12 transition-all duration-300 flex justify-between items-center 
-          ${(isSticky || !isHomePage) ? 'lg:py-3 py-4' : 'lg:py-2 py-4'}`}>
+       
+       {/* --- MAIN NAVBAR --- */}
+<div className={`bg-white px-4 lg:px-12 transition-all duration-300 flex justify-between items-center 
+  ${(isSticky || !isHomePage) ? 'lg:py-3 py-4' : 'lg:py-2 py-4'}`}>
 
-          <div className="flex items-center gap-4">
-            <img src={NextTechLogo} alt="NextTech Logo" className="lg:h-20 lg:w-44 object-contain w-[200px] h-[55px]" />
-          </div>
+  {/* 1. Logo Container (Fixed width or flex-1 to balance the right side) */}
+  <div className="flex items-center flex-1">
+    <img src={NextTechLogo} alt="NextTech Logo" className="lg:h-20 lg:w-44 object-contain w-[200px] h-[55px]" />
+  </div>
 
-          <div className="hidden lg:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.name}
-                to={link.href}
-                className={({ isActive }) =>
-                  `text-[16px] font-bold transition-colors hover:text-[#00acee] ${isActive ? 'text-primary' : 'text-gray-700'
-                  }`
-                }
-              >
-                {link.name}
-              </NavLink>
-            ))}
-          </div>
+  {/* 2. Links Container (Centered) */}
+  <div className="hidden lg:flex flex-[2] justify-center items-center gap-10">
+    {navLinks.map((link) => (
+      <NavLink
+        key={link.name}
+        to={link.href}
+        className={({ isActive }) =>
+          `text-[16px] font-bold transition-colors hover:text-[#00acee] ${isActive ? 'text-primary' : 'text-gray-700'}`
+        }
+      >
+        {link.name}
+      </NavLink>
+    ))}
+  </div>
 
-          <button onClick={() => setIsOpen(true)} className="lg:hidden p-3 text-secondary">
-            <FaBars size={32} />
-          </button>
-        </div>
+  {/* 3. Right Side Spacing/Mobile Menu (Flex-1 to match logo side and keep center perfect) */}
+  <div className="flex flex-1 justify-end">
+    <button onClick={() => setIsOpen(true)} className="lg:hidden p-3 text-secondary">
+      <FaBars size={32} />
+    </button>
+    
+    {/* If you add a "Get Started" button later, it lives here */}
+  </div>
+</div>
       </nav>
 
       {/* --- MOBILE SIDEBAR (EXACTLY AS YOUR ORIGINAL) --- */}
