@@ -5,7 +5,7 @@ export default function NotFoundMessage({ itemType = "Item", backPath }) {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-[80vh] bg-gray-50 flex items-center justify-center px-4 mt-20 mb-20">
+    <div className="min-h-[80vh]  flex items-center justify-center px-4 mt-20 mb-20">
             
       <div className="text-center max-w-md">
         {/* Calm icon */}
@@ -15,11 +15,11 @@ export default function NotFoundMessage({ itemType = "Item", backPath }) {
           </svg>
         </div>
 
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 px-2">
           {itemType} Not Found
         </h1>
 
-        <p className="text-lg text-gray-600 mb-8">
+        <p className="text-lg text-gray-600 mb-8 px-2">
           Sorry, we could not find the {itemType.toLowerCase()} you are looking for. It might have been removed or the link is incorrect.
         </p>
 
