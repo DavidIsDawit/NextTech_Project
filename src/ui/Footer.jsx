@@ -5,7 +5,12 @@ import {
   FaFacebookF, FaTwitter, FaBehance, FaInstagram, FaGlobe 
 } from 'react-icons/fa';
 
+import FooterModal from './Home Page/FooterModal';
+import { useState } from 'react';
+
+
 const Footer = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { logo, description, socials, categories, quickLinks, newsletter } = footerData;
 
   // Map icon strings to actual components
@@ -81,22 +86,27 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4: Newsletter */}
-          <div className="space-y-6">
-            <h4 className="text-white font-bold text-xl uppercase tracking-tight">{newsletter.title}</h4>
-            <p className="text-[15px] leading-relaxed text-tertiary">{newsletter.subtitle}</p>
-            
-            <div className="relative mt-6">
-              <input 
-                type="email" 
-                placeholder="Enter Your Email" 
-                className="w-full bg-secondary border-none rounded-lg py-5 px-5 text-sm text-white focus:ring-1 focus:ring-primary outline-none"
-              />
-              <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#0A1128] p-3.5 rounded-lg text-white hover:bg-[#00AEEF] transition-all">
-                <FaPaperPlane />
-              </button>
-            </div>
-          </div>
+        {/* Column 4: Newsletter */}
+<div className="space-y-6 relative"> {/* Add 'relative' here */}
+  <h4 className="text-white font-bold text-xl uppercase tracking-tight">{newsletter.title}</h4>
+  <p className="text-[15px] leading-relaxed text-tertiary">{newsletter.subtitle}</p>
+  
+  <button 
+    onClick={() => setIsModalOpen(true)}
+    className="group flex items-center justify-between w-full bg-[#031b33] border border-sky-900/50 text-sky-400 py-2 pl-5 pr-2 rounded-xl hover:bg-sky-900 transition-all text-sm"
+  >
+    <span>Click me to send an email</span>
+    <div className="bg-[#0A1128] p-3 rounded-lg group-hover:bg-[#00AEEF] transition-colors">
+      <FaPaperPlane className="text-white" />
+    </div>
+  </button>
+
+  {/* The Modal is now inside this relative div */}
+  <FooterModal 
+    isOpen={isModalOpen} 
+    onClose={() => setIsModalOpen(false)} 
+  />
+</div>
         </div>
 
         {/* Bottom Copyright */}
