@@ -11,7 +11,7 @@ export default function CertificateUI() {
   const [currentItems, setCurrentItems] = useState([]);
 
   return (
-    <div className="bg-gray-50/50  px-4 sm:px-6 lg:px-8">
+    <div className="bg-gray-50/50  px-4 sm:px-6 lg:px-8 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24">
       <div className=" mx-[1%] sm:mx-[6%]"> 
        <CertificateGrid 
           items={currentItems} 

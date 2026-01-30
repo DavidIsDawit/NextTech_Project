@@ -9,7 +9,7 @@ export default function GalleryUI() {
   const [currentPage, setCurrentPage] = useState(1); 
   const [currentItems, setCurrentItems] = useState([]); 
   return (
-    <div className="bg-gray-50/50 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gray-50/50 px-4 sm:px-6 lg:px-8 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24">
       <div className="mx-[2%] sm-[4%] md:mx-[6%]"> 
        
         {/* Grid now uses the state managed by Pagination */}
