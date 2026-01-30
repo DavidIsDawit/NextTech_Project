@@ -62,9 +62,7 @@ export default function Contact() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 ml-2 tracking-tight">
                 {contactInfo.title}
               </h2>
-              <p className="text-gray-500 text-lg sm:text-lg leading-relaxed">
-                These are the phrases we stay via way of means of in the whole lot we do. Each brand we build, and we create.
-              </p>
+              <p className="text-gray-500 text-lg leading-relaxed">{contactInfo.description}</p>
             </div>
 
             <div className="space-y-5">
@@ -74,8 +72,8 @@ export default function Contact() {
                     <item.icon size={30} />
                   </div>
                   <div>
-                    <h4 className="text-xl text-gray-900 mb-3">{item.title}</h4>
-                    <p className="text-gray-900 text-base leading-snug">{item.content}</p>
+                    <h4 className="text-xl  font-medium text-gray-900 mb-3">{item.title}</h4>
+                    <p className="text-gray-900 text-lg leading-snug">{item.content}</p>
                   </div>
                 </div>
               ))}
