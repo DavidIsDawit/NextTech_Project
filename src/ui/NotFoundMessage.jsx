@@ -6,7 +6,7 @@ export default function NotFoundMessage({ itemType = "Item", backPath }) {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-[50vh] bg-gray-50 flex items-center justify-center px-4 mt-20 mb-20">
+    <div className="min-h-[80vh] bg-gray-50 flex items-center justify-center px-4 mt-20 mb-20">
             
       <div className="text-center max-w-md">
         {/* Calm icon */}
