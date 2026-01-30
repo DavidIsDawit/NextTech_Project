@@ -1,3 +1,8 @@
+import blogData from "../data/NewsPageData";
+import services from "../data/ServicesPageData";
+import certificateItems from "../data/CertificatePageData";
+import { portfolioProjects } from "../data/PortfolioPageData";
+
 const SHARED_BANNER_IMAGE = "/BannerCoverImages/banner.jpg";
 
 export const BANNER_CONFIGS = {
@@ -48,7 +53,11 @@ export const getBannerConfig = (pathname) => {
     if (configKey) return BANNER_CONFIGS[configKey];
 
     if (normalPath.startsWith("/news/")) {
-        const id = pathname.split("/").pop();
+        const id = Number(pathname.split("/").pop());
+        const post = blogData.posts.find(p => p.id === id);
+
+        if (!post) return null;
+
         return {
             title: "News",
             backgroundImage: SHARED_BANNER_IMAGE,
@@ -62,7 +71,11 @@ export const getBannerConfig = (pathname) => {
     }
 
     if (normalPath.startsWith("/service/")) {
-        const id = pathname.split("/").pop();
+        const id = Number(pathname.split("/").pop());
+        const service = services.find(s => s.id === id);
+
+        if (!service) return null;
+
         return {
             title: "Service Detail",
             backgroundImage: SHARED_BANNER_IMAGE,
@@ -76,7 +89,11 @@ export const getBannerConfig = (pathname) => {
     }
 
     if (normalPath.startsWith("/certificate/") || normalPath.startsWith("/certificates/")) {
-        const id = pathname.split("/").pop();
+        const id = Number(pathname.split("/").pop());
+        const certificate = certificateItems.find(c => c.id === id);
+
+        if (!certificate) return null;
+
         // App.jsx uses /certificate/:id
         return {
             title: "Certificate",
@@ -91,7 +108,11 @@ export const getBannerConfig = (pathname) => {
     }
 
     if (normalPath.startsWith("/portfolio/")) {
-        const id = pathname.split("/").pop();
+        const id = Number(pathname.split("/").pop());
+        const project = portfolioProjects.find(p => p.id === id);
+
+        if (!project) return null;
+
         return {
             title: "Our Portfolio",
             backgroundImage: SHARED_BANNER_IMAGE,

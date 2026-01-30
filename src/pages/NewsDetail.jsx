@@ -4,13 +4,18 @@ import BlogCategories from "../ui/News Page/NewsCategories";
 import RecentPosts from "../ui/News Page/RecentPosts";
 import BlogTags from "../ui/News Page/NewsTags";
 import BlogContent from "../ui/News Page/NewsContent";
+import NotFoundMessage from "../ui/NotFoundMessage";
 import useBlog from "../hooks/useNewsPage";
 
 function BlogDetail() {
   const { id } = useParams();
   const { posts, categories, tags, recentPosts, searchQuery, setSearchQuery } = useBlog();
 
-  const post = posts.find((p) => p.id === parseInt(id)) || posts[0];
+  const post = posts.find((p) => p.id === parseInt(id));
+
+  if (!post) {
+    return <NotFoundMessage itemType="News" backPath="/news" />;
+  }
 
   return (
     <div className="flex flex-col pt-10 mb-6 lg:mb-16">
