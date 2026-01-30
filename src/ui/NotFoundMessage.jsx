@@ -6,10 +6,11 @@ export default function NotFoundMessage({ itemType = "Item", backPath }) {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-start justify-center px-4 mt-36">
+    <div className="min-h-[50vh] bg-gray-50 flex items-center justify-center px-4 mt-20 mb-20">
+            
       <div className="text-center max-w-md">
         {/* Calm icon */}
-        <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+        <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-blue-100 text-primary">
           <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
@@ -25,7 +26,7 @@ export default function NotFoundMessage({ itemType = "Item", backPath }) {
 
         <button
           onClick={() => navigate(backPath || "/")}
-          className="px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition"
+          className="px-8 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primaryHover transition"
         >
           Back to {itemType}s
         </button>

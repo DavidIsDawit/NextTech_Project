@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import certificateItems from "../data/CertificatePageData";
 import CertificateHero from "../ui/Certificate Page/Cert_ImageSlider";
 import CertificateContent from "../ui/Certificate Page/Cert_Title&desc";
@@ -7,7 +7,6 @@ import NotFoundMessage from "../ui/NotFoundMessage";
 
 export default function CertificateDetailPage() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const certificate = certificateItems.find(c => c.id === Number(id));
   if (!certificate) {
     return <NotFoundMessage itemType="Certificate" backPath="/certificates" />;
