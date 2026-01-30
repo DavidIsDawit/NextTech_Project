@@ -78,7 +78,7 @@ export default function PortfolioSection() {
   return (
     <div className="font-sans px-5 xs:px-6 md:px-12 lg:px-16 xl:px-20 2xl:px-28 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24">
       <div className="text-center mb-8 xs:mb-10 sm:mb-12">
-        <p className="text-cyan-500 font-semibold text-base xs:text-lg mb-4 uppercase tracking-widest">
+        <p className="text-primary font-semibold text-base xs:text-lg mb-4 uppercase tracking-widest">
           Work with us
         </p>
         <h2 className="text-3xl xs:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-8 tracking-tight">
@@ -119,7 +119,7 @@ export default function PortfolioSection() {
               }}
               className={`flex-none px-4 xs:px-5 sm:px-6 md:px-7 lg:px-8 xl:px-6 2xl:px-7 py-2.5 xs:py-3 sm:py-3.5 md:py-4 lg:py-4.5 xl:py-3 text-sm xs:text-base sm:text-base md:text-lg font-semibold whitespace-nowrap rounded-full transition-all duration-500 ease-in-out snap-center ${
                   selectedCategory === category
-                    ? "text-cyan-500 bg-transparent "
+                    ? "text-primary bg-transparent "
                     : "bg-gray-100 md:bg-transparent text-gray-700 hover:bg-gray-200 hover:text-gray-900"
                 }
               `}

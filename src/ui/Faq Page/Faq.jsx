@@ -17,10 +17,10 @@ export default function Faq() {
           
           {/* ================= LEFT SIDE: Header & Image ================= */}
           <div className="flex flex-col lg:sticky lg:top-10">
-            <p className="text-xs  xs:text-sm font-semibold text-[#00A3E0] uppercase mb-3 xs:mb-4">
+            <p className="text-base font-semibold text-primary  mb-3 xs:mb-4">
               Frequently Asked Questions
             </p>
-            <h2 className="text-3xl xs:text-4xl md:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
+            <h2 className="text-4xl xs:text-4xl md:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
               What People Want  to Know
             </h2>
 

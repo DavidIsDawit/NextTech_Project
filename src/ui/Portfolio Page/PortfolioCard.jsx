@@ -28,7 +28,7 @@ export default function PortfolioCard({ item }) {
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className={`
     flex items-center justify-center rounded-full 
-    bg-[#00acc1] text-white 
+    bg-primary text-white 
     h-10 w-10 sm:h-8 sm:w-8 md:h-8 md:w-8 lg:h-8 lg:w-8 xl:h-9 xl:w-9 2xl:h-10 2xl:w-10 
     shadow-md xs:shadow-lg sm:shadow-xl lg:shadow-2xl 
     transform 
@@ -50,7 +50,7 @@ export default function PortfolioCard({ item }) {
       <div className={`
   absolute bottom-0 left-0 right-0 
   h-24 xs:h-28 sm:h-32 md:h-36 lg:h-32 xl:h-28 2xl:h-32 
-  rounded-xl bg-[#00acc1] 
+  rounded-xl bg-primary
   p-3 xs:p-4 sm:p-4 md:p-5 lg:p-4 xl:p-5 
   text-white
   transform 
