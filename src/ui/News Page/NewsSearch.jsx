@@ -38,7 +38,7 @@ function BlogSearch({ value, onChange }) {
     }, []);
 
     const handleResultClick = (post) => {
-        navigate(`/blogs/${post.id}`);
+        navigate(`/news/${post.id}`);
         setShowResults(false);
         if (onChange) onChange(""); // Clear search
     };

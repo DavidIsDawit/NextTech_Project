@@ -47,7 +47,8 @@ export const getBannerConfig = (pathname) => {
     const configKey = Object.keys(BANNER_CONFIGS).find(key => key.toLowerCase() === normalPath);
     if (configKey) return BANNER_CONFIGS[configKey];
 
-    if (normalPath.startsWith("/blogs/") || normalPath.startsWith("/news/")) {
+    if (normalPath.startsWith("/news/")) {
+        const id = pathname.split("/").pop();
         return {
             title: "News",
             backgroundImage: SHARED_BANNER_IMAGE,
@@ -55,23 +56,27 @@ export const getBannerConfig = (pathname) => {
                 { label: "Home", path: "/" },
                 { label: "News", path: "/news" },
                 { label: "News Detail" },
+                { label: id },
             ],
         };
     }
 
     if (normalPath.startsWith("/service/")) {
+        const id = pathname.split("/").pop();
         return {
             title: "Service Detail",
             backgroundImage: SHARED_BANNER_IMAGE,
             breadcrumbs: [
                 { label: "Home", path: "/" },
                 { label: "Services", path: "/Service" },
-                { label: "Detail" },
+                { label: "Service Detail" },
+                { label: id },
             ],
         };
     }
 
     if (normalPath.startsWith("/certificate/") || normalPath.startsWith("/certificates/")) {
+        const id = pathname.split("/").pop();
         // App.jsx uses /certificate/:id
         return {
             title: "Certificate",
@@ -80,30 +85,35 @@ export const getBannerConfig = (pathname) => {
                 { label: "Home", path: "/" },
                 { label: "Certificates", path: "/certificates" },
                 { label: "Certificate Detail" },
+                { label: id },
             ],
         };
     }
 
     if (normalPath.startsWith("/portfolio/")) {
+        const id = pathname.split("/").pop();
         return {
             title: "Our Portfolio",
             backgroundImage: SHARED_BANNER_IMAGE,
             breadcrumbs: [
                 { label: "Home", path: "/" },
                 { label: "Portfolio", path: "/portfolio" },
-                { label: "Detail" },
+                { label: "Portfolio Detail" },
+                { label: id },
             ],
         };
     }
 
     if (normalPath.startsWith("/careers/")) {
+        const id = pathname.split("/").pop();
         return {
             title: "Career Detail",
             backgroundImage: SHARED_BANNER_IMAGE,
             breadcrumbs: [
                 { label: "Home", path: "/" },
                 { label: "Careers", path: "/careers" },
-                { label: "Detail" },
+                { label: "Career Detail" },
+                { label: id },
             ],
         };
     }

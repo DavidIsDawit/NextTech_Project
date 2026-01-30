@@ -8,7 +8,7 @@ function RecentPosts({ posts }) {
     if (!posts) return null;
 
     const handlePostClick = (postId) => {
-        navigate(`/blogs/${postId}`);
+        navigate(`/news/${postId}`);
     };
 
     const formatDate = (dateStr) => {
