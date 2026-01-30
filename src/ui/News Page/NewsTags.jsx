@@ -3,7 +3,14 @@ import PropTypes from "prop-types";
 
 function BlogTags({ tags }) {
     const [currentPage, setCurrentPage] = useState(1);
+    const [copiedTag, setCopiedTag] = useState(null);
     const tagsPerPage = 12;
+
+    const handleCopy = (tag) => {
+        navigator.clipboard.writeText(tag);
+        setCopiedTag(tag);
+        setTimeout(() => setCopiedTag(null), 1500);
+    };
 
     if (!tags || tags.length === 0) return null;
 
@@ -19,12 +26,20 @@ function BlogTags({ tags }) {
             </h3>
             <div className="flex flex-wrap gap-2">
                 {currentTags.map((tag) => (
-                    <span
+                    <button
                         key={tag}
-                        className="bg-white px-4 py-2 text-[13px] text-[#1a1a1a] border border-gray-100 rounded-sm shadow-sm"
+                        onClick={() => handleCopy(tag)}
+                        className={`relative bg-white px-4 py-2 text-[13px] text-[#1a1a1a] border border-gray-100 rounded-sm shadow-sm transition-all duration-200 cursor-pointer group ${copiedTag === tag ? "" : "hover:border-gray-300"}`}
                     >
                         {tag}
-                    </span>
+                        {copiedTag === tag && (
+                            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#1a1a1a] text-white text-[10px] py-1 px-2 rounded-md whitespace-nowrap animate-in fade-in zoom-in slide-in-from-bottom-2 duration-300">
+                                Copied!
+                                {/* Small Triangle Arrow */}
+                                <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1a1a1a]" />
+                            </span>
+                        )}
+                    </button>
                 ))}
             </div>
 
