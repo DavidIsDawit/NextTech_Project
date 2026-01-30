@@ -9,7 +9,7 @@ const AboutUs = () => {
           
           {/* LEFT SIDE: IMAGE SECTION */}
           <div className="relative">
-            <div className="rounded-[40px] overflow-hidden  transition-transform duration-500 hover:scale-[1.02]">
+            <div className=" rounded-xl md:rounded-3xl overflow-hidden  transition-transform duration-500 hover:scale-[1.02]">
               <img 
                 src={aboutUsImage}
                 alt="About Nextech" 
