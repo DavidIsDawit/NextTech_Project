@@ -5,10 +5,12 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import Faq from "../Faq Page/Faq";
 import services from "../../data/ServicesPageData";
 import Button from "../Button.jsx";
+import NotFoundMessage from "../NotFoundMessage";
 
 export default function ServiceDetail() {
   const { id } = useParams();
-  const service = services.find((s) => s.id === parseInt(id));
+  const service = services.find((s) => s.id === Number(id));
+  // const project = portfolioProjects.find(p => p.id === Number(id))
 
   // --- Logic for Slider and Responsive Dots ---
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,9 +31,13 @@ export default function ServiceDetail() {
     return () => window.removeEventListener("resize", updateView);
   }, []);
 
+  if (!service) {
+      return <NotFoundMessage itemType="Service" backPath="/Service" />;
+    }
+
   const totalMembers = service.content.gallery.length;
   const totalSlides = Math.ceil(totalMembers / itemsPerView);
-  // const showDots = totalMembers > itemsPerView;// Show dots only on mobile slider
+
 
 
   // Gap as percentage for translation calculation (Tailwind gap-x-4 = 1rem)
