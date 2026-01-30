@@ -20,8 +20,8 @@ const Button = ({
 
     // Base Styles
     const baseStyles = isText
-        ? "inline-flex items-center text-sm font-bold text-sky-500 hover:text-sky-600  uppercase gap-1 p-0"
-        : "inline-flex items-center justify-center font-bold uppercase tracking-wider transition-all duration-200   disabled:opacity-60 disabled:cursor-not-allowed  rounded-full";
+        ? "group inline-flex items-center text-sm font-bold text-sky-500 hover:text-sky-600  uppercase gap-1 p-0"
+        : "group inline-flex items-center justify-center font-bold uppercase tracking-wider transition-all duration-200   disabled:opacity-60 disabled:cursor-not-allowed  rounded-full";
 
     // Variant Styles (Colors/Themes)
     const variants = {
@@ -45,8 +45,8 @@ const Button = ({
             )}
             {!isLoading && Icon && <Icon className="mr-2 h-4 w-4" />}
             <span>{children}</span>
-            {!isLoading && IconAfter && <IconAfter className="ml-2 h-4 w-4" />}
-            {isText && !IconAfter && <HiArrowRight className="ml-1 h-3 w-3" />}
+            {!isLoading && IconAfter && <IconAfter className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />}
+            {isText && !IconAfter && <HiArrowRight className="ml-1 h-3 w-3 transition-transform duration-200 group-hover:translate-x-1" />}
         </Component>
     );
 };

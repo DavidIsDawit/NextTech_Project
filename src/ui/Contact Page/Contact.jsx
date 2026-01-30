@@ -10,7 +10,7 @@ export default function Contact() {
         {/* Main Flex/Grid Wrapper */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-0 items-start mb-16 md:mb-24 xl:mb-28">
           
-          {/* ================= LEFT SIDE: Get A Quote Form ================= */}
+          {/* LEFT SIDE: Form */}
           <div className="order-1 lg:order-1">
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-8 sm:mb-10 tracking-tight">
               Get A Quote
@@ -21,12 +21,12 @@ export default function Contact() {
                 <input
                   type="text"
                   placeholder="Enter Name"
-                  className="w-full px-5 py-4 border border-gray-300 bg-gray-50/30 rounded-lg text-lg sm:text-lg outline-none focus:ring-2 focus:ring-[#00A3E0] transition-all"
+                  className="w-full px-5 py-4 border border-gray-300 bg-gray-50/30 rounded-lg text-lg sm:text-lg outline-none focus:ring-2 focus:ring-primary transition-all"
                 />
                 <input
                   type="email"
                   placeholder="Enter Email"
-                  className="w-full px-5 py-4 border border-gray-300 bg-gray-50/30 rounded-lg text-lg sm:text-lg outline-none focus:ring-2 focus:ring-[#00A3E0] transition-all"
+                  className="w-full px-5 py-4 border border-gray-300 bg-gray-50/30 rounded-lg text-lg sm:text-lg outline-none focus:ring-2 focus:ring-primary transition-all"
                 />
               </div>
               
@@ -34,12 +34,12 @@ export default function Contact() {
                 <input
                   type="text"
                   placeholder="Enter Subject"
-                  className="w-full px-5 py-4 border border-gray-300 bg-gray-50/30 rounded-lg text-lg sm:text-lg outline-none focus:ring-2 focus:ring-[#00A3E0] transition-all"
+                  className="w-full px-5 py-4 border border-gray-300 bg-gray-50/30 rounded-lg text-lg sm:text-lg outline-none focus:ring-2 focus:ring-primary transition-all"
                 />
                 <input
                   type="text"
                   placeholder="Enter Phone"
-                  className="w-full px-5 py-4 border border-gray-300 bg-gray-50/30 rounded-lg text-lg sm:text-lg outline-none focus:ring-2 focus:ring-[#00A3E0] transition-all"
+                  className="w-full px-5 py-4 border border-gray-300 bg-gray-50/30 rounded-lg text-lg sm:text-lg outline-none focus:ring-2 focus:ring-primary transition-all"
                 />
               </div>
               
@@ -60,7 +60,7 @@ export default function Contact() {
           <div className="order-2 lg:px-24 lg:order-2 space-y-8 sm:space-y-8">
             <div>
               <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 ml-2 tracking-tight">
-                Get In Touch
+                {contactInfo.title}
               </h2>
               <p className="text-gray-500 text-lg sm:text-lg leading-relaxed">
                 These are the phrases we stay via way of means of in the whole lot we do. Each brand we build, and we create.

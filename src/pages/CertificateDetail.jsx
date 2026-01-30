@@ -1,28 +1,15 @@
-// src/pages/CertificateDetailPage.jsx
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import certificateItems from "../data/CertificatePageData";
 import CertificateHero from "../ui/Certificate Page/Cert_ImageSlider";
 import CertificateContent from "../ui/Certificate Page/Cert_Title&desc";
 import CertificateInfo from "../ui/Certificate Page/CertInfo";
+import NotFoundMessage from "../ui/NotFoundMessage";
 
 export default function CertificateDetailPage() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const certificate = certificateItems.find(c => c.id === Number(id));
   if (!certificate) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-red-600 mb-4">Certificate Not Found</h1>
-          <button
-            onClick={() => navigate("/certificate")}
-            className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-          >
-            Back to Certificates
-          </button>
-        </div>
-      </div>
-    );
+    return <NotFoundMessage itemType="Certificate" backPath="/certificates" />;
   }
   return (       
         <div className="min-h-screen bg-gray-50 px-4 sm:px-6 lg:px-8 pb-8">
@@ -48,3 +35,4 @@ export default function CertificateDetailPage() {
         </div>  
   );
 }
+

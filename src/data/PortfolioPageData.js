@@ -29,7 +29,17 @@ export const portfolioProjects = [
     },
     {
       id: 4,
-      image: "/PortfolioPageImage/feature.png",
+      image: "/ServicesPageImage/TrafficManagement2.png",
+    },
+
+    {
+      id: 5,
+      image: "/ServicesPageImage/TrafficManagementMain.png",
+    },
+
+    {
+      id: 6,
+      image: "/ServicesPageImage/TrafficManagement2.png",
     },
   ],
   requirements: [
