@@ -47,7 +47,7 @@ export const getBannerConfig = (pathname) => {
     const configKey = Object.keys(BANNER_CONFIGS).find(key => key.toLowerCase() === normalPath);
     if (configKey) return BANNER_CONFIGS[configKey];
 
-    if (normalPath.startsWith("/blogs/") || normalPath.startsWith("/news/")) {
+    if (normalPath.startsWith("/news/")) {
         const id = pathname.split("/").pop();
         return {
             title: "News",

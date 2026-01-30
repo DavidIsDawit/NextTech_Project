@@ -8,7 +8,7 @@ function BlogCard({ post }) {
 
     return (
         <Link
-            to={`/blogs/${post.id}`}
+            to={`/news/${post.id}`}
             className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-transform w-full cursor-pointer"
         >
             <div className="relative overflow-hidden aspect-[16/10] w-full">
