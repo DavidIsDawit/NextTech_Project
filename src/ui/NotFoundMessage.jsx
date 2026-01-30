@@ -6,7 +6,8 @@ export default function NotFoundMessage({ itemType = "Item", backPath }) {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-start justify-center px-4 mt-36">
+    <div className="min-h-[20vh] bg-gray-50 flex items-start justify-center px-4 mt-2 mb-20">
+            
       <div className="text-center max-w-md">
         {/* Calm icon */}
         <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-blue-100 text-blue-600">
@@ -25,7 +26,7 @@ export default function NotFoundMessage({ itemType = "Item", backPath }) {
 
         <button
           onClick={() => navigate(backPath || "/")}
-          className="px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition"
+          className="px-8 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primaryHover transition"
         >
           Back to {itemType}s
         </button>
