@@ -12,7 +12,7 @@ export default function CertificateDetailPage() {
     return <NotFoundMessage itemType="Certificate" backPath="/certificates" />;
   }
   return (       
-        <div className="min-h-screen bg-gray-50 px-4 sm:px-6 lg:px-8 pb-8">
+        <div className="min-h-screen bg-gray-50 px-4 sm:px-6 lg:px-8 pb-8 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24">
       <div className=" mx-[1%] sm:mx-[5.45%]"> 
           {/* Hero Slider */}
           <div className="w-full lg:w-full">
