@@ -16,7 +16,7 @@ export default function ServiceCard({ service }) {
         <img
           src={service.heroImage}
           alt={service.title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-120"
           loading="lazy"
         />
       </div>
