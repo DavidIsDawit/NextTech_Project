@@ -31,7 +31,7 @@ export default function UpArrow() {
       className={`
         fixed bottom-6 right-6 z-50 
         2xl:h-14 2xl:w-14 xl:h-12 xl:w-12 lg:h-11 lg:w-11 md:h-10 md:w-10 sm:h-9 sm:w-9 h-12 w-12 flex items-center justify-center 
-        bg-primary  hover:bg-primaryHover text-white rounded-full
+        bg-primary   active:bg-primaryHover text-white rounded-full
         shadow-lg transition-all duration-300
         ${visible ? "opacity-100" : "opacity-0 pointer-events-none"}
       `}
