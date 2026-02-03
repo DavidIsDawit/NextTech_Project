@@ -15,29 +15,15 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
   };
   
   return (
-    // <div 
-    //   className="
-    //     group relative overflow-hidden rounded-xl 
-    //     shadow-lg hover:shadow-2xl transition-all duration-500 
-    //     cursor-pointer bg-gray-100 h-[340px] sm:h-[325px]    lg:h-[325px] xl:h-[395px]  2xl:min-h-[500px] 
-    //   "
-    //   onClick={onClick}
-    // >
-          <div 
-        className="
-          group relative overflow-hidden rounded-xl 
-          shadow-lg hover:shadow-2xl transition-all duration-500 
-          cursor-pointer bg-gray-100 
-          
-          /* Responsive Heights in vh */
-          h-[40vh]           /* Default (Mobile) ~340px */
-          sm:h-[35vh]       /* ~325px (Adjusted for landscape) */
-          lg:h-[40vh]       /* ~325px */
-          xl:h-[50vh]       /* ~395px */
-          2xl:min-h-[61vh] 2xl:min-w-[28vw]  /* ~500px */
-        "
-        onClick={onClick}
-      >
+    <div 
+      className="
+        group relative overflow-hidden rounded-xl 
+        shadow-lg hover:shadow-2xl transition-all duration-500 
+        cursor-pointer bg-gray-100 h-[340px] sm:h-[325px]    lg:h-[325px] xl:h-[395px]  2xl:min-h-[500px] 
+      "
+      onClick={onClick}
+    >
+  
       <img
         src={images[currentIndex]}
         alt={alt} 
