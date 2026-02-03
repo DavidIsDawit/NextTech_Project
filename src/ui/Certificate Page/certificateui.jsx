@@ -11,8 +11,8 @@ export default function CertificateUI() {
   const [currentItems, setCurrentItems] = useState([]);
 
   return (
-    <div className="bg-gray-50/50  px-4 sm:px-6 lg:px-8 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24">
-      <div className=" mx-[1%] sm:mx-[6%]"> 
+    <div className="bg-gray-50/50  px-4 sm:px-6 lg:pl-12 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24">
+      <div className=" mx-[1%] sm-[4%] md:mx-[4.5%] "> 
        <CertificateGrid 
           items={currentItems} 
           onItemClick={setSelectedImage}

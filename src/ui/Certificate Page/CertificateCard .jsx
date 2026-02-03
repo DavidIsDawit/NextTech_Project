@@ -31,7 +31,7 @@ export default function CertificateCard({ item, index }) {
       "
         onClick={goToDetail}
       >
-        <img
+        {/* <img
           // src={src}
           src={images[currentIndex]}
           alt="certificate image"
@@ -40,7 +40,29 @@ export default function CertificateCard({ item, index }) {
           transition-transform duration-700 
           group-hover:scale-110          
         "        loading="lazy"
-        />
+        /> */}
+              <img
+        src={images[currentIndex]}
+        alt="certificate image"
+        className="
+          /* Width */
+          xl:w-full 
+          
+          /* Responsive Heights in vh */
+          h-[40vh]          /* Default (Mobile) ~350px equivalent */
+          sm:h-[25vh]       /* ~200px */
+          md:h-[30vh]       /* ~250px */
+          lg:h-[35vh]       /* ~265px */
+          xl:h-[45vh]       /* ~345px */
+          2xl:min-h-[61vh]   /* ~408px */
+
+          /* Image Fit & Animations */
+          object-cover object-top
+          transition-transform duration-700 
+          group-hover:scale-110
+        "
+        loading="lazy"
+      />
         {/* Subtle hover overlay */}
         {/* THUMBNAIL OVERLAY */}
         {imgicon && (

@@ -6,7 +6,7 @@ export default function GalleryGrid({ items, onItemClick }) {
     <div className="
       grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 
       lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 
-      gap-y-6 gap-x-3 md:gap-x-5 md:gap-y-4 lg:gap-x-6 lg:gap-y-4  pb-16
+      gap-y-6 gap-x-3 md:gap-x-5 md:gap-y-4 lg:gap-x-16 lg:gap-y-4  pb-16
     ">
       {items.map((src, index) => (
         <GalleryCard

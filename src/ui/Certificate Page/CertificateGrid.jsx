@@ -6,7 +6,7 @@ export default function CertificateGrid({ items, onItemClick }) {
     <div className="
       grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 
       lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 
-      gap-3 md:gap-4 lg:gap-8 pb-16
+      gap-3 md:gap-4 lg:gap-y-8 lg:gap-x-9 pb-16
     ">
       {items.map((src, index) => (
         <CertificateCard
