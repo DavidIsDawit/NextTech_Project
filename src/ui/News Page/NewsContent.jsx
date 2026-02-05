@@ -10,11 +10,13 @@ function BlogContent({ post }) {
 
     return (
         <article>
-            <img
-                src={post.image}
-                alt={post.title}
-                className="mb-8 w-full object-cover"
-            />
+            <div className="relative mb-8 w-full overflow-hidden rounded-xl aspect-[16/10]">
+                <img
+                    src={post.image}
+                    alt={post.title}
+                    className="h-full w-full object-cover"
+                />
+            </div>
 
             <div className="mb-10 flex flex-wrap items-center gap-8 text-[15px] 2xl:text-lg 2xl:gap-14 text-gray-500">
                 <div className="flex items-center font-bold">
@@ -46,12 +48,13 @@ function BlogContent({ post }) {
                 {post.detailImages && (
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 py-2">
                         {post.detailImages.map((img, index) => (
-                            <img
-                                key={index}
-                                src={img}
-                                alt={`Detail ${index + 1}`}
-                                className="rounded-lg object-cover w-full h-auto"
-                            />
+                            <div key={index} className="relative overflow-hidden rounded-lg aspect-[16/10] w-full">
+                                <img
+                                    src={img}
+                                    alt={`Detail ${index + 1}`}
+                                    className="h-full w-full object-cover"
+                                />
+                            </div>
                         ))}
                     </div>
                 )}
