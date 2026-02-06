@@ -76,7 +76,7 @@ export default function PortfolioSection() {
   const totalDots = Math.ceil(projectCategories.length / 3)
 
   return (
-    <div className="font-sans px-5 xs:px-6 md:px-12 lg:px-16 xl:px-20 2xl:px-28 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24">
+    <div className="font-sans px-5 xs:px-6 md:px-12 lg:px-20 xl:px-20 2xl:px-28 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24">
       <div className="text-center mb-8 xs:mb-10 sm:mb-12">
         <p className="text-primary font-semibold text-base xs:text-lg mb-4 uppercase tracking-widest">
           Work with us
@@ -130,7 +130,7 @@ export default function PortfolioSection() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xs:gap-8 mb-14 md:mb-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-5 mb-14 md:mb-24">
         {currentItems.map((item, index) => (
           <PortfolioCard key={`${item.id}-${index}`} item={item} />
         ))}

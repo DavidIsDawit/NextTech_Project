@@ -5,8 +5,8 @@ import Button from "../Button.jsx";
 
 export default function Contact() {
   return (
-    <section className="font-sans pt-14 sm:pt-16 md:pt-24 lg:pt-32 bg-white">
-      <div className="px-4 sm:px-10 lg:px-12 xl:px-28">
+    <section className="font-sans pt-28 sm:pt-16 md:pt-24 lg:pt-32 bg-white ">
+      <div className="px-6 sm:px-10 lg:px-12 xl:px-28">
         {/* Main Flex/Grid Wrapper */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-0 items-start mb-16 md:mb-24 xl:mb-28">
           
@@ -49,7 +49,7 @@ export default function Contact() {
               /> 
             </form>
 
-            <div className="pt-4 lg:pt-6">
+            <div className="pt-10 lg:pt-6">
               <Button as={Link} to="" variant="primary" size="lg" iconAfter={MdKeyboardArrowRight}>
                 SEND MESSAGE
               </Button>

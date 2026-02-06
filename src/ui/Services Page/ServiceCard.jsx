@@ -21,9 +21,9 @@ export default function ServiceCard({ service }) {
         />
       </div>
 
-      <div className="p-4 xs:p-5 sm:p-6 md:p-7 lg:p-8">
+      <div className="p-4 xs:p-5 sm:p-6 md:p-7 lg:p-4 xl:p-8">
         <h3 className="
-          text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-2xl
+          text-xl sm:text-xl md:text-2xl lg:text-lg xl:text-2xl 2xl:text-2xl
           font-bold text-gray-900 line-clamp-1 
           group-hover:text-primary transition-colors duration-300
         ">
@@ -31,17 +31,17 @@ export default function ServiceCard({ service }) {
         </h3>
 
         <p className="
-          text-base sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-lg
-          text-gray-600 mt-2 xs:mt-3 sm:mt-3 md:mt-4 
+          text-base sm:text-base md:text-lg lg:text-base xl:text-xl 2xl:text-lg
+          text-gray-600 mt-2 xs:mt-3 sm:mt-3 md:mt-4 lg:mt-3 xl:mt-4 2xl:mt-4
           line-clamp-2 break-words
         ">
           {service.subtitle}
         </p>
         <div
           className="
-            mt-4 xs:mt-5 sm:mt-6 
-            text-sm xs:text-base sm:text-base md:text-base 
-            inline-flex items-center font-semibold gap-1.5 sm:gap-2 
+            mt-4 xs:mt-5 sm:mt-6 lg:mt-3 xl:mt-6 
+            text-sm xs:text-base sm:text-base md:text-base  lg:text-sm xl:text-base 2xl:text-base
+            inline-flex items-center  gap-1.5 sm:gap-2 
             text-[#00A3E0] transition-colors
           "
         >

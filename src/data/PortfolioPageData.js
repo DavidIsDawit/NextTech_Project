@@ -2,7 +2,7 @@
 export const portfolioProjects = [
  {
   id: 1,
-  title: "Audio Visual System with  Interior design & construction work Interior design & construction work",
+  title: "Audio Visual System with  Interior design & construction work Interior design & construction work ",
   category: "Design",
   client: "Broadcast",
   avSystem: "Broadcast",

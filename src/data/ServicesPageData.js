@@ -238,8 +238,7 @@ const services = [
         "Additionally, the system integrates public transportation management, smart parking solutions, and pedestrian safety measures such as intelligent crosswalks. Environmental monitoring and data analysis support sustainable urban planning by reducing congestion, emissions, and travel delays. Overall, this system enhances urban mobility, increases efficiency, and contributes to safer and more sustainable transportation networks."
       ]
     },
-  },
- 
+  }, 
 
   
 ];
