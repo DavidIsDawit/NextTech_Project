@@ -15,14 +15,43 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
   };
   
   return (
-    <div 
-      className="
-        group relative overflow-hidden rounded-xl 
-        shadow-lg hover:shadow-2xl transition-all duration-500 
-        cursor-pointer bg-gray-100 h-[340px] sm:h-[325px]    lg:h-[325px] xl:h-[395px]  2xl:min-h-[500px] 
-      "
-      onClick={onClick}
-    >
+    // <div 
+    //   className="
+    //     group relative overflow-hidden rounded-xl 
+    //     shadow-lg hover:shadow-2xl transition-all duration-500 
+    //     cursor-pointer bg-gray-100 h-[340px] sm:h-[325px]    lg:h-[325px] xl:h-[395px]  2xl:min-h-[500px] 
+    //   "
+    //   onClick={onClick}
+    // >
+      //     <div 
+      //   className="
+      //     group relative overflow-hidden rounded-xl 
+      //     shadow-lg hover:shadow-2xl transition-all duration-500 
+      //     cursor-pointer bg-gray-100 
+          
+      //     /* Responsive Heights in vh */
+      //     min-h-[46vh]          /* Default (Mobile) ~340px */
+      //     sm:h-[55vh]       /* ~325px (Adjusted for landscape) */
+      //     lg:h-[50vh]       /* ~325px */
+      //     xl:min-h-[60vh] xl:min-w-[27vw]       /* ~395px */          
+      //   "
+      //   onClick={onClick}
+      // >
+      <div 
+  className="
+    group relative overflow-hidden rounded-xl 
+    shadow-lg hover:shadow-2xl transition-all duration-500 
+    cursor-pointer bg-gray-100 
+
+    /* Standard width for the grid column */
+    w-full 
+
+    /* The Aspect Ratio Replacement */
+    /* This creates the same 'tall' proportion as 27vw width and 60vh height */
+    aspect-[1.04/1] 
+  "
+  onClick={onClick}
+>
   
       <img
         src={images[currentIndex]}
@@ -82,7 +111,7 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
               >
                 <img
                   src={img}
-                  className="h-[10vh] w-[12vh] sm:h-[10vh]  object-cover"
+                  className="h-[10vh] w-[12vh]  sm:h-[10vh]  object-cover"
                   alt=""
                 />
               </button>
