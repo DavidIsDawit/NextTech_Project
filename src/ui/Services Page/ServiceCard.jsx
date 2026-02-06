@@ -9,21 +9,21 @@ export default function ServiceCard({ service }) {
       className=" 
         group bg-white rounded-t-xl
         overflow-hidden 
-        shadow-sm ring-1 ring-gray-50/5
+        shadow-sm ring-1 ring-gray-50/5 
       "
     >
-      <div className="relative aspect-[4/3]  xs:aspect-[16/10] sm:aspect-[4/3] md:aspect-[16/9] overflow-hidden">
+      <div className="relative aspect-[4/3]  xs:aspect-[16/10] sm:aspect-[4/3] md:aspect-[16/10] lg:aspect-[15/9] xl:aspect-[15/9] 2xl:aspect-[15/9] overflow-hidden">
         <img
           src={service.heroImage}
           alt={service.title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-120"
           loading="lazy"
         />
       </div>
 
       <div className="p-4 xs:p-5 sm:p-6 md:p-7 lg:p-8">
         <h3 className="
-          text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-3xl
+          text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-2xl
           font-bold text-gray-900 line-clamp-1 
           group-hover:text-primary transition-colors duration-300
         ">
@@ -31,7 +31,7 @@ export default function ServiceCard({ service }) {
         </h3>
 
         <p className="
-          text-base sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl
+          text-base sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-lg
           text-gray-600 mt-2 xs:mt-3 sm:mt-3 md:mt-4 
           line-clamp-2 break-words
         ">
@@ -40,7 +40,7 @@ export default function ServiceCard({ service }) {
         <div
           className="
             mt-4 xs:mt-5 sm:mt-6 
-            text-sm xs:text-base sm:text-base md:text-lg 
+            text-sm xs:text-base sm:text-base md:text-base 
             inline-flex items-center font-semibold gap-1.5 sm:gap-2 
             text-[#00A3E0] transition-colors
           "
