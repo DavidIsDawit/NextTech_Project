@@ -29,13 +29,13 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/aboutus' },
-    { name: 'Service', href: '/service' },
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'Certificates', href: '/certificates' },
-    { name: 'News', href: '/news' },
+    { name: 'Home',           href: '/' },
+    { name: 'About',          href: '/aboutus' },
+    { name: 'Service',        href: '/service' },
+    { name: 'Portfolio',      href: '/portfolio' },
+    { name: 'Gallery',        href: '/gallery' },
+    { name: 'Certificates',   href: '/certificates' },
+    { name: 'News',           href: '/news' },
   ];
 
   return (
@@ -49,12 +49,12 @@ const Navbar = () => {
       <nav className={`w-full transition-all duration-300 shadow-xl 
         ${(isSticky || !isHomePage)
           ? 'lg:max-w-full lg:rounded-none'
-          : 'lg:max-w-[1700px] lg:mx-auto lg:rounded-[35px] overflow-hidden'
+          : 'lg:max-w-[100rem] lg:mx-auto lg:rounded-[35px] overflow-hidden'
         }`}>
 
         {/* --- TOP BAR (Only visible on Home page) --- */}
         {(!isSticky && isHomePage) && (
-          <div className="bg-secondary text-white py-4 px-8 md:px-12 lg:flex justify-between items-center text-[16px] hidden">
+          <div className="bg-secondary text-white py-4 px-8 md:px-12 lg:flex justify-between items-center text-[16px] hidden ">
             <div className="lg:flex items-center gap-8">
               <div className="flex items-center gap-3">
                 <span className="font-light">location: Addis Ababa, bole, Ethiopia</span>
@@ -75,7 +75,7 @@ const Navbar = () => {
 
        
        {/* --- MAIN NAVBAR --- */}
-<div className={`bg-white px-4 lg:px-12 transition-all duration-300 flex justify-between items-center 
+<div className={`bg-white px-4 lg:px-10 transition-all duration-300 flex justify-between items-center 
   ${(isSticky || !isHomePage) ? 'lg:py-3 py-4' : 'lg:py-2 py-4'}`}>
 
   {/* 1. Logo Container (Fixed width or flex-1 to balance the right side) */}
@@ -90,7 +90,7 @@ const Navbar = () => {
         key={link.name}
         to={link.href}
         className={({ isActive }) =>
-          `text-[16px] font-bold transition-colors hover:text-[#00acee] ${isActive ? 'text-primary' : 'text-gray-700'}`
+          `text-[16px]  transition-colors hover:text-[#00acee] ${isActive ? 'text-primary' : 'text-[#0B162C]'}`
         }
       >
         {link.name}

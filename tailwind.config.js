@@ -12,7 +12,7 @@ export default {
         120: "1.2",
       },
       colors: {
-        primary: "#04A9C1",     
+        primary: "#00A3E0",     
         secondary: "#0B162C",
         tertiary :"#B6BFDA",
         primaryHover: "#0d1476ff", 

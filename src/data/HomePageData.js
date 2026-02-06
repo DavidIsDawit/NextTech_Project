@@ -11,7 +11,7 @@ import { FaChartLine, FaBriefcase, FaAward } from 'react-icons/fa';
 import { HiMiniUserGroup } from "react-icons/hi2";
 export const statsData = [
   { id: 1, icon: HiMiniUserGroup, value: "315", label: "Best Client", hasPlus: true },
-  { id: 2, icon: FaChartLine,     value: "12 Years of", label: "Experience", hasPlus: false },
+  { id: 2, icon: FaChartLine,     value: "12 Years", label: "Experience", hasPlus: false },
   { id: 3, icon: FaBriefcase,     value: "205", label: "Projects", hasPlus: true },
   { id: 4, icon: FaAward,         value: "51", label: "Awards", hasPlus: true },
   
