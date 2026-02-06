@@ -48,12 +48,12 @@ function Pagination({ items, itemsPerPage, currentPage, onPageChange, onDataUpda
 
   // ────────────────────────────────────────────────
   // Styling (Kept exactly as yours)
-  const baseBtn = "flex items-center justify-center w-12 h-12 rounded-md font-medium transition-all shadow-[0_4px_10px_rgba(0,0,0,0.08),0_10px_20px_-6px_rgba(0,0,0,0.12),0_-2px_6px_rgba(0,0,0,0.04)]";
-  const ellipsisStyle = "flex items-center justify-center font-medium text-gray-500 h-12 w-10";
+  const baseBtn = "flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-md font-medium transition-all shadow-[0_4px_10px_rgba(0,0,0,0.08),0_10px_20px_-6px_rgba(0,0,0,0.12),0_-2px_6px_rgba(0,0,0,0.04)]";
+  const ellipsisStyle = "flex items-center justify-center font-medium text-gray-500 w-6 h-8 md:h-12 md:w-10";
   const iconSize = "text-xl";
 
   return (
-    <div className="flex items-center justify-center gap-3 py-6">
+    <div className="flex items-center justify-center gap-1.5 md:gap-3 py-6">
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}

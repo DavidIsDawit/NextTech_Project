@@ -18,7 +18,7 @@ export default function PortfolioCard({ item }) {
         alt={item.title}
         className="
           w-full object-cover 
-          h-72 sm:h-80 md:h-96 lg:h-[25rem]  2xl:h-[25rem]
+          h-72 sm:h-80 md:h-80 lg:h-[19rem] xl:h-[20rem] 2xl:h-[25rem]
           transition-transform duration-700 ease-out 
           group-hover:scale-105 group-hover:duration-1000
         "
@@ -40,7 +40,7 @@ export default function PortfolioCard({ item }) {
   `}>
           <ArrowUpRight
             size={20}
-            className="xs:size-[22] sm:size-24 md:size-7 lg:size-8"
+            className="xs:size-[22] sm:size-24 md:size-7 lg:size-6 xl:size-8 2xl:size-8"
             strokeWidth={2.5}
           />
         </div>
@@ -49,7 +49,7 @@ export default function PortfolioCard({ item }) {
       {/* Bottom Info Panel */}
       <div className={`
   absolute bottom-0 left-0 right-0 
-  h-24 xs:h-28 sm:h-32 md:h-36 lg:h-32 xl:h-28 2xl:h-32 
+  h-24 xs:h-28 sm:h-32 md:h-32 lg:h-28 xl:h-28 2xl:h-32 
   rounded-xl bg-primary
   p-3 xs:p-4 sm:p-4 md:p-5 lg:p-4 xl:p-5 
   text-white
@@ -60,13 +60,13 @@ export default function PortfolioCard({ item }) {
   lg:group-hover:translate-y-0
 `}>
         <p className="
-    mb-1 text-sm xs:text-base sm:text-base md:text-lg 
+    mb-1 text-sm xs:text-base sm:text-base md:text-lg  lg:text-base xl:text-lg 
     font-medium opacity-90 tracking-wider
   ">
           {item.category}
         </p>
         <h3 className="
-    text-lg xs:text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-xl 
+    text-lg xs:text-xl sm:text-xl md:text-lg lg:text-base xl:text-2xl 2xl:text-xl 
     font-bold leading-tight line-clamp-2
   ">
           {item.title}
