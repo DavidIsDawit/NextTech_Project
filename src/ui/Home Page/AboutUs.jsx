@@ -6,68 +6,71 @@ import Button from "../Button.jsx";
 
 const AboutUs = () => {
   return (
-    // Increased vertical padding to give that "larger" section feel
-    <section className="bg-gray-50 pt-10 md:pt-10 lg:pt-20">
-      {/* Increased max-width from 7xl (1280px) to [1380px] 
-         This mimics the extra width a 110% zoom would occupy.
+    <section className="bg-[#FBFBFB] py-12 md:py-20 lg:py-28 xl:py-32">
+      {/* Container: Gradually increases max-width. 
+          2xl:max-w-screen-2xl (1536px) keeps it readable on massive monitors.
       */}
-      <div className="max-w-7xl lg:max-w-[1700px] mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-28 items-center">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 2xl:max-w-[1720px]">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-24 2xl:gap-32 items-start">
           
-          {/* LEFT SIDE: IMAGE */}
-          <div className="w-full">
-            <div className="space-y-4 lg:space-y-7">
-              <span className="text-primary font-bold text-sm lg:text-[17px]  uppercase ">
+          {/* LEFT SIDE: IMAGE & HEADER */}
+          <div className="w-full flex flex-col space-y-6 lg:space-y-10">
+            <div className="space-y-3 md:space-y-5">
+              <span className="text-primary font-bold text-xs sm:text-sm lg:text-base xl:text-sm uppercase tracking-wider">
                 {aboutData.subtitle}
               </span>
-              {/* Bumped text-5xl to text-[54px] for a true 110% feel */}
-              <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-secondary  pb-4 md:pb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-bold text-[#0B162C] leading-tight">
                 {aboutData.title}
               </h2>
             </div>
-            {/* Expanded the image max-width slightly */}
-            <img 
-              src={aboutUsImage}
-              alt="Our Team" 
-              className="md:max-w-md lg:max-w-[520px] w-full h-auto rounded-[20px] shadow-2xl object-cover"
-            />
+            
+            {/* Image Wrapper: ensures image scales nicely but doesn't blow up too large */}
+            <div className="relative group">
+              <img 
+                src={aboutUsImage}
+                alt="Our Team" 
+                className="min-w-[310px] sm:min-w-[550px] md:min-w-[650px]   max-h-[400px] md:max-h-[360px] lg:max-h-[600px] lg:min-w-[100px] xl:max-h-[600px] rounded-[10px]  object-cover transform transition-transform duration-500 hover:scale-[1.01]"
+              />
+            </div>
           </div>
 
           {/* RIGHT SIDE: CONTENT */}
-          <div className="space-y-8 lg:space-y-10">
-            <div className="space-y-5 lg:space-y-7">
-              {/* description text-base (16px) -> text-[18px] (approx 110% zoom) */}
-              <p className="text-gray-400 text-sm lg:text-[18px] lg:leading-[1.8] leading-relaxed">
+          <div className="flex flex-col space-y-8 lg:space-y-12">
+            <div className="space-y-6">
+              <p className="text-[#8F939B] text-base md:text-lg xl:text-xl leading-relaxed lg:leading-[1.8]">
                 {aboutData.description}
               </p>
-              <p className="text-gray-400 text-sm lg:text-[18px] lg:leading-[1.8] leading-relaxed">
+              <p className="text-[#8F939B] text-base md:text-lg xl:text-xl leading-relaxed lg:leading-[1.8]">
                 {aboutData.subDescription}
               </p>
             </div>
 
-            {/* VISION/MISSION GRID */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 lg:gap-y-12 gap-x-14 pt-4">
+            {/* VISION/MISSION GRID: Adjusts columns for smaller screens */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 xl:gap-12">
               {aboutData.features.map((item) => (
-                <div key={item.id} className="space-y-3">
-                  <h4 className="text-xl lg:text-[26px] font-bold text-secondary">{item.title}</h4>
-                  {/* Scaled description from 13px to 16px */}
-                  <p className="text-gray-400 text-[13px] lg:text-[16px] leading-relaxed">
+                <div key={item.id} className="group">
+                  <h4 className="text-xl md:text-2xl xl:text-3xl font-bold text-[#26262C] mb-3 group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h4>
+                  <p className="text-[#8F939B] text-sm md:text-base xl:text-lg leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
               ))}
             </div>
 
-            {/* BUTTON */}
-            <div className="pt-6 lg:pt-8">
-              {/* Scaled padding and font size for a "bigger" button */}
+            {/* BUTTON: Larger touch targets for mobile, sleek for desktop */}
+            <div className="pt-4">
               <Button
                 as={Link}
                 to="/aboutus"
                 variant="primary"
+                className="w-full sm:w-auto px-8 py-4 text-lg" // Added custom sizing helper
                 size="xl"
-                iconAfter={HiChevronRight}>
-                   Read More
+                iconAfter={HiChevronRight}
+              >
+                Read More
               </Button>
             </div>
           </div>

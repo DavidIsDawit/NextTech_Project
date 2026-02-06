@@ -3,23 +3,17 @@ import { clientsData } from "../../data/HomePageData";
 
 const LogoCard = ({ logo }) => (
   <div 
-    className="
-      /* Mobile: Fixed size, perfectly centered in their own space */
-      w-[155px] h-[70px]   
+    className="w-full max-w-[170px] h-[59px] sm:max-w-[200px] sm:h-[85px] md:max-w-[220px] md:h-[95px] lg:w-[360px] lg:h-[80px] xl:w-[480px] xl:h-[80px] 2xl:w-[600px] 2xl:h-[100px]
       
-      /* Tablet: Scaling up slightly */
-      md:w-[180px] md:h-[100px] 
-      
-      /* Large Screen: Your 110% Zoom layout */
-      lg:w-[295px] lg:h-[100px] lg:p-[18px] 
-      
-      bg-white shadow-xl lg:shadow-xl
-      border border-gray-50 flex items-center justify-center"
+      bg-white rounded-[8px] md:rounded-[15px]
+      shadow-[0px_15px_40px_rgba(176,190,210,0.25)] 
+      flex items-center justify-center 
+      p-1 "
   >
     <img 
       src={logo.src} 
       alt={logo.alt} 
-      className="max-h-[65px] md:max-h-[75px] lg:max-h-[100px] w-auto max-w-[95%] object-contain" 
+      className="max-w-[100%] max-h-[100%]" 
     />
   </div>
 );
@@ -36,46 +30,45 @@ const Clients = () => {
   const { subtitle, title, blogTitle, logos } = clientsData;
 
   return (
-    <section className="py-1 md:py-0 lg:py-[20px] bg-white overflow-hidden">
-      {/* Container centered with mx-auto */}
-      <div className="max-w-8xl mx-auto px-4 flex flex-col items-center">
+    <section className="py-10 md:py-24 lg:py-32 bg-[#FCFDFF] overflow-hidden">
+      <div className=" mx-auto px-6">
         
         {/* Header Section */}
-        <div className="text-center mb-10 md:mb-12 lg:mb-[80px] space-y-3 lg:space-y-6">
-          <span className="text-primary font-bold text-[15px] md:text-sm lg:text-[22px] tracking-widest uppercase">
+        <div className="text-center mb-12 md:mb-24">
+          <span className="text-[#00AEEF] font-bold text-xs md:text-lg tracking-[0.2em] uppercase block mb-3">
             {subtitle}
           </span>
-          <h2 className="text-2xl md:text-4xl lg:text-[56px] font-bold text-[#0a1128] leading-tight">
-            {title} <br className="hidden lg:block" />
-            <span className="lg:mt-2 block">{blogTitle}</span>
+          <h2 className="text-2xl md:text-5xl lg:text-[52px] font-bold text-[#1A2B49] leading-tight max-w-3xl mx-auto">
+            {title} <br className="hidden md:block" />
+            <span className="font-semibold block mt-1">{blogTitle}</span>
           </h2>
         </div>
 
-        {/* MOBILE & TABLET: Centered flex container */}
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:hidden w-full max-w-[400px] md:max-w-full">
+        {/* MOBILE VIEW: Exact 2-Column Grid as per your screenshot */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:hidden justify-items-center">
           {logos.map((logo) => (
             <LogoCard key={logo.id} logo={logo} />
           ))}
         </div>
 
-        {/* LARGE SCREENS: 4-5-4 Staggered Layout */}
-        <div className="hidden lg:flex flex-col items-center gap-[30px] w-full">
-          {/* Row 1: 4 Cards */}
-          <div className="flex justify-center gap-[30px] w-full">
+        {/* DESKTOP VIEW: Exact 4-5-4 Staggered Layout */}
+        <div className="hidden lg:flex flex-col items-center gap-8 lg:gap-10">
+          {/* Row 1 (4 logos) */}
+          <div className="flex justify-center gap-8 w-full">
             {logos.slice(0, 4).map((logo) => (
               <LogoCard key={logo.id} logo={logo} />
             ))}
           </div>
 
-          {/* Row 2: 5 Cards - Physically wider row */}
-          <div className="flex justify-center gap-[30px] w-full lg:w-[115%]">
+          {/* Row 2 (5 logos) - Physically wider to create stagger */}
+          <div className="flex justify-center gap-8 w-full">
             {logos.slice(4, 9).map((logo) => (
               <LogoCard key={logo.id} logo={logo} />
             ))}
           </div>
 
-          {/* Row 3: 4 Cards */}
-          <div className="flex justify-center gap-[30px] w-full">
+          {/* Row 3 (4 logos) */}
+          <div className="flex justify-center gap-8 w-full">
             {logos.slice(9, 13).map((logo) => (
               <LogoCard key={logo.id} logo={logo} />
             ))}

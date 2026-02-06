@@ -49,7 +49,7 @@ export default function WhyWeOffer() {
         `}
       </style>
 
-      <div className="max-w-[1710px] mx-auto px-6 lg:px-12">
+      <div className="max-w-[1690px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-[100px] ">
           
           {/* LEFT CONTENT */}
@@ -61,10 +61,10 @@ export default function WhyWeOffer() {
               <h2 className="text-3xl md:text-5xl lg:text-[58px] font-bold text-secondary leading-tight">
                 {workData.title}
               </h2>
-              <p className="text-gray-400 text-base lg:text-[18px] leading-relaxed max-w-2xl">
+              <p className="text-[#8F939B] text-base lg:text-[18px] leading-relaxed max-w-2xl">
                 {workData.description1}
               </p>
-              <p className="text-gray-400 text-base lg:text-[18px] leading-relaxed max-w-2xl">
+              <p className="text-[#8F939B] text-base lg:text-[18px] leading-relaxed max-w-2xl">
                 {workData.description2}
               </p>
             </div>
