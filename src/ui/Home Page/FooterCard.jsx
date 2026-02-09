@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function FooterCard() {
   return (
     <section className="px-4 pb-12 lg:pb-[90px]">
-      <div className="max-w-7xl mx-auto bg-[#0A142F] rounded-[40px] overflow-hidden relative min-h-[300px] flex items-center translate-y-[102px] md:translate-y-30">
+      <div className="max-w-7xl mx-auto bg-[#0A142F] rounded-[16px] overflow-hidden relative min-h-[300px] flex items-center z-10">
         
        
 
