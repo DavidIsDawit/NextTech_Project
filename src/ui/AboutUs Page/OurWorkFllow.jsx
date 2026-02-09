@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 const Workflow = () => {
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-[1640px] mx-auto px-6 lg:px-2">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-2">
         
         {/* HEADER */}
         <div className="text-center max-w-2xl mx-auto mb-16">

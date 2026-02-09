@@ -135,6 +135,32 @@ export const testimonialsData = {
       image: "/HomePageImages/Ga logo.png",
       text: "Next Tech delivered reliable, high-quality solutions tailored to our needs. Their technical expertise, responsiveness, and commitment to excellence made them a valuable partner in our digital transformation.",
       stars: 5
+    },
+    
+    {
+      id: 4,
+      name: "G.A. Engineering Group ",
+      role: "Company",
+      image: "/HomePageImages/Ga logo.png",
+      text: "Next Tech delivered reliable, high-quality solutions tailored to our needs. Their technical expertise, responsiveness, and commitment to excellence made them a valuable partner in our digital transformation.",
+      stars: 5
+    },
+   
+    {
+      id: 5,
+      name: "Ethiopian Shipping Lines ",
+      role: "Company",
+      image: "/HomePageImages/esl.png",
+      text: "We commend GA Soft for their excellent performance in executing the project, showcasing quality service and effective health and safety management. We are satisfied with their work in Supply, Installation, Testing, and Commissioning, and we recommend the company for similar projects.",
+      stars: 5
+    },
+    {
+      id: 6,
+      name: "Ethiopian Civil Service University",
+      role: "Company",
+      image: "/HomePageImages/ecsu.jpeg",
+      text: "They acted in accordance with their duties in due time, so we are delighted to recommend their service and endeavor whoever want to use all their professional abilities.",
+      stars: 5
     }
    
   ]

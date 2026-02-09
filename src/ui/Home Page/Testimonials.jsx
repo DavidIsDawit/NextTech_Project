@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { testimonialsData } from '../../data/HomePageData';
 
 const Testimonials = () => {
   const { subtitle, title, items } = testimonialsData;
   const [currentPage, setCurrentPage] = useState(0);
-  
-  // Changed: Tracking window width to handle the 2-card tablet view
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -16,126 +13,104 @@ const Testimonials = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Changed: Logic to show 1 card (mobile), 2 cards (md), or 3 cards (lg)
   let itemsPerPage = 1;
-  if (windowWidth >= 1024) {
-    itemsPerPage = 3; 
-  } else if (windowWidth >= 768) {
-    itemsPerPage = 2; 
-  }
+  if (windowWidth >= 1024) itemsPerPage = 3; 
+  else if (windowWidth >= 768) itemsPerPage = 2; 
 
   const totalPages = Math.ceil(items.length / itemsPerPage);
 
-  // Auto-play logic
   useEffect(() => {
     if (!isPaused) {
       const interval = setInterval(() => {
-        setCurrentPage((prevPage) => 
-          prevPage >= totalPages - 1 ? 0 : prevPage + 1
-        );
+        setCurrentPage((prevPage) => (prevPage >= totalPages - 1 ? 0 : prevPage + 1));
       }, 5000);
       return () => clearInterval(interval);
     }
   }, [isPaused, totalPages]); 
 
-  const currentItems = items.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
+  const currentItems = items.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
 
   return (
-    <section className="py-12 md:py-20 lg:py-[70px] px-4  overflow-hidden">
-      <div className="max-w-7xl lg:max-w-[1400px] mx-auto flex flex-col items-center">
+    <section className="py-16 md:py-24 bg-white overflow-hidden">
+      <div className="max-w-[1640px] mx-auto px-4">
         
         {/* Header Section */}
-        <div className="text-center mb-12 lg:mb-20 md:space-y-10 space-y-5">
-          <span className="text-primary font-bold text-md md:text-sm lg:text-[22px] tracking-widest uppercase">
+        <div className="text-center mb-16">
+          <span className="text-[#00AEEF] font-bold text-sm tracking-[0.2em] uppercase block mb-4">
             {subtitle}
           </span>
-          <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-[#0a1128] leading-tight">
+          <h2 className="text-[32px] md:text-[44px] font-bold text-[#1A2B49] leading-tight">
             {title}
           </h2>
         </div>
 
         {/* Testimonials Container */}
-        <div 
-          className="w-full flex justify-center min-h-[250px] md:min-h-[100px]"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          {/* Changed: grid-cols-1 md:grid-cols-2 lg:grid-cols-3 to show 2 cards on tablet */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-[40px] w-full max-w-[450px] md:max-w-full">
-          {currentItems.map((item) => (
-  <div 
-    key={item.id} 
-    className="bg-white p-8 lg:p-[45px] rounded-[25px] lg:rounded-[35px] shadow-[0_15px_50px_rgba(0,0,0,0.05)] text-left border border-transparent hover:border-blue-50 transition-all duration-300 transform animate-fadeInUp flex flex-col h-full" // Added: flex flex-col h-full
-  >
-    {/* Profile Header */}
-    <div className="flex items-center gap-5 mb-6 lg:mb-8">
-      <div className="relative flex-shrink-0">
-        <div 
-          className="w-16 h-16 lg:w-[85px] lg:h-[85px] rounded-full flex items-center justify-center shadow-sm"
-          style={{ 
-            background: `conic-gradient(#00AEEF 0deg 180deg, #d1d5db 180deg 360deg)` 
-          }}
-        >
-          <div className="w-[92%] h-[92%] rounded-full bg-white flex items-center justify-center">
-            <div className="w-[88%] h-[88%] rounded-full overflow-hidden">
-              <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h4 className="font-bold text-[#0a1128] text-lg lg:text-[22px] leading-tight">
-          {item.name}
-        </h4>
-        <p className="text-[#00AEEF] text-sm lg:text-[16px] font-semibold mt-1">
-          {item.role}
-        </p>
-      </div>
-    </div>
+        <div className="flex justify-center" onMouseEnter={() => setIsPaused(true)}onMouseLeave={() => setIsPaused(false)}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 sm:gap-5 w-full">
+            {currentItems.map((item) => (
+              <div 
+                   key={item.id} 
+                   className="bg-white p-8 md:p-10 rounded-[20px] shadow-[0px_20px_50px_rgba(176,190,210,0.3)] flex flex-col h-full border border-gray-50/50"
+              >
+                {/* Profile Header */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="relative flex-shrink-0">
+                    {/* Ring implementation based on Figma screenshot */}
+                    <div className="w-[75px] h-[75px]  rounded-full p-[3px] border-2 border-[#00AEEF]">
+                      <div className="w-full h-full rounded-full overflow-hidden border-2 border-white">
+                        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#1A2B49] text-xl">
+                      {item.name}
+                    </h4>
+                    <p className="text-[#00AEEF] text-sm font-semibold">
+                      {item.role}
+                    </p>
+                  </div>
+                </div>
 
-    {/* Testimonial Text */}
-    <p className="text-secondary text-[15px] lg:text-[18px] leading-relaxed italic mb-6">
-      &quot;{item.text}&quot;
-    </p>
+                {/* Testimonial Text - Removed italics per Figma */}
+                <p className="text-[#64748B] text-base md:text-[17px] leading-relaxed mb-8">
+                  {item.text}
+                </p>
 
-    {/* Stars Section - Pushed to the bottom */}
-    <div className="flex gap-1 mt-auto  border-t border-gray-50"> {/* Added: mt-auto and a subtle top border/padding */}
-      {[...Array(item.stars)].map((_, i) => (
-        <span key={i} className="text-[#FFA800] text-lg lg:text-[20px]">★</span>
-      ))}
-    </div>
-  </div>
-))}
+                {/* Stars Section */}
+                <div className="flex gap-1 mt-auto">
+                  {[...Array(5)].map((_, i) => (
+                    <svg 
+                      key={i} 
+                      className={`w-4 h-4 ${i < item.stars ? 'fill-[#FFA800]' : 'fill-gray-200'}`}
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Pagination Dots */}
-        <div className="flex justify-center items-center gap-3 mt-8 lg:mt-10">
-          {[...Array(totalPages)].map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentPage(index)}
-              className={`
-                transition-all duration-300 rounded-full
-                ${currentPage === index 
-                  ? 'md:w-2 md:h-2 h-3 w-3 bg-[#0a1128]' 
-                  : 'md:w-2 md:h-2 h-3 w-3 bg-gray-300 '}
-              `}
-              aria-label={`Go to page ${index + 1}`}
-            />
-          ))}
-        </div>
+        {totalPages > 1 && (
+          <div className="flex justify-center gap-2 mt-12">
+            {[...Array(totalPages)].map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentPage(index)}
+                className={`h-2 transition-all duration-300 rounded-full ${
+                  currentPage === index ? 'w-2 bg-[#00AEEF]' : 'w-2 bg-gray-300'
+                }`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
-};
-
-Testimonials.propTypes = {
-  subtitle: PropTypes.string,
-  title: PropTypes.string,
 };
 
 export default Testimonials;

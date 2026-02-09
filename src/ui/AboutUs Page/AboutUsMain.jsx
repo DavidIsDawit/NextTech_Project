@@ -4,8 +4,8 @@ import aboutUsImage from "/AboutUsPageImages/aboutUsHeroImage.jpg";
 const AboutUs = () => {
   return (
     <section className="bg-white pb-20  lg:pb-32 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24">
-      <div className="max-w-7xl lg:max-w-[1440px] mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-56 items-center">
+      <div className="max-w-7xl xl:max-w-[1640px] mx-auto px-6 lg:px-6 xl:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16  xl:gap-56 items-center">
           
           {/* LEFT SIDE: IMAGE SECTION */}
           <div className="relative">
@@ -23,7 +23,7 @@ const AboutUs = () => {
             <span className="text-[#00AEEF] font-bold text-sm tracking-[0.2em] uppercase mb-4 text-start lg:text-left">
               {aboutData.subtitle}
             </span>
-            <h2 className="text-3xl md:text-5xl lg:text-[54px] font-bold text-[#0a1128] leading-[1.1] mb-8 text-start lg:text-left">
+            <h2 className="text-3xl md:text-5xl xl:text-[54px] font-bold text-[#0a1128] leading-[1.1] mb-8 text-start lg:text-left">
               {aboutData.title}
             </h2>
             <p className="text-gray-500 text-base lg:text-[17px] leading-relaxed mb-12 text-start lg:text-left">
