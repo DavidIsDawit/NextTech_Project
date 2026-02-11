@@ -1,19 +1,20 @@
-
 import { footerData } from '../data/FooterData';
 import { 
   FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaPaperPlane, 
   FaFacebookF, FaTwitter, FaBehance, FaInstagram, FaGlobe 
 } from 'react-icons/fa';
-
 import FooterModal from './Home Page/FooterModal';
 import { useState } from 'react';
-
+import { useLocation } from 'react-router-dom'; // Import useLocation
 
 const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const location = useLocation(); // Initialize location
   const { logo, description, socials, categories, quickLinks, newsletter } = footerData;
 
-  // Map icon strings to actual components
+  // Check if current page is the Home page
+  const isHomePage = location.pathname === '/';
+
   const iconMap = {
     FaFacebookF: <FaFacebookF />,
     FaTwitter: <FaTwitter />,
@@ -23,11 +24,15 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-secondary text-gray-400 py-12 -mt-20 lg:pt-[20rem] px-6 font-sans lg:-mt-[322px] lg:bottom-0  z-1">
-      <div className="max-w-7xl mx-auto">
+    <footer className={`bg-secondary text-gray-400 px-6 font-sans relative z-10 ${
+      isHomePage 
+        ? 'py-12 -mt-20 lg:pt-[20rem]' // Spacing for Home Page (with card overlap)
+        : 'py-12 mt-0'                 // Spacing for all other pages (clean look)
+    }`}>
+      <div className="max-w-[1550px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           
-          {/* Column 1: Info & Social Media below Email */}
+          {/* Column 1: Info & Social Media */}
           <div className="flex flex-col space-y-8">
             <div className="bg-white p-2 inline-block rounded w-fit">
               <img src={logo} alt="Nextech Logo" className="h-9 w-auto" />
@@ -47,7 +52,6 @@ const Footer = () => {
                 <p>{description.email}</p>
               </div>
 
-              {/* SOCIAL MEDIA ICONS PLACED HERE (Below Email) */}
               <div className="flex gap-5 pt-4">
                 {socials.map((social) => (
                   <a 
@@ -86,27 +90,26 @@ const Footer = () => {
             </ul>
           </div>
 
-        {/* Column 4: Newsletter */}
-<div className="space-y-6 relative"> {/* Add 'relative' here */}
-  <h4 className="text-white font-bold text-xl uppercase tracking-tight">{newsletter.title}</h4>
-  <p className="text-[15px] leading-relaxed text-tertiary">{newsletter.subtitle}</p>
-  
-  <button 
-    onClick={() => setIsModalOpen(true)}
-    className="group flex items-center justify-between w-full bg-[#031b33] border border-sky-900/50 text-sky-400 py-2 pl-5 pr-2 rounded-xl hover:bg-sky-900 transition-all text-sm"
-  >
-    <span>Click me to send an email</span>
-    <div className="bg-[#0A1128] p-3 rounded-lg group-hover:bg-[#00AEEF] transition-colors">
-      <FaPaperPlane className="text-white" />
-    </div>
-  </button>
+          {/* Column 4: Newsletter */}
+          <div className="space-y-6 relative">
+            <h4 className="text-white font-bold text-xl uppercase tracking-tight">{newsletter.title}</h4>
+            <p className="text-[15px] leading-relaxed text-tertiary">{newsletter.subtitle}</p>
+            
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="group flex items-center justify-between w-full bg-[#031b33] border border-sky-900/50 text-sky-400 py-2 pl-5 pr-2 rounded-xl hover:bg-sky-900 transition-all text-sm"
+            >
+              <span>Click me to send an email</span>
+              <div className="bg-[#0A1128] p-3 rounded-lg group-hover:bg-[#00AEEF] transition-colors">
+                <FaPaperPlane className="text-white" />
+              </div>
+            </button>
 
-  {/* The Modal is now inside this relative div */}
-  <FooterModal 
-    isOpen={isModalOpen} 
-    onClose={() => setIsModalOpen(false)} 
-  />
-</div>
+            <FooterModal 
+              isOpen={isModalOpen} 
+              onClose={() => setIsModalOpen(false)} 
+            />
+          </div>
         </div>
 
         {/* Bottom Copyright */}
