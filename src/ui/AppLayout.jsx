@@ -9,6 +9,7 @@ import UpArrow from "../ui/UpArrow";
 function AppLayout() {
   const location = useLocation();
   const banner = getBannerConfig(location.pathname);
+  
   return (
     <div className="relative min-h-screen">
       

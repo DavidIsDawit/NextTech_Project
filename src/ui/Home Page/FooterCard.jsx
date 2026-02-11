@@ -4,8 +4,8 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 export default function FooterCard() {
   return (
-    <section className="px-4 pb-12 lg:pb-[90px]">
-      <div className="max-w-7xl mx-auto bg-[#0A142F] rounded-[16px] overflow-hidden relative min-h-[300px] flex items-center z-10">
+    <section className="px-4 pb-12 lg:pb-[90px] translate-y-5 lg:translate-y-60 relative z-20">
+      <div className="max-w-7xl mx-auto bg-[#0A142F] rounded-[16px] overflow-hidden relative min-h-[480px] flex items-center ">
         
        
 

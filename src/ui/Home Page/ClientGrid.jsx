@@ -3,7 +3,12 @@ import { clientsData } from "../../data/HomePageData";
 
 const LogoCard = ({ logo }) => (
   <div 
-    className="w-full max-w-[170px] h-[59px] sm:max-w-[200px] sm:h-[85px] md:max-w-[220px] md:h-[95px] lg:w-[360px] lg:h-[80px] xl:w-[480px] xl:h-[80px] 2xl:w-[600px] 2xl:h-[100px]
+    className="w-full max-w-[170px] h-[59px] 
+               sm:max-w-[200px] sm:h-[85px] 
+               md:max-w-[220px] md:h-[95px] 
+               lg:max-w-[360px] lg:h-[80px] 
+               xl:w-[480px] xl:h-[80px] 
+               2xl:w-[600px] 2xl:h-[100px]
       
       bg-white rounded-[8px] md:rounded-[15px]
       shadow-[0px_15px_40px_rgba(176,190,210,0.25)] 
