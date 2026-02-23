@@ -2,308 +2,125 @@ const blogData = {
     "posts": [
         {
             "id": 1,
-            "title": "GA engineering receives an award",
-            "image": "/NewsPageImages/service.png",
-            "date": "23 May 2026",
-            "author": "Admin",
-            "category": "construction",
-            "fullDate": "May 23, 2026",
-            "content1": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
-            "content2": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
+            "title": "Revolutionizing Air Travel: The NextTech Smart Airport Concept",
+            "image": "/NewsPageImages/smart-airport.png",
+            "date": "05 Feb 2026",
+            "author": "Tech Lead",
+            "category": "Technology",
+            "fullDate": "February 05, 2026",
+            "content1": "The modern traveler expects a seamless journey from curb to gate. Our latest smart airport project at NextTech integrates biometric boarding, AI-driven baggage handling, and real-time passenger flow management. By leveraging IoT sensors throughout the terminal, we can predict bottlenecks before they happen.",
+            "content2": "This isn't just about efficiency; it's about experience. Our systems automatically adjust lighting and climate based on passenger density, creating a comfortable environment while reducing energy consumption by 40%. The future of aviation is smart, connected, and sustainable.",
             "detailImages": [
-                "/NewsPageImages/service.png",
-                "/NewsPageImages/service.png"
+                "/NewsPageImages/smart-airport.png",
+                "/NewsPageImages/smart-city.png"
             ],
-            "bottomContent1": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
-            "bottomContent2": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
+            "bottomContent1": "Implementation is set to begin in Q3 2026, with a phased rollout ensuring zero disruption to current operations. We are partnering with global aviation leaders to set a new standard for international transit hubs.",
+            "bottomContent2": "Security is paramount. Our integrated surveillance systems utilize advanced analytics to detect anomalies in real-time, providing security personnel with actionable intelligence without compromising passenger privacy.",
             "tags": [
-                "software",
-                "Consulting",
-                "construction",
-                "higher education",
-                "university",
-                "kau",
-                "atp",
-                "software",
-                "technology"
+                "Aviation",
+                "Smart Airport",
+                "IoT",
+                "Travel",
+                "Efficiency"
             ]
         },
         {
             "id": 2,
-            "title": "GA engineering receives an award",
-            "image": "/NewsPageImages/service.png",
-            "date": "23 May 2026",
-            "author": "Admin",
-            "category": "technology",
-            "fullDate": "May 23, 2026",
-            "content1": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
-            "content2": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
+            "title": "Building the Backbone of the Internet: High-Efficiency Data Centers",
+            "image": "/NewsPageImages/data-center.png",
+            "date": "01 Feb 2026",
+            "author": "Infrastructure Team",
+            "category": "Infrastructure",
+            "fullDate": "February 01, 2026",
+            "content1": "As cloud computing demand skyrockets, the need for robust data center infrastructure has never been greater. NextTech's latest facility features a modular design that allows for rapid scalability. Our focus is on power usage effectiveness (PUE), achieving a rating of 1.15 compared to the industry average of 1.58.",
+            "content2": "We've implemented liquid cooling solutions for high-density server racks, significantly reducing the energy required for heat dissipation. This facility will support the next generation of AI model training and real-time data processing.",
             "detailImages": [
-                "/NewsPageImages/service.png"
+                "/NewsPageImages/data-center.png"
             ],
-            "bottomContent1": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
-            "bottomContent2": "GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA transformer. GA engineering has been awarded the project for Diredawa university to supply and install 1000KVA",
+            "bottomContent1": "Sustainability is core to our design. The facility is powered 100% by renewable energy sources, including an on-site solar farm and grid-scale battery storage.",
+            "bottomContent2": "This project represents a clear shift towards green computing. By optimizing both the physical infrastructure and the software management layers, we are reducing the carbon footprint of digital services.",
             "tags": [
-                "software",
-                "Consulting",
-                "construction",
-                "higher education",
-                "university",
-                "kau",
-                "atp",
-                "software",
-                "technology"
+                "Data Center",
+                "Cloud",
+                "Sustainability",
+                "Green Energy",
+                "Infrastructure"
             ]
         },
         {
             "id": 3,
-            "title": "Completing the Landmark Heritage Bridge Project",
-            "image": "/NewsPageImages/service.png",
-            "date": "20 Oct 2026",
-            "author": "Project Mgr",
-            "category": "construction",
-            "fullDate": "October 20, 2026",
+            "title": "Electrifying the Future: Expansion of EV Charging Networks",
+            "image": "/NewsPageImages/ev-charging.png",
+            "date": "28 Jan 2026",
+            "author": "Green Energy Div",
+            "category": "Innovation",
+            "fullDate": "January 28, 2026",
             "content": [
-                "After three years of meticulous labor, the Heritage Bridge Project has reached completion. This landmark project restores a vital transport link while preserving the historical aesthetic of the region.",
-                "Our engineers balanced modern structural requirements with period-accurate materials, ensuring the bridge can withstand heavy traffic for the next century."
+                "Electric vehicle adoption is accelerating, and infrastructure must keep pace. NextTech is proud to announce the installation of 500 new ultra-fast charging stations across the region. These stations are capable of adding 200 miles of range in just 15 minutes.",
+                "Our stations are designed with the user in mind, featuring weather protection, good lighting, and integrated payment systems. We are also testing vehicle-to-grid (V2G) technology, allowing cars to discharge power back to the grid during peak demand."
             ],
             "detailImages": [
-                "/NewsPageImages/service.png",
-                "/NewsPageImages/service.png"
+                "/NewsPageImages/ev-charging.png"
             ],
             "bottomContent": [
-                "The bridge serves as a symbol of our commitment to both progress and heritage. It now facilitates the movement of over 20,000 vehicles daily.",
-                "Local communities have praised the project for its contribution to regional tourism and connectivity."
+                "The shift to electric mobility is a critical component of our environmental strategy. By making charging accessible and reliable, we remove the primary barrier to EV adoption.",
+                "We are collaborating with local municipalities to ensure equitable distribution of charging points in both urban and suburban areas."
             ],
             "tags": [
-                "Infrastructure",
-                "Heritage",
-                "Construction",
-                "Success"
+                "EV",
+                "Sustainability",
+                "Automotive",
+                "Green Tech"
             ]
         },
         {
             "id": 4,
-            "title": "Streamlined Project Management with Next-Gen Software",
-            "image": "/NewsPageImages/service.png",
-            "date": "22 Oct 2026",
-            "author": "IT Solutions",
-            "category": "technology",
-            "fullDate": "October 22, 2026",
-            "content": [
-                "Managing multi-million dollar projects requires precision and transparency. We've transitioned to a new software suite that offers real-time tracking of budgets, materials, and labor hours.",
-                "This digital transformation has already reduced administrative overhead by 30%, allowing our project managers to focus on site-level execution and safety compliance."
-            ],
+            "title": "Smart Cities: Integrating Data into Urban Fabric",
+            "image": "/NewsPageImages/smart-city.png",
+            "date": "20 Jan 2026",
+            "author": "Urban Planner",
+            "category": "Smart City",
+            "fullDate": "January 20, 2026",
+            "content1": "A smart city is more than just sensors; it's about improving the quality of life for its citizens. Our pilot program in the downtown district utilizes adaptive traffic signals that respond to real-time traffic flow, reducing commute times by 20%.",
+            "content2": "Data from these systems also helps city planners understand usage patterns, leading to better decisions about public transit routes and infrastructure investments. The visible 'nervous system' of the city is becoming a reality.",
             "detailImages": [
-                "/NewsPageImages/service.png"
+                "/NewsPageImages/smart-city.png",
+                "/NewsPageImages/smart-airport.png"
             ],
-            "bottomContent": [
-                "Transparency with our clients is a top priority. The new platform includes a client dashboard, providing visibility into project milestones as they are reached.",
-                "Data-driven decision-making is the future of the construction industry, and we are proud to lead the way."
-            ],
+            "bottomContent1": "Privacy and security are built into the architecture from day one. All data is anonymized and encrypted, ensuring that the benefits of a smart city do not come at the cost of civil liberties.",
+            "bottomContent2": "The feedback from the community has been overwhelmingly positive. Reduced congestion means less pollution and more time spent with family.",
             "tags": [
-                "Software",
-                "Management",
-                "Efficiency",
-                "Digital Transformation"
+                "Smart City",
+                "Urban Planning",
+                "Traffic",
+                "Big Data"
             ]
         },
         {
             "id": 5,
-            "title": "Modernizing Higher Education: The Global Campus Expansion",
-            "image": "/NewsPageImages/service.png",
-            "date": "25 Oct 2026",
-            "author": "Admin",
-            "category": "university",
-            "fullDate": "October 25, 2026",
+            "title": "The Art of Modern Construction Management",
+            "image": "/NewsPageImages/construction-site.png",
+            "date": "15 Jan 2026",
+            "author": "Project Mgr",
+            "category": "Construction",
+            "fullDate": "January 15, 2026",
             "content": [
-                "We are proud to announce our partnership in the expansion of the Global University campus. The project includes three new research labs and a 500-seat lecture hall designed for collaboration.",
-                "The architecture features flexible learning spaces that can adapt to different teaching styles, supporting a multi-disciplinary approach to higher education."
+                "Complex engineering projects require a symphony of coordination. At NextTech, we utilize Building Information Modeling (BIM) to create digital twins of our structures before a single shovel hits the ground. This allows us to clash-detect systems and optimize schedules.",
+                "On-site, we deploy augmented reality tools that allow supervisors to overlay digital plans onto the physical reality, ensuring precision to the millimeter."
             ],
             "detailImages": [
-                "/NewsPageImages/service.png",
-                "/NewsPageImages/service.png"
+                "/NewsPageImages/construction-site.png"
             ],
             "bottomContent": [
-                "Education is the foundation of progress. By providing world-class facilities, we are helping the next generation of innovators thrive in a competitive world.",
-                "The buildings also feature state-of-the-art climate control systems for laboratory precisely."
+                "Safety is our culture. We have achieved 5 million man-hours without a lost-time incident on our flagship commercial tower project.",
+                "Technology empowers our workers, it does not replace them. It gives them the tools to do their best work safely and efficiently."
             ],
             "tags": [
-                "Education",
-                "Architecture",
-                "University",
-                "Growth"
+                "Construction",
+                "BIM",
+                "Management",
+                "Safety"
             ]
-        },
-        {
-            "id": 6,
-            "title": "Architectural Trends: The Rise of Biophilic Skyscapes",
-            "image": "/NewsPageImages/service.png",
-            "date": "30 Oct 2026",
-            "author": "Design Principal",
-            "category": "construction",
-            "fullDate": "October 30, 2026",
-            "content": [
-                "Biophilic design, which incorporates nature into the built environment, is reshaping the skylines of major cities. Vertical forests and rooftop ecosystems are becoming standard in high-rise developments.",
-                "Our latest concept for the Metropolis Tower includes 2,000 square meters of vertical greenery, improving air quality and natural insulation for residents."
-            ],
-            "detailImages": [
-                "/NewsPageImages/service.png"
-            ],
-            "bottomContent": [
-                "Living among nature in a dense urban environment improves mental well-being and reduces the 'heat island' effect common in large cities.",
-                "As architects, our duty is to create spaces that nourish both the planet and the people who inhabit them."
-            ],
-            "tags": [
-                "Architecture",
-                "Biophilia",
-                "Skyscrapers",
-                "Well-being"
-            ]
-        },
-        {
-            "id": 7,
-            "title": "Smart Cities: The Intersection of Data and Infrastructure",
-            "image": "/NewsPageImages/service.png",
-            "date": "02 Nov 2026",
-            "author": "Tech Lead",
-            "category": "technology",
-            "fullDate": "November 02, 2026",
-            "content": [
-                "Smart cities are leveraging IoT sensors to optimize traffic flow and energy usage. We are at the forefront of this revolution.",
-                "Our latest pilot program reduced energy consumption in municipal buildings by 15%."
-            ],
-            "detailImages": ["/NewsPageImages/service.png"],
-            "bottomContent": ["This data-driven approach is the blueprint for future urban development."],
-            "tags": ["Smart City", "IoT", "Data", "Efficiency"]
-        },
-        {
-            "id": 8,
-            "title": "Sustainable Materials 101: Beyond Concrete",
-            "image": "/NewsPageImages/service.png",
-            "date": "05 Nov 2026",
-            "author": "Green Team",
-            "category": "construction",
-            "fullDate": "November 05, 2026",
-            "content": [
-                "Exploring alternatives to traditional concrete, such as bamboo-reinforced composites and recycled plastics.",
-                "These materials offer comparable strength with a significantly lower carbon footprint."
-            ],
-            "detailImages": ["/NewsPageImages/service.png"],
-            "bottomContent": ["Adopting these materials is essential for meeting international climate goals."],
-            "tags": ["Sustainability", "Materials", "Green", "Innovation"]
-        },
-        {
-            "id": 9,
-            "title": "The Future of Remote Work in Civil Engineering",
-            "image": "/NewsPageImages/service.png",
-            "date": "08 Nov 2026",
-            "author": "HR Dept",
-            "category": "management",
-            "fullDate": "November 08, 2026",
-            "content": [
-                "Remote work utilizing VR site inspections is becoming a reality. Engineers can now tour a site halfway across the world without leaving their office.",
-                "This capability increases collaboration while reducing travel costs and emissions."
-            ],
-            "detailImages": ["/NewsPageImages/service.png"],
-            "bottomContent": ["Virtual reality tools are being rolled out across all our major hubs."],
-            "tags": ["Remote Work", "VR", "Management", "Future"]
-        },
-        {
-            "id": 10,
-            "title": "Renewable Energy Integration in Commercial Buildings",
-            "image": "/NewsPageImages/service.png",
-            "date": "12 Nov 2026",
-            "author": "Energy Div",
-            "category": "construction",
-            "fullDate": "November 12, 2026",
-            "content": [
-                "Integrating solar films into window glass allows skyscrapers to generate their own power.",
-                "We are testing this technology on the new downtown financial center."
-            ],
-            "detailImages": ["/NewsPageImages/service.png"],
-            "bottomContent": ["Energy independence is a key selling point for modern commercial real estate."],
-            "tags": ["Energy", "Solar", "Commercial", "Green"]
-        },
-        {
-            "id": 11,
-            "title": "Cybersecurity in Critical Infrastructure",
-            "image": "/NewsPageImages/service.png",
-            "date": "15 Nov 2026",
-            "author": "Security Ops",
-            "category": "technology",
-            "fullDate": "November 15, 2026",
-            "content": [
-                "As infrastructure becomes more connected, the risk of cyberattacks increases. We are implementing military-grade encryption.",
-                "Protecting the power grid and water supply is as important as building them."
-            ],
-            "detailImages": ["/NewsPageImages/service.png"],
-            "bottomContent": ["Our security team operates 24/7 to monitor threats."],
-            "tags": ["Security", "Cyber", "Infrastructure", "Tech"]
-        },
-        {
-            "id": 12,
-            "title": "Modular Construction: Speed and Precision",
-            "image": "/NewsPageImages/service.png",
-            "date": "18 Nov 2026",
-            "author": "Ops Lead",
-            "category": "construction",
-            "fullDate": "November 18, 2026",
-            "content": [
-                "Prefabricated modules allow for rapid assembly on-site, reducing construction time by up to 50%.",
-                "Quality control is also improved as modules are built in a controlled factory environment."
-            ],
-            "detailImages": ["/NewsPageImages/service.png"],
-            "bottomContent": ["We are expanding our modular production facility next year."],
-            "tags": ["Modular", "Speed", "Construction", "Efficiency"]
-        },
-        {
-            "id": 13,
-            "title": "A Day in the Life of a NextTech Site Manager",
-            "image": "/NewsPageImages/service.png",
-            "date": "20 Nov 2026",
-            "author": "Guest Post",
-            "category": "Career",
-            "fullDate": "November 20, 2026",
-            "content": [
-                "From morning safety briefings to evening log updates, a site manager's day is packed with challenges and rewards.",
-                "Coordinate between diverse teams is the key to a successful project."
-            ],
-            "detailImages": ["/NewsPageImages/service.png"],
-            "bottomContent": ["Join our team to experience the excitement of building the future."],
-            "tags": ["Career", "Management", "Daily Life", "People"]
-        },
-        {
-            "id": 14,
-            "title": "Navigating Zoning Laws in Emerging Markets",
-            "image": "/NewsPageImages/service.png",
-            "date": "22 Nov 2026",
-            "author": "Legal Team",
-            "category": "university",
-            "fullDate": "November 22, 2026",
-            "content": [
-                "Understanding local regulations is crucial for international expansion. Our legal team shares insights.",
-                "Building strong relationships with local councils ensures smooth project approval."
-            ],
-            "detailImages": ["/NewsPageImages/service.png"],
-            "bottomContent": ["Compliance is non-negotiable in our operations."],
-            "tags": ["Legal", "Zoning", "International", "Growth"]
-        },
-        {
-            "id": 15,
-            "title": "Robotics in Hazardous Construction Zones",
-            "image": "/NewsPageImages/service.png",
-            "date": "25 Nov 2026",
-            "author": "R&D",
-            "category": "technology",
-            "fullDate": "November 25, 2026",
-            "content": [
-                "Using robots for demolition and toxic waste cleanup keeps human workers safe.",
-                "Our remote-controlled units can operate in extreme temperatures."
-            ],
-            "detailImages": ["/NewsPageImages/service.png"],
-            "bottomContent": ["Safety innovation is a core value at NextTech."],
-            "tags": ["Robotics", "Safety", "Tech", "R&D"]
         }
     ]
 };
