@@ -40,7 +40,7 @@ const Hero = () => {
             <span className="text-primary md:text-[2.8rem] font-bold sm:text-4xl text-4xl lg:text-5xl xl:text-7xl">Solution</span>
 
             <p className="text-[#666666] text-lg md:text-xl lg:text-2xl">
-            Founded in 2010, NextTech is a private company dedicated to providing innovative technological  solutions in the world.
+            Founded in 2009, NextTech is a private company dedicated to providing innovative technological  solutions in the world.
             </p>
 
             <div className="lg:pt-6">
