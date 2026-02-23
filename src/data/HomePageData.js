@@ -11,7 +11,7 @@ import { FaChartLine, FaBriefcase, FaAward } from 'react-icons/fa';
 import { HiMiniUserGroup } from "react-icons/hi2";
 export const statsData = [
   { id: 1, icon: HiMiniUserGroup, value: "315", label: "Best Client", hasPlus: true },
-  { id: 2, icon: FaChartLine,     value: "12 Years", label: "Experience", hasPlus: false },
+  { id: 2, icon: FaChartLine,     value: "17 Years", label: "Experience", hasPlus: false },
   { id: 3, icon: FaBriefcase,     value: "205", label: "Projects", hasPlus: true },
   { id: 4, icon: FaAward,         value: "51", label: "Awards", hasPlus: true },
   
@@ -20,19 +20,14 @@ export const statsData = [
 export const aboutData = {
   subtitle: "01 - ABOUT US",
   title: "Technology, Science, Artificial Intelligence with Passion",
-  description: "NextTech is a private company established in 2010. We specialize in Providing Better Services for Supply And Installation Works of Electro-Mechanical and related Equipment In Ethiopia.",
-  subDescription: "Our Company is well experienced in this sector and has multiple professionals from different fields. Our company's constant endeavor has been to extend our expertise in",
+  description: "NextTech delivers smart engineering and technology solutions across transport systems, infrastructure, power, electromechanical works, IT, and AI-driven platforms.",
+  subDescription: "We provide end-to-end services from supply and installation to commissioning and consultancy across sectors including healthcare, agriculture, EV systems, warehouses, cold rooms, machinery, telecommunications, and advanced industrial solutions.",
   
   features: [
-    { id: 1, title: "Vision", desc: "To maintain the highest levels of quality services so that we can provide the best engineering services in the country." },
+    { id: 1, title: "Vision", desc: "To maintain the highest levels of quality services so that we can provide the best engineering services internationally." },
     { id: 2, title: "Mission", desc: "To exceed the expectation of the customers & provide them with the best engineering services & the most reliable support system." },
-    { 
-      id: 3, 
-      title: "Goal", 
-      desc: "To deliver innovative and efficient engineering solutions by leveraging our experience, expertise, and commitment to continuous improvement." 
-    },
-    
-    { id: 4, title: "Target", desc: "To gradually expand our scope & become a renowned solution providers." },
+    { id: 3, title: "Goal", desc: "To deliver innovative and efficient engineering solutions by leveraging our experience, expertise, and commitment to continuous improvement." },
+    { id: 4, title: "Target", desc: "To gradually expand our scope & become a renowned solution provider in the world." },
     
   ]
 };
@@ -42,20 +37,19 @@ import { FaCheckCircle } from 'react-icons/fa';
 export const workData = {
   subtitle: "02 - SOME OF OUR WORK",
   title: "Technology with Passion",
-  description1: "Established in 2010, NextTech has spent over a decade at the forefront of the industry, specializing in the precision supply and expert installation of advanced electro-mechanical systems. We bridge the gap between complex engineering and seamless operational efficiency.",
-  description2: "Operating with a global perspective, we deliver world class infrastructure solutions from high security ports to intelligent building management. Our commitment is to provide integrated, turnkey services that empower modern industries to thrive.",
-  features: [
-    { id: 1, icon: FaCheckCircle, text: "Smart Airport,sea port,Dry port systems  " },
-    { id: 2, icon: FaCheckCircle, text: "Installation and configuration of HVAC, fire safety, and CCTV systems" },
-    { id: 3, icon: FaCheckCircle, text: "IT Infrastructure  data center Building" },
-    { id: 4, icon: FaCheckCircle, text: "smart BMS System" },
-    { id: 5, icon: FaCheckCircle, text: "Supply of conveyor belts " },
-    { id: 6, icon: FaCheckCircle, text: "Audiovisual system " },
-    { id: 7, icon: FaCheckCircle, text: "Telecom and Communication Systems " },
-    { id: 8, icon: FaCheckCircle, text: "Ware house Building " },
-    { id: 9, icon: FaCheckCircle, text: "Ware house Building" },
-    { id: 10, icon: FaCheckCircle, text: "supply and instillation of Advertising materials and machineries " },
-    { id: 11, icon: FaCheckCircle, text: "Smart traffic management system " },
+  description1: "Established in 2009, NextTech has spent over  decades delivering smart engineering and advanced electro-mechanical solutions across transport systems, infrastructure, power, IT, and AI-driven platforms. We specialize in the precision supply and expert installation of complex systems, bridging the gap between engineering excellence and seamless operational efficiency.",
+  description2: "Operating with a global perspective, we provide integrated, turnkey services—from design and supply to installation, commissioning, and consultancy—serving sectors including high-security ports, intelligent buildings, healthcare, agriculture, EV systems, telecommunications, warehouses, cold rooms, and advanced industrial solutions.",
+  features: [ 
+    { id: 1,   icon: FaCheckCircle,   text: "Smart Airport,sea port,Dry port systems  " },
+    { id: 2,   icon: FaCheckCircle,   text: "Installation and configuration of HVAC, fire safety, and CCTV systems" },
+    { id: 3,   icon: FaCheckCircle,   text: "IT Infrastructure  data center Building" },
+    { id: 4,   icon: FaCheckCircle,   text: "smart BMS System" },
+    { id: 5,   icon: FaCheckCircle,   text: "Supply of conveyor belts " },
+    { id: 6,   icon: FaCheckCircle,   text: "Audiovisual system " },
+    { id: 7,   icon: FaCheckCircle,   text: "Telecom and Communication Systems " },
+    { id: 8,   icon: FaCheckCircle,   text: "Ware house Building " },
+    { id: 9,   icon: FaCheckCircle,   text: "supply and instillation of Advertising materials and machineries " },
+    { id: 10,  icon: FaCheckCircle,   text: "Smart traffic management system " },
 
     
 
@@ -94,9 +88,9 @@ export const clientsData = {
 
 export const recentProjects = {
   subtitle: "04 - RECENT PROJECTS",
-  title: "Technology with Passion",
+  title: "Delivering Smart Solutions with Excellence",
   description: [
-    "Founded in 2010, NextTech delivers advanced engineering solutions driven by innovation and technical excellence.",
+    "Founded in 2009, NextTech delivers advanced engineering solutions driven by innovation and technical excellence.",
     "Our expertise spans supply and installation works, executed with precision, quality assurance, and a passion for modern technology."
   ],
   

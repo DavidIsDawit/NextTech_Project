@@ -224,21 +224,21 @@ const services = [
       ]
     },
   },
- {
+  {
     id: 15,
-    title: "Ware House Building",
-    subtitle: "Design and Functional Importance",
-    heroImage: "/ServicesPageImage/TrafficManagementMain.png",
+    title: "Supply and Installation of Advertising Materials and Machinery",
+    subtitle: "Advertising Solutions, Installation, and Maintenance",
+    heroImage: "/ServicesPageImage/SupplyInstallationMain.png",
     content: {
       paragraphs: [
-        "Our smart traffic management system utilizes advanced technologies such as sensors, real-time data analytics, and intelligent communication tools to optimize traffic flow and improve road safety in urban environments. The system includes adaptive traffic signals that adjust dynamically based on vehicle density, as well as real-time information delivery to drivers through digital signage and mobile applications."
+        "The supply and installation of advertising materials and machinery involve providing a wide range of promotional products, including banners, signage, posters, digital displays, and point-of-sale materials. This service also includes the provision of printing, cutting, and display equipment required for high-quality production. Proper planning ensures that advertising materials are visually effective and aligned with branding and marketing objectives."
       ],
-      gallery: ["/ServicesPageImage/TrafficManagement1.png", "/ServicesPageImage/TrafficManagement2.png"],
+      gallery: ["/ServicesPageImage/SupplyInstallation1.png", "/ServicesPageImage/SupplyInstallation2.png"],
       subparagraphs: [
-        "Additionally, the system integrates public transportation management, smart parking solutions, and pedestrian safety measures such as intelligent crosswalks. Environmental monitoring and data analysis support sustainable urban planning by reducing congestion, emissions, and travel delays. Overall, this system enhances urban mobility, increases efficiency, and contributes to safer and more sustainable transportation networks."
+        "The installation process covers site assessment, design coordination, transportation logistics, and secure mounting of displays at designated locations. Ongoing maintenance and technical support, such as inspections, repairs, and content updates, are essential to ensure long-term functionality and performance. Key considerations include compliance with local regulations, accurate audience targeting, cost control, and adherence to project timelines."
       ]
     },
-  }, 
+  },
 
   
 ];

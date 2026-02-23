@@ -12,13 +12,13 @@ export const aboutData = {
     {
       id: 2,
       title: "Vission",
-      text: "To maintain the highest levels of quality services so that we can provide the best engineering services in the country. ",
+      text: "To maintain the highest levels of quality services so that we can provide the best engineering services internationally. ",
       icon: "/AboutUsPageImages/EyeICon.png" 
     },
     {
       id: 3,
       title: "Target",
-      text: "To gradually expand our scope & become a renowned solution providers.",
+      text: "To gradually expand our scope & become a renowned solution provider in the world.",
       icon: "/AboutUsPageImages/MoreTargetIcon.png" 
     }
   ]
@@ -57,15 +57,36 @@ export const workflowData = {
       text: "We create a detailed strategy to ensure smooth execution.",
       icon: "/AboutUsPageImages/headset_icons.png",
       stepColor: "bg-gray-100 text-gray-800"
-    }
-    ,
+    },
+   
     {
-      id: "05",
+      id: "I",
+      title: "Find New Ideas",
+      text: "We explore fresh ideas by carefully understanding your needs to deliver the right solution.",
+      icon: "/AboutUsPageImages/bulb_icons.png", 
+      stepColor: "bg-gray-100 text-gray-800"
+    },
+    {
+      id: "II",
+      title: "Analysis",
+      text: "We thoroughly analyze your needs to offer the best solution.",
+      icon: "/AboutUsPageImages/search_icons.png",
+      stepColor: "bg-gray-100 text-gray-800"
+    },
+    {
+      id: "III",
+      title: "Research",
+      text: "We conduct in-depth research to understand your requirements and provide the most effective solution.",
+      icon: "/AboutUsPageImages/chart_icons.png",
+      stepColor: "bg-gray-100 text-gray-800"
+    },
+    {
+      id: "IV",
       title: "Planning",
       text: "We create a detailed strategy to ensure smooth execution.",
       icon: "/AboutUsPageImages/headset_icons.png",
       stepColor: "bg-gray-100 text-gray-800"
-    }
-
+    },
+    
   ]
 };
