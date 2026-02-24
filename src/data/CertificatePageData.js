@@ -1,10 +1,11 @@
 import certificate_pic from "/CertificatePageImage/certificate_pic.png";
 import img_icon from "/CertificatePageImage/Certificate_Icon.png";
+import award from "/CertificatePageImage/award.jpg";
 export default [
      {
     id: 0,
     images: [
-       certificate_pic,
+      award,
        certificate_pic,
        certificate_pic,
         certificate_pic,
