@@ -127,7 +127,7 @@ export const portfolioProjects = [
       "Ensured precise air quality and temperature controls for surgical theaters and patient rooms.",
       "Integrated emergency fire suppression and smoke extraction systems."
     ],
-    image: "/PortfolioPageImage/portfolio5.jpg",
+    image: "/PortfolioPageImage/Havac.png",
     teamMembers: [
       { id: 1, image: "/GalleryPageImage/gallery6_1.jpg" },
       { id: 2, image: "/GalleryPageImage/gallery6_2.jpg" }
