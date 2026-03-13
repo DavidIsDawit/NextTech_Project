@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
+import { usePartners } from "../../hooks/usePartnerHooks";
 import { clientsData } from "../../data/HomePageData";
 
 const LogoCard = ({ logo }) => (
-  <div 
+  <div
     className="w-full max-w-[170px] h-[59px] 
                sm:max-w-[200px] sm:h-[85px] 
                md:max-w-[220px] md:h-[95px] 
@@ -15,29 +16,38 @@ const LogoCard = ({ logo }) => (
       flex items-center justify-center 
       p-1 "
   >
-    <img 
-      src={logo.src} 
-      alt={logo.alt} 
-      className="max-w-[100%] max-h-[100%]" 
+    <img
+      src={logo.src || logo.image}
+      alt={logo.alt || logo.name || "client logo"}
+      className="max-w-[100%] max-h-[100%]"
     />
   </div>
 );
 
 LogoCard.propTypes = {
   logo: PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    src: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    src: PropTypes.string,
+    image: PropTypes.string,
+    alt: PropTypes.string,
+    name: PropTypes.string,
   }).isRequired,
 };
 
 const Clients = () => {
-  const { subtitle, title, blogTitle, logos } = clientsData;
+  const { subtitle, title, blogTitle } = clientsData;
+  const { data: logos, loading, error } = usePartners();
+
+  if (loading) return (
+    <div className="flex justify-center py-20 text-primary font-bold">
+      Loading Partners...
+    </div>
+  );
 
   return (
     <section className="py-10 md:py-24 lg:py-32 bg-[#FCFDFF] overflow-hidden">
       <div className=" mx-auto px-6">
-        
+
         {/* Header Section */}
         <div className="text-center mb-12 md:mb-24">
           <span className="text-[#00AEEF] font-bold text-xs md:text-lg tracking-[0.2em] uppercase block mb-3">
@@ -49,36 +59,50 @@ const Clients = () => {
           </h2>
         </div>
 
-        {/* MOBILE VIEW: Exact 2-Column Grid as per your screenshot */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:hidden justify-items-center">
-          {logos.map((logo) => (
-            <LogoCard key={logo.id} logo={logo} />
-          ))}
-        </div>
-
-        {/* DESKTOP VIEW: Exact 4-5-4 Staggered Layout */}
-        <div className="hidden lg:flex flex-col items-center gap-8 lg:gap-10">
-          {/* Row 1 (4 logos) */}
-          <div className="flex justify-center gap-8 w-full">
-            {logos.slice(0, 4).map((logo) => (
-              <LogoCard key={logo.id} logo={logo} />
-            ))}
+        {error && (
+          <div className="text-center text-red-500 mb-8 bg-red-50 p-4 rounded-lg max-w-xl mx-auto">
+            Unauthorized: Please login to view partners data from the backend.
           </div>
+        )}
 
-          {/* Row 2 (5 logos) - Physically wider to create stagger */}
-          <div className="flex justify-center gap-8 w-full">
-            {logos.slice(4, 9).map((logo) => (
-              <LogoCard key={logo.id} logo={logo} />
-            ))}
+        {!logos || logos.length === 0 ? (
+          <div className="text-center text-gray-400 py-10">
+            No partners found in the backend.
           </div>
+        ) : (
+          <>
+            {/* MOBILE VIEW */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:hidden justify-items-center">
+              {logos.map((logo, index) => (
+                <LogoCard key={logo.id || `mobile-${index}`} logo={logo} />
+              ))}
+            </div>
 
-          {/* Row 3 (4 logos) */}
-          <div className="flex justify-center gap-8 w-full">
-            {logos.slice(9, 13).map((logo) => (
-              <LogoCard key={logo.id} logo={logo} />
-            ))}
-          </div>
-        </div>
+            {/* DESKTOP VIEW: Exact 4-5-4 Staggered Layout */}
+            <div className="hidden lg:flex flex-col items-center gap-8 lg:gap-10">
+              {/* Row 1 (4 logos) */}
+              <div className="flex justify-center gap-8 w-full">
+                {logos.slice(0, 4).map((logo, index) => (
+                  <LogoCard key={logo.id || `row1-${index}`} logo={logo} />
+                ))}
+              </div>
+
+              {/* Row 2 (5 logos) */}
+              <div className="flex justify-center gap-8 w-full">
+                {logos.slice(4, 9).map((logo, index) => (
+                  <LogoCard key={logo.id || `row2-${index}`} logo={logo} />
+                ))}
+              </div>
+
+              {/* Row 3 (4 logos) */}
+              <div className="flex justify-center gap-8 w-full">
+                {logos.slice(9, 13).map((logo, index) => (
+                  <LogoCard key={logo.id || `row3-${index}`} logo={logo} />
+                ))}
+              </div>
+            </div>
+          </>
+        )}
 
       </div>
     </section>

@@ -1,20 +1,25 @@
 import { useState } from "react";
-import faqData, { faqImage } from "../../data/FaqPageData";
+import { useFAQs } from "../../hooks/useFAQHooks";
+import { faqImage } from "../../data/FaqPageData";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 
 export default function Faq() {
+  const { data: faqData, loading, error } = useFAQs();
   const [openIndex, setOpenIndex] = useState(0);
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  if (loading) return <div className="flex justify-center py-20">Loading FAQs...</div>;
+  if (error) return <div className="flex justify-center py-20 text-red-500">Error loading FAQs.</div>;
+
   return (
     <section className="py-12 xs:py-16 md:py-10 lg:py-24 xl:py-16 bg-white overflow-hidden">
       <div className="font-sans mx-auto px-5 xs:px-6 sm:px-10 lg:px-20 xl:pl-32 xl:pr-24">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xs:gap-14 lg:gap-10 xl:gap-20 items-start">
-          
+
           {/* ================= LEFT SIDE: Header & Image ================= */}
           <div className="flex flex-col lg:sticky ">
             <p className="text-base font-semibold text-primary  mb-3 xs:mb-4">
@@ -29,12 +34,12 @@ export default function Faq() {
               <img
                 src={faqImage}
                 alt="FAQ Illustration"
-               className="w-full mx-auto object-contain"
+                className="w-full mx-auto object-contain"
               />
             </div>
           </div>
 
-         {/* Right Side - Accordion */}
+          {/* Right Side - Accordion */}
           <div className="space-y-4 ">
             {faqData.map((item, index) => (
               <div
@@ -43,11 +48,10 @@ export default function Faq() {
               >
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className={`w-full px-6 py-5 lg:py-3  xl:px-6 xl:py-5 flex items-center border rounded-md justify-between text-left transition-all duration-300 ${
-                    openIndex === index
-                      ? "bg-gray-900 text-white "
-                      : "text-gray-900 border-gray-400   hover:bg-gray-100"
-                  }`}
+                  className={`w-full px-6 py-5 lg:py-3  xl:px-6 xl:py-5 flex items-center border rounded-md justify-between text-left transition-all duration-300 ${openIndex === index
+                    ? "bg-gray-900 text-white "
+                    : "text-gray-900 border-gray-400   hover:bg-gray-100"
+                    }`}
                   aria-expanded={openIndex === index}
                 >
                   <span className="text-xl lg:text-base xl:text-xl p-1  font-semibold pr-4">

@@ -1,20 +1,24 @@
 import { useState, useRef, useEffect, useMemo } from "react" // Added useMemo
 import PortfolioCard from "./PortfolioCard"
 import Pagination from "../Pagination";
-import { portfolioProjects } from "../../data/PortfolioPageData";
+import { usePortfolio } from "../../hooks/usePortfolioHooks";
 
 export default function PortfolioSection() {
-  const scrollRef = useRef(null); 
-  
+  const scrollRef = useRef(null);
+  const { data: portfolioProjects, loading, error } = usePortfolio();
+
   // FIXED: Wrapped in useMemo to prevent unnecessary re-renders and fix the warning
-  const projectCategories = useMemo(() => [
-    "All", 
-    ...new Set(portfolioProjects.map((item) => item.category))
-  ], []);
+  const projectCategories = useMemo(() => {
+    if (!portfolioProjects) return ["All"];
+    return [
+      "All",
+      ...new Set(portfolioProjects.map((item) => item.category))
+    ];
+  }, [portfolioProjects]);
 
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [currentPage, setCurrentPage] = useState(1)
-  const [currentItems, setCurrentItems] = useState([]); 
+  const [currentItems, setCurrentItems] = useState([]);
 
   const ITEMS_PER_PAGE = 6
 
@@ -40,7 +44,7 @@ export default function PortfolioSection() {
   useEffect(() => {
     const index = projectCategories.indexOf(selectedCategory);
     const container = scrollRef.current;
-    
+
     if (container) {
       const buttons = container.querySelectorAll("button");
       const activeButton = buttons[index];
@@ -51,7 +55,7 @@ export default function PortfolioSection() {
         const buttonWidth = activeButton.offsetWidth;
 
         const targetScroll = buttonLeft - (containerWidth / 2) + (buttonWidth / 2);
-        
+
         container.scrollTo({
           left: targetScroll,
           behavior: "smooth"
@@ -60,10 +64,12 @@ export default function PortfolioSection() {
     }
   }, [selectedCategory, projectCategories]); // Warning fixed here
 
-  const filteredItems =
-    selectedCategory === "All"
+  const filteredItems = useMemo(() => {
+    if (!portfolioProjects) return [];
+    return selectedCategory === "All"
       ? portfolioProjects
       : portfolioProjects.filter((item) => item.category === selectedCategory);
+  }, [selectedCategory, portfolioProjects]);
 
   const totalPages = Math.ceil(filteredItems.length / ITEMS_PER_PAGE);
 
@@ -75,8 +81,16 @@ export default function PortfolioSection() {
   const activeDotIndex = Math.floor(categoryIndex / 3)
   const totalDots = Math.ceil(projectCategories.length / 3)
 
+  if (loading) return <div className="flex justify-center py-20 font-bold text-primary">Loading portfolio...</div>;
+
   return (
     <div className="font-sans px-5 xs:px-6 md:px-12 lg:px-20 xl:px-20 2xl:px-28 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24">
+
+      {error && (
+        <div className="text-center text-red-500 mb-8 bg-red-50 p-4 rounded-lg max-w-xl mx-auto font-semibold">
+          Unauthorized: Please login to view portfolio items from the backend.
+        </div>
+      )}
       <div className="text-center mb-8 xs:mb-10 sm:mb-12">
         <p className="text-primary font-semibold text-base xs:text-lg mb-4 uppercase tracking-widest">
           Work with us
@@ -89,23 +103,22 @@ export default function PortfolioSection() {
           {Array.from({ length: totalDots }).map((_, index) => (
             <span
               key={index}
-              className={`w-2 h-2 rounded-full transition-all duration-500 ${
-                activeDotIndex === index ? "bg-gray-600 scale-125"
-                  : "bg-cyan-100"
-              }`}
+              className={`w-2 h-2 rounded-full transition-all duration-500 ${activeDotIndex === index ? "bg-gray-600 scale-125"
+                : "bg-cyan-100"
+                }`}
             />
           ))}
         </div>
       </div>
 
       <div className="mb-10 sm:mb-14 md:mb-16 lg:mb-20 xl:mb-10 2xl:mb-12 sm:px-28 md:px-36 lg:px-48 xl:px-52 2xl:px-56 flex justify-center">
-        <div 
+        <div
           ref={scrollRef}
           className="w-full max-w-4xl flex overflow-x-auto gap-4 pb-4 
                      cursor-grab active:cursor-grabbing
                      no-scrollbar select-none"
-          style={{ 
-            scrollbarWidth: 'none', 
+          style={{
+            scrollbarWidth: 'none',
             msOverflowStyle: 'none',
             WebkitOverflowScrolling: 'touch'
           }}
@@ -117,10 +130,9 @@ export default function PortfolioSection() {
                 setSelectedCategory(category)
                 setCurrentPage(1)
               }}
-              className={`flex-none px-4 xs:px-5 sm:px-6 md:px-7 lg:px-8 xl:px-6 2xl:px-7 py-2.5 xs:py-3 sm:py-3.5 md:py-4 lg:py-4.5 xl:py-3 text-sm xs:text-base sm:text-base md:text-lg font-semibold whitespace-nowrap rounded-full transition-all duration-500 ease-in-out snap-center ${
-                  selectedCategory === category
-                    ? "text-primary bg-transparent "
-                    : "bg-gray-100 md:bg-transparent text-gray-700 hover:bg-gray-200 hover:text-gray-900"
+              className={`flex-none px-4 xs:px-5 sm:px-6 md:px-7 lg:px-8 xl:px-6 2xl:px-7 py-2.5 xs:py-3 sm:py-3.5 md:py-4 lg:py-4.5 xl:py-3 text-sm xs:text-base sm:text-base md:text-lg font-semibold whitespace-nowrap rounded-full transition-all duration-500 ease-in-out snap-center ${selectedCategory === category
+                ? "text-primary bg-transparent "
+                : "bg-gray-100 md:bg-transparent text-gray-700 hover:bg-gray-200 hover:text-gray-900"
                 }
               `}
             >

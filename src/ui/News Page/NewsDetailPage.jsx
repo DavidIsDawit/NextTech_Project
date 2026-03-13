@@ -11,7 +11,7 @@ function BlogDetail() {
   const { id } = useParams();
   const { posts, categories, tags, recentPosts, searchQuery, setSearchQuery } = useBlog();
 
-  const post = posts.find((p) => p.id === parseInt(id));
+  const post = posts.find((p) => String(p.id) === String(id));
 
   if (!post) {
     return <NotFoundMessage itemType="News" backPath="/news" />;

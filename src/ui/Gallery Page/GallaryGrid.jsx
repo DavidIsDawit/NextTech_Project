@@ -21,6 +21,6 @@ export default function GalleryGrid({ items, onItemClick }) {
 }
 
 GalleryGrid.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object])).isRequired,
   onItemClick: PropTypes.func,
 };

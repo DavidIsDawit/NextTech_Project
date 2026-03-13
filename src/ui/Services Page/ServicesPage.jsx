@@ -1,24 +1,30 @@
-
 import { useState } from "react";
-// import services from "../data/"; 
-import services from "../../data/ServicesPageData";
+import { useServices } from "../../hooks/useServiceHooks";
 import ServiceCard from "./ServiceCard";
 import Pagination from "../Pagination";
 
 const ITEMS_PER_PAGE = 6;
 
-export default function ServicesPage() { 
+export default function ServicesPage() {
+  const { data: services, loading, error } = useServices();
   const [currentPage, setCurrentPage] = useState(1);
-  const [currentServices, setCurrentServices] = useState([]); 
+  const [currentServices, setCurrentServices] = useState([]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
-    
   };
+
+  if (loading) return <div className="flex justify-center py-20 font-bold text-primary">Loading services...</div>;
 
   return (
     <section className="py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 bg-gray-50">
       <div className="px-4 xs:px-5 sm:px-6 md:px-8 lg:px-24 xl:px-28 2xl:pl-[7rem] 2xl:pr-[5rem]">
+
+        {error && (
+          <div className="text-center text-red-500 mb-8 bg-red-50 p-4 rounded-lg max-w-xl mx-auto font-semibold">
+            Unauthorized: Please login to view services from the backend.
+          </div>
+        )}
         {/* Header */}
         <div className="text-center mb-10 xs:mb-12 sm:mb-14 md:mb-16 lg:mb-24 xl:mb-24">
           <p className="text-primary font-semibold uppercase tracking-widest text-xs xs:text-sm sm:text-base md:text-lg mb-2 xs:mb-3">
@@ -45,7 +51,7 @@ export default function ServicesPage() {
             itemsPerPage={ITEMS_PER_PAGE}
             currentPage={currentPage}
             onPageChange={handlePageChange}
-            onDataUpdate={setCurrentServices} 
+            onDataUpdate={setCurrentServices}
           />
         </div>
       </div>

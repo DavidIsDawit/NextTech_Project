@@ -51,7 +51,7 @@ export default function WhyWeOffer() {
 
       <div className="max-w-[1690px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-[100px] ">
-          
+
           {/* LEFT CONTENT */}
           <div className="space-y-6 lg:space-y-10">
             <div className="space-y-4">
@@ -74,85 +74,85 @@ export default function WhyWeOffer() {
               variant="primary"
               size="xl"
               iconAfter={HiChevronRight}>
-             Read More
-           </Button>
+              Read More
+            </Button>
           </div>
 
-      {/* RIGHT SLIDER SECTION */}
-<div className="w-full">
-  {isMobile ? (
-    /* MOBILE VIEW: Horizontal groups of 5 with dynamic dots */
-    <div className="relative">
-      <Swiper
-        direction={"horizontal"}
-        slidesPerView={1}
-        spaceBetween={20}
-        // This connects the dots to the scroll position
-        pagination={{ 
-          clickable: true, 
-          el: '.mobile-dots',
-          bulletActiveClass: 'swiper-pagination-bullet-active' 
-        }}
-        // Updates the activeIndex state when swiping
-        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-        modules={[Autoplay, Pagination]}
-        className="w-full"
-      >
-        {featureGroups.map((group, idx) => (
-          <SwiperSlide key={idx}>
-            <div className="flex flex-col gap-3">
-              {group.map((item) => (
-                <FeatureCard key={item.id} feature={item} isMobile={true} />
-              ))}
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          {/* RIGHT SLIDER SECTION */}
+          <div className="w-full">
+            {isMobile ? (
+              /* MOBILE VIEW: Horizontal groups of 5 with dynamic dots */
+              <div className="relative">
+                <Swiper
+                  direction={"horizontal"}
+                  slidesPerView={1}
+                  spaceBetween={20}
+                  // This connects the dots to the scroll position
+                  pagination={{
+                    clickable: true,
+                    el: '.mobile-dots',
+                    bulletActiveClass: 'swiper-pagination-bullet-active'
+                  }}
+                  // Updates the activeIndex state when swiping
+                  onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+                  modules={[Autoplay, Pagination]}
+                  className="w-full"
+                >
+                  {featureGroups.map((group, idx) => (
+                    <SwiperSlide key={idx}>
+                      <div className="flex flex-col gap-3">
+                        {group.map((item) => (
+                          <FeatureCard key={item.id} feature={item} isMobile={true} />
+                        ))}
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
 
-      {/* THE DOTS: These will now change color based on the scroll position */}
-      <div className="mobile-dots flex justify-center gap-2 mt-8"></div>
-    </div>
-  ) : (
-    /* DESKTOP VIEW: Vertical Individual Slider + Progress Line */
-    <div className="flex items-center gap-8 w-full">
-      <div className="flex-1 h-[600px]">
-        <Swiper
-          direction={"vertical"}
-          slidesPerView={3}
-          spaceBetween={20}
-          loop={true}
-          autoplay={{ delay: 3000 }}
-          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-          modules={[Autoplay]}
-          className="h-full w-full"
-        >
-          {workData.features.map((feature, index) => (
-            <SwiperSlide key={feature.id} className="py-2">
-              <FeatureCard 
-                feature={feature} 
-                isMobile={false} 
-                stagger={index % 2 !== 0}
-                isActive={activeIndex === index}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+                {/* THE DOTS: These will now change color based on the scroll position */}
+                <div className="mobile-dots flex justify-center gap-2 mt-8"></div>
+              </div>
+            ) : (
+              /* DESKTOP VIEW: Vertical Individual Slider + Progress Line */
+              <div className="flex items-center gap-8 w-full">
+                <div className="flex-1 h-[600px]">
+                  <Swiper
+                    direction={"vertical"}
+                    slidesPerView={3}
+                    spaceBetween={20}
+                    loop={true}
+                    autoplay={{ delay: 3000 }}
+                    onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+                    modules={[Autoplay]}
+                    className="h-full w-full"
+                  >
+                    {workData.features.map((feature, index) => (
+                      <SwiperSlide key={feature.id} className="py-2">
+                        <FeatureCard
+                          feature={feature}
+                          isMobile={false}
+                          stagger={index % 2 !== 0}
+                          isActive={activeIndex === index}
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
 
-      {/* THE PROGRESS LINE (DESKTOP ONLY) */}
-      <div className="flex flex-col items-center gap-4 h-[400px]">
-        <span className="text-xs font-bold text-primary">0{activeIndex + 1}</span>
-        <div className="w-[4px] h-full bg-gray-100 relative rounded-full overflow-hidden">
-          <div 
-            className="absolute top-0 left-0 w-full bg-primary transition-all duration-500 ease-out"
-            style={{ height: `${((activeIndex + 1) / totalSlides) * 100}%` }}
-          />
-        </div>
-        <span className="text-xs font-bold text-gray-300">0{totalSlides}</span>
-      </div>
-    </div>
-  )}
-</div>
+                {/* THE PROGRESS LINE (DESKTOP ONLY) */}
+                <div className="flex flex-col items-center gap-4 h-[400px]">
+                  <span className="text-xs font-bold text-primary">0{activeIndex + 1}</span>
+                  <div className="w-[4px] h-full bg-gray-100 relative rounded-full overflow-hidden">
+                    <div
+                      className="absolute top-0 left-0 w-full bg-primary transition-all duration-500 ease-out"
+                      style={{ height: `${((activeIndex + 1) / totalSlides) * 100}%` }}
+                    />
+                  </div>
+                  <span className="text-xs font-bold text-gray-300">0{totalSlides}</span>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
