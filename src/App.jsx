@@ -1,4 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import axios from "axios";
+import generalService from "./api/generalService";
+
 
 import AppLayout from "./ui/AppLayout";
 import Home from "./pages/Home";
@@ -16,7 +20,23 @@ import PageNotFound from "./pages/PageNotFound";
 import Contact from "./pages/Contacts";
 
 
+
+
+
+
 function App() {
+
+  useEffect(() => {
+    const countVisitor = async () => {
+      try {
+        await generalService.recordVisit();
+      } catch (error) {
+        console.log("Visitor count error:", error);
+      }
+    };
+
+    countVisitor();
+  }, []);
   return (
     <BrowserRouter>
       <Routes>
