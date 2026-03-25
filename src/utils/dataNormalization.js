@@ -73,7 +73,7 @@ export const formatMonthYear = (dateInput) => {
         const year = date.getFullYear();
 
         return `${month} ${year}`;
-    } catch (e) {
+    } catch {
         return String(dateInput);
     }
 };
@@ -93,7 +93,7 @@ export const formatDate = (dateInput) => {
         const year = date.getFullYear();
 
         return `${day} ${month} ${year}`;
-    } catch (e) {
+    } catch {
         return String(dateInput);
     }
 };

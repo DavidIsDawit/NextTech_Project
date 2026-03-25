@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useTestimonials } from "../../hooks/useTestimonialHooks";
-import { testimonialsData } from '../../data/HomePageData';
 
 const Testimonials = () => {
-  const { subtitle, title } = testimonialsData;
-  const { data: items, loading, error } = useTestimonials();
+  // Static headers
+  const subtitle = "05 - OUR TESTIMONIALS";
+  const title = "What’s Our Clients About Us";
+
   const [currentPage, setCurrentPage] = useState(0);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
   const [isPaused, setIsPaused] = useState(false);
+  const [hasInitialLoaded, setHasInitialLoaded] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -19,11 +21,28 @@ const Testimonials = () => {
   if (windowWidth >= 1024) itemsPerPage = 3;
   else if (windowWidth >= 768) itemsPerPage = 2;
 
+  // Logic to handle backend mismatch (Backend limit is fixed at 3)
+  const backendLimit = 3;
+  // Calculate which backend page contains the items for our current frontend page
+  const backendPage = Math.floor((currentPage * itemsPerPage) / backendLimit) + 1;
+
+  const { data: items, totalTestimonials, loading, error } = useTestimonials({
+    page: backendPage,
+    limit: backendLimit
+  });
+
   const safeItems = Array.isArray(items) ? items : [];
-  const totalPages = safeItems.length > 0 ? Math.ceil(safeItems.length / itemsPerPage) : 0;
 
   useEffect(() => {
-    if (!isPaused && totalPages > 0) {
+    if (!loading && !hasInitialLoaded) {
+      setHasInitialLoaded(true);
+    }
+  }, [loading, hasInitialLoaded]);
+
+  const totalPages = totalTestimonials > 0 ? Math.ceil(totalTestimonials / itemsPerPage) : 1;
+
+  useEffect(() => {
+    if (!isPaused && totalPages > 1) {
       const interval = setInterval(() => {
         setCurrentPage((prevPage) => (prevPage >= totalPages - 1 ? 0 : prevPage + 1));
       }, 5000);
@@ -31,13 +50,9 @@ const Testimonials = () => {
     }
   }, [isPaused, totalPages]);
 
-  if (loading) return (
-    <div className="flex justify-center py-20 text-primary font-bold">
-      Loading Testimonials...
-    </div>
-  );
-
-  const currentItems = safeItems.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
+  // Use slicing within the fetched backend page to show the correct items for the frontend page
+  const offset = (currentPage * itemsPerPage) % backendLimit;
+  const currentItems = safeItems.slice(offset, offset + itemsPerPage);
 
   return (
     <section className="py-16 md:py-24 bg-white overflow-hidden">
@@ -54,52 +69,63 @@ const Testimonials = () => {
         </div>
 
         {error && (
-          <div className="text-center text-red-500 mb-8 bg-red-50 p-4 rounded-lg max-w-xl mx-auto">
-            Unauthorized: Please login to view testimonials from the backend.
+          <div className="text-center text-red-500 mb-8 p-4 bg-red-50 rounded-lg max-w-xl mx-auto border border-red-100">
+            Backend connection error.
           </div>
         )}
 
         {/* Testimonials Container */}
-        <div className="flex justify-center" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
-          {safeItems.length === 0 ? (
-            <div className="text-center text-gray-400 py-10">
-              No testimonials found in the backend.
+        <div className="flex justify-center min-h-[400px]" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
+          {loading && !hasInitialLoaded ? (
+            <div className="flex items-center justify-center py-20 text-[#00AEEF] font-bold">
+              Loading...
+            </div>
+          ) : safeItems.length === 0 && !loading ? (
+            <div className="flex items-center justify-center py-20 text-gray-400">
+              No testimonials found.
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 sm:gap-5 w-full">
+            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 sm:gap-5 w-full transition-opacity duration-300 ${loading ? 'opacity-50' : 'opacity-100'}`}>
               {currentItems.map((item, index) => (
                 <div
-                  key={item.id || `testimonial-${index}`}
+                  key={item.id || index}
                   className="bg-white p-8 md:p-10 rounded-[20px] shadow-[0px_20px_50px_rgba(176,190,210,0.3)] flex flex-col h-full border border-gray-50/50"
                 >
                   {/* Profile Header */}
                   <div className="flex items-center gap-4 mb-6">
                     <div className="relative flex-shrink-0">
-                      <div className="w-[75px] h-[75px]  rounded-full p-[3px] border-2 border-[#00AEEF]">
+                      <div className="w-[75px] h-[75px] rounded-full p-[3px] border-2 border-[#00AEEF]">
                         <div className="w-full h-full rounded-full overflow-hidden border-2 border-white">
-                          <img src={item.image || "/placeholder-user.png"} alt={item.name} className="w-full h-full object-cover" />
+                          <img
+                            src={item.image || "/placeholder-user.png"}
+                            alt={item.name}
+                            className="w-full h-full object-cover"
+                            onError={(e) => { e.target.src = "/placeholder-user.png"; }}
+                          />
                         </div>
                       </div>
                     </div>
                     <div>
                       <h4 className="font-bold text-[#1A2B49] text-xl">
-                        {item.name}
+                        {item.name || "Client"}
                       </h4>
                       <p className="text-[#00AEEF] text-sm font-semibold">
-                        {item.specality || item.role || item.position}
+                        {item.role || item.position || item.specality || "Customer"}
                       </p>
                     </div>
                   </div>
 
+                  {/* Testimonial Text */}
                   <p className="text-[#64748B] text-base md:text-[17px] leading-relaxed mb-8">
-                    {item.text || item.testimonial}
+                    &quot;{item.text || item.testimonial || item.testimony || "No content provided."}&quot;
                   </p>
 
+                  {/* Stars Section */}
                   <div className="flex gap-1 mt-auto">
                     {[...Array(5)].map((_, i) => (
                       <svg
                         key={i}
-                        className={`w-4 h-4 ${i < (item.stars || 5) ? 'fill-[#FFA800]' : 'fill-gray-200'}`}
+                        className={`w-4 h-4 ${i < (item.stars || item.rate || 5) ? 'fill-[#FFA800]' : 'fill-gray-200'}`}
                         viewBox="0 0 20 20"
                       >
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />

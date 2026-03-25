@@ -1,4 +1,6 @@
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+
 import { usePartners } from "../../hooks/usePartnerHooks";
 import { clientsData } from "../../data/HomePageData";
 
@@ -9,7 +11,7 @@ const LogoCard = ({ logo }) => (
                md:max-w-[220px] md:h-[95px] 
                lg:max-w-[360px] lg:h-[80px] 
                xl:w-[480px] xl:h-[80px] 
-               2xl:w-[600px] 2xl:h-[100px]
+               2xl:w-[300px] 2xl:h-[90px]
       
       bg-white rounded-[8px] md:rounded-[15px]
       shadow-[0px_15px_40px_rgba(176,190,210,0.25)] 
@@ -35,17 +37,54 @@ LogoCard.propTypes = {
 };
 
 const Clients = () => {
+  const [currentPage, setCurrentPage] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [hasInitialLoaded, setHasInitialLoaded] = useState(false);
   const { subtitle, title, blogTitle } = clientsData;
-  const { data: logos, loading, error } = usePartners();
+  const { data: logos, totalPartners, loading, error } = usePartners({ page: currentPage + 1 });
 
-  if (loading) return (
+  const totalPages = Math.ceil((totalPartners || 0) / 13);
+
+  // Auto-slide effect
+  useEffect(() => {
+    if (!isPaused && totalPages > 1) {
+      const interval = setInterval(() => {
+        setCurrentPage((prevPage) => (prevPage >= totalPages - 1 ? 0 : prevPage + 1));
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [isPaused, totalPages]);
+
+  // Debug log to help identify why it might not be displaying
+  console.log("ClientGrid Data:", {
+    logosCount: logos?.length,
+    totalPartners,
+    totalPages,
+    currentPage,
+    loading,
+    error: error?.message
+  });
+
+  useEffect(() => {
+    if (!loading && !hasInitialLoaded) {
+      setHasInitialLoaded(true);
+    }
+  }, [loading, hasInitialLoaded]);
+
+  const handlePageChange = (index) => {
+    setCurrentPage(index);
+  };
+
+  // Only show the global loading screen on the very first visit
+  // Subsequent pages will use the opacity fade transition instead of replacing the whole UI
+  if (loading && !hasInitialLoaded) return (
     <div className="flex justify-center py-20 text-primary font-bold">
       Loading Partners...
     </div>
   );
 
   return (
-    <section className="py-10 md:py-24 lg:py-32 bg-[#FCFDFF] overflow-hidden">
+    <section id="partners-section" className="py-10 md:py-24 lg:py-32 bg-[#FCFDFF] overflow-hidden">
       <div className=" mx-auto px-6">
 
         {/* Header Section */}
@@ -65,44 +104,65 @@ const Clients = () => {
           </div>
         )}
 
-        {!logos || logos.length === 0 ? (
-          <div className="text-center text-gray-400 py-10">
-            No partners found in the backend.
-          </div>
-        ) : (
-          <>
-            {/* MOBILE VIEW */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:hidden justify-items-center">
-              {logos.map((logo, index) => (
-                <LogoCard key={logo.id || `mobile-${index}`} logo={logo} />
-              ))}
+        {/* Logos Container with Pause on Hover */}
+        <div
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {!logos || logos.length === 0 ? (
+            <div className="text-center text-gray-400 py-10">
+              No partners found in the backend.
             </div>
-
-            {/* DESKTOP VIEW: Exact 4-5-4 Staggered Layout */}
-            <div className="hidden lg:flex flex-col items-center gap-8 lg:gap-10">
-              {/* Row 1 (4 logos) */}
-              <div className="flex justify-center gap-8 w-full">
-                {logos.slice(0, 4).map((logo, index) => (
-                  <LogoCard key={logo.id || `row1-${index}`} logo={logo} />
+          ) : (
+            <>
+              {/* MOBILE VIEW */}
+              <div className={`grid grid-cols-2 md:grid-cols-3 gap-4 lg:hidden justify-items-center transition-all duration-700 ease-in-out ${loading ? 'opacity-0 translate-x-10' : 'opacity-100 translate-x-0'}`}>
+                {logos.map((logo, index) => (
+                  <LogoCard key={logo.id || `mobile-${index}`} logo={logo} />
                 ))}
               </div>
 
-              {/* Row 2 (5 logos) */}
-              <div className="flex justify-center gap-8 w-full">
-                {logos.slice(4, 9).map((logo, index) => (
-                  <LogoCard key={logo.id || `row2-${index}`} logo={logo} />
-                ))}
-              </div>
+              {/* DESKTOP VIEW: Exact 4-5-4 Staggered Layout */}
+              <div className={`hidden lg:flex flex-col items-center gap-8 lg:gap-10 transition-all duration-700 ease-in-out ${loading ? 'opacity-0 translate-x-10' : 'opacity-100 translate-x-0'}`}>
+                {/* Row 1 (4 logos) */}
+                <div className="flex justify-center gap-8 w-full">
+                  {logos.slice(0, 4).map((logo, index) => (
+                    <LogoCard key={logo.id || `row1-${index}`} logo={logo} />
+                  ))}
+                </div>
 
-              {/* Row 3 (4 logos) */}
-              <div className="flex justify-center gap-8 w-full">
-                {logos.slice(9, 13).map((logo, index) => (
-                  <LogoCard key={logo.id || `row3-${index}`} logo={logo} />
-                ))}
+                {/* Row 2 (5 logos) */}
+                <div className="flex justify-center gap-8 w-full">
+                  {logos.slice(4, 9).map((logo, index) => (
+                    <LogoCard key={logo.id || `row2-${index}`} logo={logo} />
+                  ))}
+                </div>
+
+                {/* Row 3 (4 logos) */}
+                <div className="flex justify-center gap-8 w-full">
+                  {logos.slice(9, 13).map((logo, index) => (
+                    <LogoCard key={logo.id || `row3-${index}`} logo={logo} />
+                  ))}
+                </div>
               </div>
-            </div>
-          </>
-        )}
+              {/* Pagination Dots */}
+              {totalPages > 1 && (
+                <div className="flex justify-center items-center gap-3 mt-12 md:mt-16 relative z-10">
+                  {[...Array(totalPages)].map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handlePageChange(index)}
+                      aria-label={`Go to page ${index + 1}`}
+                      title={`Page ${index + 1}`}
+                      className={`h-2 transition-all duration-300 rounded-full ${currentPage === index ? 'w-2 bg-[#00AEEF]' : 'w-2 bg-gray-300'
+                        }`}
+                    />
+                  ))}
+                </div>
+              )}
+            </>
+          )}
+        </div>
 
       </div>
     </section>

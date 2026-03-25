@@ -47,7 +47,7 @@ export const API_CONFIG = {
 };
 
 const axiosInstance = axios.create({
-    baseURL: '/api',
+    baseURL: `${BACKEND_URL}/api`,
     headers: {
         'Content-Type': 'application/json',
     },

@@ -1,7 +1,4 @@
-import blogData from "../data/NewsPageData";
-import services from "../data/ServicesPageData";
-import certificateItems from "../data/CertificatePageData";
-import { portfolioProjects } from "../data/PortfolioPageData";
+
 
 const SHARED_BANNER_IMAGE = "/BannerCoverImages/banner.jpg";
 
@@ -53,7 +50,6 @@ export const getBannerConfig = (pathname) => {
     if (configKey) return BANNER_CONFIGS[configKey];
 
     if (normalPath.startsWith("/news/")) {
-        const id = pathname.split("/").pop();
         return {
             title: "News",
             backgroundImage: SHARED_BANNER_IMAGE,
@@ -61,13 +57,11 @@ export const getBannerConfig = (pathname) => {
                 { label: "Home", path: "/" },
                 { label: "News", path: "/news" },
                 { label: "News Detail" },
-                // { label: id },
             ],
         };
     }
 
     if (normalPath.startsWith("/service/")) {
-        const id = pathname.split("/").pop();
         return {
             title: "Service Detail",
             backgroundImage: SHARED_BANNER_IMAGE,
@@ -75,13 +69,11 @@ export const getBannerConfig = (pathname) => {
                 { label: "Home", path: "/" },
                 { label: "Services", path: "/Service" },
                 { label: "Service Detail" },
-                // { label: id },
             ],
         };
     }
 
     if (normalPath.startsWith("/certificate/") || normalPath.startsWith("/certificates/")) {
-        const id = pathname.split("/").pop();
         return {
             title: "Certificate",
             backgroundImage: SHARED_BANNER_IMAGE,
@@ -89,13 +81,11 @@ export const getBannerConfig = (pathname) => {
                 { label: "Home", path: "/" },
                 { label: "Certificates", path: "/certificates" },
                 { label: "Certificate Detail" },
-                // { label: id },
             ],
         };
     }
 
     if (normalPath.startsWith("/portfolio/")) {
-        const id = pathname.split("/").pop();
         return {
             title: "Our Portfolio",
             backgroundImage: SHARED_BANNER_IMAGE,
@@ -103,13 +93,11 @@ export const getBannerConfig = (pathname) => {
                 { label: "Home", path: "/" },
                 { label: "Portfolio", path: "/portfolio" },
                 { label: "Portfolio Detail" },
-                // { label: id },
             ],
         };
     }
 
     if (normalPath.startsWith("/careers/")) {
-        const id = pathname.split("/").pop();
         return {
             title: "Career Detail",
             backgroundImage: SHARED_BANNER_IMAGE,
@@ -117,7 +105,6 @@ export const getBannerConfig = (pathname) => {
                 { label: "Home", path: "/" },
                 { label: "Careers", path: "/careers" },
                 { label: "Career Detail" },
-                // { label: id },
             ],
         };
     }

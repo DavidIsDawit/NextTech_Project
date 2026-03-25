@@ -41,7 +41,7 @@ const generalService = {
     getSingleCounter: (id) => axiosInstance.get(`/counters/${id}`),
 
     // Visitor Tracking
-    recordVisit: () => axiosInstance.post('/visitcountes'),
+    recordVisit: (data) => axiosInstance.post('/visitcountes', data),
 };
 
 export default generalService;
