@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // The backend server address
-export const BACKEND_URL = 'http://192.168.1.16:8000';
+export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://192.168.1.16:8000';
 
 // Centralized path configuration (previously in vite.config.js)
 export const API_CONFIG = {
@@ -47,7 +47,7 @@ export const API_CONFIG = {
 };
 
 const axiosInstance = axios.create({
-    baseURL: `${BACKEND_URL}/api`,
+    baseURL: import.meta.env.DEV ? '/api' : `${BACKEND_URL}/api`,
     headers: {
         'Content-Type': 'application/json',
     },
