@@ -8,7 +8,7 @@ function RecentPosts({ posts }) {
     if (!posts) return null;
 
     const handlePostClick = (postId) => {
-        navigate(`/news/${postId}`);
+        navigate(`/blogs/${postId}`);
     };
 
     const formatDate = (dateStr) => {
@@ -23,7 +23,7 @@ function RecentPosts({ posts }) {
     };
 
     return (
-        <section className="bg-[#f4f7fa] p-8">
+        <section className="bg-[#f8faff] p-8">
             <h3 className="mb-6 text-xl font-bold text-[#1a1a1a]">
                 Recent Posts
             </h3>
@@ -39,8 +39,8 @@ function RecentPosts({ posts }) {
                             alt={post.title}
                             className="h-20 w-20 rounded-md object-cover"
                         />
-                        <div className="flex flex-col justify-center gap-3 overflow-hidden min-w-0">
-                            <h4 className="truncate text-lg font-bold leading-snug text-[#1a1a1a] transition-colors duration-300 group-hover:text-[#00a6e3]">
+                        <div className="flex flex-col justify-center gap-3">
+                            <h4 className="line-clamp-2 text-lg font-bold leading-snug text-[#1a1a1a] transition-colors duration-300 group-hover:text-[#00a6e3]">
                                 {post.title}
                             </h4>
                             <div className="flex items-center text-sm font-medium text-[#00A3C4]">

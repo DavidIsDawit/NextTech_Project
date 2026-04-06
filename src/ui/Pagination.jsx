@@ -3,15 +3,20 @@ import PropTypes from "prop-types";
 import { BiSolidArrowToLeft, BiArrowToRight } from "react-icons/bi";
 
 function Pagination({ items, itemsPerPage, currentPage, onPageChange, onDataUpdate }) {
-  const totalPages = Math.ceil(items.length / itemsPerPage);
+  const isItemsArray = Array.isArray(items);
+  const totalPages = isItemsArray ? Math.ceil(items.length / itemsPerPage) : 0;
 
   useEffect(() => {
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    onDataUpdate(items.slice(start, end));
-  }, [currentPage, items, itemsPerPage, onDataUpdate]);
+    if (isItemsArray) {
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      onDataUpdate(items.slice(start, end));
+    } else {
+      onDataUpdate([]);
+    }
+  }, [currentPage, items, itemsPerPage, onDataUpdate, isItemsArray]);
 
-  if (totalPages <= 1) return null;
+  if (!isItemsArray || totalPages <= 1) return null;
 
   const pages = [1];
   let left, right;
@@ -22,7 +27,7 @@ function Pagination({ items, itemsPerPage, currentPage, onPageChange, onDataUpda
   if (currentPage <= 3) {
     // Start: 1 2 3 4 ...
     left = 2;
-    right = Math.min(totalPages - 1, 4); 
+    right = Math.min(totalPages - 1, 4);
   } else if (currentPage >= totalPages - 2) {
     // End: ... 17 18 19 20
     left = Math.max(2, totalPages - 3);
@@ -38,7 +43,7 @@ function Pagination({ items, itemsPerPage, currentPage, onPageChange, onDataUpda
   // ────────────────────────────────────────────────
   // Build the array
   if (left > 2) pages.push("...");
-  
+
   for (let i = left; i <= right && i < totalPages; i++) {
     pages.push(i);
   }
@@ -69,11 +74,10 @@ function Pagination({ items, itemsPerPage, currentPage, onPageChange, onDataUpda
           <button
             key={page}
             onClick={() => onPageChange(page)}
-            className={`${baseBtn} ${
-              currentPage === page
+            className={`${baseBtn} ${currentPage === page
                 ? "bg-[#52cffc] text-white font-semibold"
                 : "bg-white text-gray-800 hover:bg-primary hover:text-white"
-            }`}
+              }`}
           >
             {page}
           </button>

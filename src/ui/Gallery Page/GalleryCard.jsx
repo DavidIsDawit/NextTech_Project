@@ -1,19 +1,42 @@
 import PropTypes from 'prop-types';
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import RightArrow from "/GalleryPageImage/RightArrow.png";
 import LeftArrow from "/GalleryPageImage/LeftArrow.png";
 
 export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const images = src.images;
-  const hasMultipleImages = images.length > 1;  
+
+  // Extract images array: handle both string (single image) and object (multi-image)
+  const allImages = useMemo(() => {
+    if (typeof src === 'string') return [src];
+    if (Array.isArray(src)) return src;
+    if (src && typeof src === 'object') {
+      const combinedImages = [];
+      if (src.coverImage) combinedImages.push(src.coverImage);
+      if (Array.isArray(src.images)) {
+        src.images.forEach(img => {
+          if (img && img !== src.coverImage) combinedImages.push(img);
+        });
+      }
+      // Fallback if no coverImage or images array is found in the object
+      if (combinedImages.length === 0) {
+        if (src.image) combinedImages.push(src.image);
+        else if (src.src) combinedImages.push(src.src);
+        else if (src.coverImage) combinedImages.push(src.coverImage); // As a last resort, if coverImage was the only thing
+      }
+      return combinedImages.length > 0 ? combinedImages : [];
+    }
+    return [];
+  }, [src]);
+
+  const hasMultipleImages = allImages.length > 1;
   const prev = () => {
-    setCurrentIndex((i) => (i === 0 ? images.length - 1 : i - 1));    
+    setCurrentIndex((i) => (i === 0 ? allImages.length - 1 : i - 1));
   };
   const next = () => {
-    setCurrentIndex((i) => (i === images.length - 1 ? 0 : i + 1));
+    setCurrentIndex((i) => (i === allImages.length - 1 ? 0 : i + 1));
   };
-  
+
   return (
     // <div 
     //   className="
@@ -23,22 +46,22 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
     //   "
     //   onClick={onClick}
     // >
-      //     <div 
-      //   className="
-      //     group relative overflow-hidden rounded-xl 
-      //     shadow-lg hover:shadow-2xl transition-all duration-500 
-      //     cursor-pointer bg-gray-100 
-          
-      //     /* Responsive Heights in vh */
-      //     min-h-[46vh]          /* Default (Mobile) ~340px */
-      //     sm:h-[55vh]       /* ~325px (Adjusted for landscape) */
-      //     lg:h-[50vh]       /* ~325px */
-      //     xl:min-h-[60vh] xl:min-w-[27vw]       /* ~395px */          
-      //   "
-      //   onClick={onClick}
-      // >
-      <div 
-  className="
+    //     <div 
+    //   className="
+    //     group relative overflow-hidden rounded-xl 
+    //     shadow-lg hover:shadow-2xl transition-all duration-500 
+    //     cursor-pointer bg-gray-100 
+
+    //     /* Responsive Heights in vh */
+    //     min-h-[46vh]          /* Default (Mobile) ~340px */
+    //     sm:h-[55vh]       /* ~325px (Adjusted for landscape) */
+    //     lg:h-[50vh]       /* ~325px */
+    //     xl:min-h-[60vh] xl:min-w-[27vw]       /* ~395px */          
+    //   "
+    //   onClick={onClick}
+    // >
+    <div
+      className="
     group relative overflow-hidden rounded-xl 
     shadow-lg hover:shadow-2xl transition-all duration-500 
     cursor-pointer bg-gray-100 
@@ -50,43 +73,43 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
     /* This creates the same 'tall' proportion as 27vw width and 60vh height */
     aspect-[1.04/1] 
   "
-  onClick={onClick}
->
-  
+      onClick={onClick}
+    >
+
       <img
-        src={images[currentIndex]}
-        alt={alt} 
+        src={allImages[currentIndex]}
+        alt={alt}
         className="
           w-full  h-full object-cover object-top
           transition-transform duration-700"
         loading="lazy"
-      />      
-       {/* Prev / Next buttons */}
-       {hasMultipleImages && (
-      <button
-        onClick={prev}
-        className="absolute left-3 top-1/2 -translate-y-1/2 bg-[#00A3E0] hover:bg-[#0097a7]  text-white pt-2 px-1  "
-      > 
-        <img src={LeftArrow }
-             className="h-6 w-6 lg:h-5 lg:w-5 xl:w-7 xl:h-8 object-cover"
-            alt=""/>       
-      </button>
+      />
+      {/* Prev / Next buttons */}
+      {hasMultipleImages && (
+        <button
+          onClick={prev}
+          className="absolute left-3 top-1/2 -translate-y-1/2 bg-[#00A3E0] hover:bg-[#0097a7]  text-white pt-2 px-1  "
+        >
+          <img src={LeftArrow}
+            className="h-6 w-6 lg:h-5 lg:w-5 xl:w-7 xl:h-8 object-cover"
+            alt="" />
+        </button>
       )}
-       {hasMultipleImages && (
-      <button
-        onClick={next}
-        className="absolute right-3 top-1/2 -translate-y-1/2 hover:bg-[#0097a7] bg-[#00A3E0]   text-white pt-2 px-1    "
-      >
-         <img src={RightArrow }
-              className=" h-6 w-6 lg:h-5 lg:w-5 xl:w-8 xl:h-8 object-cover "
-              alt=""/>      
-      </button>
+      {hasMultipleImages && (
+        <button
+          onClick={next}
+          className="absolute right-3 top-1/2 -translate-y-1/2 hover:bg-[#0097a7] bg-[#00A3E0]   text-white pt-2 px-1    "
+        >
+          <img src={RightArrow}
+            className=" h-6 w-6 lg:h-5 lg:w-5 xl:w-8 xl:h-8 object-cover "
+            alt="" />
+        </button>
       )}
-       
-      
+
+
       {/* Subtle hover overlay */}
       {/* THUMBNAIL OVERLAY */}
-         {hasMultipleImages && (
+      {hasMultipleImages && (
         <div
           className="
             absolute bottom-0 left-0 right-0 z-10
@@ -94,8 +117,8 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
             px-3 pb-5 pt-3 
           "
         >
-  <div className=" flex justify-start gap-2 overflow-x-auto flex-nowrap scrollbar-hide ">
-            {images.map((img, index) => (
+          <div className=" flex justify-start gap-2 overflow-x-auto flex-nowrap scrollbar-hide ">
+            {allImages.map((img, index) => (
               <button
                 key={index}
                 onClick={(e) => {
@@ -103,10 +126,9 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
                   setCurrentIndex(index);
                 }}
                 className={`h-[10vh] w-[12vh] sm:h-[10vh] flex-shrink-0  rounded-sm overflow-hidden border
-                  ${
-                    index === currentIndex 
-                      ? "border-blue-500"
-                      : "border-white/30"
+                  ${index === currentIndex
+                    ? "border-blue-500"
+                    : "border-white/30"
                   }`}
               >
                 <img
@@ -118,14 +140,14 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
             ))}
           </div>
         </div>
-         )}
+      )}
 
     </div>
   );
 }
 
 GalleryCard.propTypes = {
-  src: PropTypes.string.isRequired,
+  src: PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.array]).isRequired,
   alt: PropTypes.string,
   onClick: PropTypes.func,
 };

@@ -15,17 +15,19 @@ function BlogCard({ post }) {
                 <img
                     src={post.image}
                     alt={post.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-120"
+                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-120"
                 />
             </div>
 
             <div className="flex w-full bg-white p-6 2xl:p-8">
                 <div className="flex w-full flex-col items-start">
-                    <div className="mb-4 flex flex-nowrap items-center gap-x-2 gap-y-2 text-xs 2xl:text-base">
+                    {/* <div className="mb-4 flex flex-nowrap items-center gap-x-2 gap-y-2 text-xs 2xl:text-base"> */}
+                    <div className="w-full mb-4 flex items-center justify-between text-xs 2xl:text-base">
                         <div className="flex items-center">
                             <MdPerson className="mr-1 text-lg text-sky-500" />
-                            <span>{post.author}.</span>
+                            <span>{post.author}</span>
                         </div>
+
                         <div className="flex items-center">
                             <MdDateRange className="mr-1 text-lg text-sky-500" />
                             <span>{post.date}</span>
