@@ -40,7 +40,7 @@ export default function ServiceDetail() {
       <div className="py-20">
         {error && (
           <div className="text-center text-red-500 mb-8 bg-red-50 p-4 rounded-lg max-w-xl mx-auto font-semibold">
-            Error loading service: {error.message}
+            {error?.response?.data?.message || error?.message || String(error)}
           </div>
         )}
         <NotFoundMessage itemType="Service" backPath="/Service" />
@@ -80,11 +80,11 @@ export default function ServiceDetail() {
 
             {/* Text Content */}
             <div className="space-y-6 text-gray-600 leading-relaxed text-base md:text-lg lg:text-base xl:text-lg ">
-              {service.content?.paragraphs?.map((text, index) => (
-                <p key={index} className="first-letter:text-gray-900">
-                  {text}
+              {service.description && (
+                <p className="first-letter:text-gray-900">
+                  {service.description}
                 </p>
-              ))}
+              )}
 
               {/* Sub Section One */}
               {(service.subTitleOne || service.subdescriptionOne) && (
@@ -160,11 +160,11 @@ export default function ServiceDetail() {
             )}
 
             {/* Second Text Block */}
-            <div className="space-y-6 text-gray-600 leading-relaxed text-base md:text-lg lg:text-base xl:text-lg ">
-              {(service.content?.headLine || []).map((text, index) => (
-                <p key={`bottom-${index}`}>{text}</p>
-              ))}
-            </div>
+            {service.headLine && (
+              <div className="space-y-6 text-gray-600 leading-relaxed text-base md:text-lg lg:text-base xl:text-lg ">
+                <p>{service.headLine}</p>
+              </div>
+            )}
           </div>
 
           {/* ================= RIGHT SIDEBAR ================= */}

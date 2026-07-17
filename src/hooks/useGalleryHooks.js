@@ -22,7 +22,8 @@ export const useGallery = (params) => {
         try {
             setLoading(true);
             const result = await getGallery(params);
-            setData(Array.isArray(result) ? result : []);
+            const activeGallery = (Array.isArray(result) ? result : []).filter(item => item.status === "Active");
+            setData(activeGallery);
         } catch (err) {
             setError(err);
             setData([]);

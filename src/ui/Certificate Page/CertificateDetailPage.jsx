@@ -4,6 +4,7 @@ import CertificateHero from "./Cert_ImageSlider";
 import CertificateContent from "./Cert_Title&desc";
 import CertificateInfo from "./CertInfo";
 import NotFoundMessage from "../NotFoundMessage";
+import { formatDate } from "../../utils/dataNormalization";
 
 export default function CertificateDetailPage() {
   const { id } = useParams();
@@ -45,14 +46,14 @@ export default function CertificateDetailPage() {
         {/* Right Column */}
         <div className="flex flex-col lg:flex-row  justify-between gap-x-5 2xl:gap-x-10 ">
           <CertificateContent
-            certificateName={certificate.certificateName || certificate.title}
-            certificateType={certificate.certificateType || certificate.description}
+            certificateName={certificate.certificateName}
+            certificateType={certificate.certificateType}
           />
           <CertificateInfo
-            certificateFrom={certificate.certificateFrom || certificate.from || "N/A"}
-            project={certificate.project || "N/A"}
-            catagory={certificate.catagory || "Certificate"}
-            IssueDate={certificate.IssueDate || "N/A"}
+            certificateFrom={certificate.certificateFrom}
+            project={certificate.project}
+            catagory={certificate.catagory}
+            IssueDate={formatDate(certificate.createdDate)}
           />
         </div>
       </div>

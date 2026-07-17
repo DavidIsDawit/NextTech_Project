@@ -2,18 +2,19 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { MdPerson, MdDateRange } from "react-icons/md";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { formatDate } from "../../utils/dataNormalization";
 
 function BlogCard({ post }) {
     if (!post) return null;
 
     return (
         <Link
-            to={`/news/${post.id}`}
+            to={`/news/${post._id}`}
             className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-transform w-full cursor-pointer"
         >
             <div className="relative overflow-hidden aspect-[16/10] w-full">
                 <img
-                    src={post.image}
+                    src={post.imageCover}
                     alt={post.title}
                     className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-120"
                 />
@@ -30,7 +31,7 @@ function BlogCard({ post }) {
 
                         <div className="flex items-center">
                             <MdDateRange className="mr-1 text-lg text-sky-500" />
-                            <span>{post.date}</span>
+                            <span>{formatDate(post.happenedOn)}</span>
                         </div>
                     </div>
 
@@ -57,10 +58,10 @@ function BlogCard({ post }) {
 
 BlogCard.propTypes = {
     post: PropTypes.shape({
-        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        _id: PropTypes.string.isRequired,
         title: PropTypes.string,
-        image: PropTypes.string,
-        date: PropTypes.string,
+        imageCover: PropTypes.string,
+        happenedOn: PropTypes.string,
         author: PropTypes.string,
     }),
 };

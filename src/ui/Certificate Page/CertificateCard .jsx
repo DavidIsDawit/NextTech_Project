@@ -6,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 export default function CertificateCard({ item }) {
   const [currentIndex] = useState(0);
   const navigate = useNavigate();
-  const images = (item.images && item.images.length > 0) ? item.images : (item.certificateImage ? [item.certificateImage] : []);
-  const description = item.certificateType || item.description;
-  const title = item.certificateName || item.title;
+  const images = item.certificateImage ? [item.certificateImage] : [];
+  const description = item.certificateType;
+  const title = item.certificateName;
   const goToDetail = () => {
-    navigate(`/certificate/${item.id}`);
+    navigate(`/certificate/${item._id}`);
   };
   const truncateWords = (text, wordLimit = 5) => {
     if (!text) return "";
@@ -64,6 +64,7 @@ CertificateCard.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     images: PropTypes.arrayOf(PropTypes.string),
+    _id: PropTypes.string.isRequired,
     certificateImage: PropTypes.string,
     img_icon: PropTypes.string,
     title: PropTypes.string,

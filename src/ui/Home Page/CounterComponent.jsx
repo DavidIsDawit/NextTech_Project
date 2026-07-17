@@ -22,15 +22,10 @@ const StatCard = ({ item }) => {
       <div>
         <div className="flex items-start text-3xl lg:text-xl  font-extrabold text-[#0B162C] leading-none xl:text-[2.5rem]">
           {item.value}
-
-          {item.hasPlus && (
-            <span className="text-primary text-xl lg:text-2xl font-bold ml-1 -mt-1">
-              +
-            </span>
-          )}
+          <span className="text-primary text-xl lg:text-2xl font-bold ml-1 -mt-1">+</span>
         </div>
         <p className="text-[#4A5568] font-medium mt-2 text-base lg:text-[17px] leading-tight">
-          {item.label}
+          {item.name}
         </p>
       </div>
     </div>
@@ -39,10 +34,10 @@ const StatCard = ({ item }) => {
 
 StatCard.propTypes = {
   item: PropTypes.shape({
-    icon: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    hasPlus: PropTypes.bool,
+    _id: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    icon: PropTypes.string,
   }).isRequired,
 };
 
@@ -61,28 +56,24 @@ const CounterComponent = () => {
 
         {error && (
           <div className="text-center text-red-500 bg-red-50 p-4 rounded-lg max-w-xl mx-auto mb-4 font-semibold shadow-sm">
-            Unauthorized: Please login to view counters from the backend.
+            {error?.response?.data?.message || error?.message || String(error)}
           </div>
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-9 ">
           {Array.isArray(statsData) && statsData.length > 0 ? (
-            statsData.map((stat, index) => {
-              // Map backend fields to frontend-expected fields
+            statsData.map((stat) => {
               const mappedStat = {
                 ...stat,
-                id: stat._id || stat.id || index,
-                label: stat.label || stat.name,
                 value: String(stat.value),
-                icon: stat.icon || (
+                icon: (
                   stat.name === 'Clients' ? 'HiMiniUserGroup' :
-                    stat.name === 'Experiences' ? 'FaChartLine' :
-                      stat.name === 'Projects' ? 'FaBriefcase' :
-                        stat.name === 'Awards' ? 'FaAward' : 'HiMiniUserGroup'
+                  stat.name === 'Experiences' ? 'FaChartLine' :
+                  stat.name === 'Projects' ? 'FaBriefcase' :
+                  stat.name === 'Awards' ? 'FaAward' : 'HiMiniUserGroup'
                 ),
-                hasPlus: stat.hasPlus !== undefined ? stat.hasPlus : true // Adding + by default or as per data
               };
-              return <StatCard key={mappedStat.id} item={mappedStat} />;
+              return <StatCard key={stat._id} item={mappedStat} />;
             })
           ) : !error && (
             <div className="col-span-full text-center text-gray-400 py-10">

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { MdOutlineCalendarToday } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { formatDate } from "../../utils/dataNormalization";
 
 function RecentPosts({ posts }) {
     const navigate = useNavigate();
@@ -11,16 +12,7 @@ function RecentPosts({ posts }) {
         navigate(`/news/${postId}`);
     };
 
-    const formatDate = (dateStr) => {
-        if (!dateStr) return "";
-        const [day, month, year] = dateStr.split(" ");
-        const months = {
-            Jan: "January", Feb: "February", Mar: "March", Apr: "April",
-            May: "May", Jun: "June", Jul: "July", Aug: "August",
-            Sep: "September", Oct: "October", Nov: "November", Dec: "December"
-        };
-        return `${months[month] || month} ${day}, ${year}`;
-    };
+
 
     return (
         <section className="bg-[#f4f7fa] p-8">
@@ -30,12 +22,12 @@ function RecentPosts({ posts }) {
             <div className="space-y-6">
                 {posts.map((post) => (
                     <div
-                        key={post.id}
+                        key={post._id}
                         className="flex gap-4 group cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
-                        onClick={() => handlePostClick(post.id)}
+                        onClick={() => handlePostClick(post._id)}
                     >
                         <img
-                            src={post.image}
+                            src={post.imageCover}
                             alt={post.title}
                             className="h-20 w-20 rounded-md object-cover"
                         />
@@ -45,7 +37,7 @@ function RecentPosts({ posts }) {
                             </h4>
                             <div className="flex items-center text-sm font-medium text-[#00A3C4]">
                                 <MdOutlineCalendarToday className="mr-2" size={16} />
-                                <span>{formatDate(post.date)}</span>
+                                <span>{formatDate(post.happenedOn)}</span>
                             </div>
                         </div>
                     </div>
@@ -58,10 +50,10 @@ function RecentPosts({ posts }) {
 RecentPosts.propTypes = {
     posts: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+            _id: PropTypes.string.isRequired,
             title: PropTypes.string,
-            image: PropTypes.string,
-            date: PropTypes.string,
+            imageCover: PropTypes.string,
+            happenedOn: PropTypes.string,
         })
     ),
 };

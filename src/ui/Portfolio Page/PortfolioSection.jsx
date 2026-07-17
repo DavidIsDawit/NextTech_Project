@@ -12,7 +12,7 @@ export default function PortfolioSection() {
     if (!portfolioProjects) return ["All"];
     return [
       "All",
-      ...new Set(portfolioProjects.map((item) => item.category))
+      ...new Set(portfolioProjects.map((item) => item.catagory))
     ];
   }, [portfolioProjects]);
 
@@ -68,7 +68,7 @@ export default function PortfolioSection() {
     if (!portfolioProjects) return [];
     return selectedCategory === "All"
       ? portfolioProjects
-      : portfolioProjects.filter((item) => item.category === selectedCategory);
+      : portfolioProjects.filter((item) => item.catagory === selectedCategory);
   }, [selectedCategory, portfolioProjects]);
 
   const totalPages = Math.ceil(filteredItems.length / ITEMS_PER_PAGE);
@@ -88,7 +88,7 @@ export default function PortfolioSection() {
 
       {error && (
         <div className="text-center text-red-500 mb-8 bg-red-50 p-4 rounded-lg max-w-xl mx-auto font-semibold">
-          Unauthorized: Please login to view portfolio items from the backend.
+          {error?.response?.data?.message || error?.message || String(error)}
         </div>
       )}
       <div className="text-center mb-8 xs:mb-10 sm:mb-12">

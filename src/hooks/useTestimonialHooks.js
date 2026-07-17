@@ -26,7 +26,8 @@ export const useTestimonials = (params) => {
             setLoading(true);
             const response = await generalService.getAllTestimonials(params);
             const result = normalizeArrayResponse(response.data, 'testimonials');
-            setData(Array.isArray(result) ? result : []);
+            const activeItems = (Array.isArray(result) ? result : []).filter(item => item.status === 'Active');
+            setData(activeItems);
             setTotalTestimonials(response.data?.totalTestimonials || response.data?.totalCount || result.length || 0);
         } catch (err) {
             setError(err);

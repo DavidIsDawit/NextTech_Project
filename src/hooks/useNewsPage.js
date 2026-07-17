@@ -20,18 +20,7 @@ export const getSingleNews = async (id) => {
     // Normalize and fix media
     const normalized = normalizeArrayResponse([item], 'news')[0];
 
-    // Page specific mapping
-    return {
-        ...normalized,
-        id: normalized.id,
-        image: normalized.imageCover || normalized.image,
-        detailImages: normalized.images || normalized.detailImages,
-        content1: normalized.descriptionOne || normalized.description1,
-        content2: normalized.descriptionTwo || normalized.description2,
-        bottomContent1: normalized.discriptionThree || normalized.descriptionThree,
-        bottomContent2: normalized.discriptionFour || normalized.descriptionFour,
-        content: normalized.content || [],
-    };
+    return normalized;
 };
 
 /**
@@ -79,28 +68,10 @@ function useBlog() {
                 // Use the centralized getNews helper which handles basic normalization and media fixing
                 const result = await getNews();
 
-                // Secondary mapping specific to News Page requirements
-                const mappedPosts = result.map((post, index) => {
-                    const id = post.id || String(index);
-                    return {
-                        ...post,
-                        // Ensure ID type consistency (NewsDetail uses parseInt comparison)
-                        id: !isNaN(id) && /^\d+$/.test(String(id)) ? parseInt(id) : id,
-                        image: post.imageCover || post.image,
-                        // Support both images and detailImages for gallery/grid
-                        detailImages: post.images || post.detailImages,
-                        // NewsContent expects specific content fields for paragraphs
-                        content1: post.descriptionOne || post.description1,
-                        content2: post.descriptionTwo || post.description2,
-                        // Mapping 3 and 4 to "bottomContent" fields
-                        bottomContent1: post.discriptionThree || post.descriptionThree,
-                        bottomContent2: post.discriptionFour || post.descriptionFour,
-                        // General content array as fallback
-                        content: post.content || [],
-                    };
-                });
+                // Filter to only show published posts
+                const publishedPosts = result.filter(post => post.status === "published");
 
-                setPosts(mappedPosts);
+                setPosts(publishedPosts);
                 setError(null);
             } catch (err) {
                 console.error("Error fetching news:", err);
@@ -122,7 +93,7 @@ function useBlog() {
             (post) =>
                 (post.title && post.title.toLowerCase().includes(lowerQuery)) ||
                 (post.tags && post.tags.some((tag) => tag.toLowerCase().includes(lowerQuery))) ||
-                (post.category && post.category.toLowerCase().includes(lowerQuery))
+                (post.catagory && post.catagory.toLowerCase().includes(lowerQuery))
         );
     }, [searchQuery, posts]);
 
@@ -130,7 +101,7 @@ function useBlog() {
     const categories = useMemo(() => {
         const safePosts = Array.isArray(posts) ? posts : [];
         const categoryCounts = safePosts.reduce((acc, post) => {
-            const cat = post.category || "Uncategorized";
+            const cat = post.catagory || "Uncategorized";
             acc[cat] = (acc[cat] || 0) + 1;
             return acc;
         }, {});
@@ -157,7 +128,7 @@ function useBlog() {
     const recentPosts = useMemo(() => {
         const safePosts = Array.isArray(posts) ? posts : [];
         return [...safePosts]
-            .sort((a, b) => new Date(b.rawDate || 0) - new Date(a.rawDate || 0))
+            .sort((a, b) => new Date(b.createdDate || 0) - new Date(a.createdDate || 0))
             .slice(0, 5);
     }, [posts]);
 

@@ -17,7 +17,7 @@ export default function CertificateUI() {
     <div className="bg-gray-50/50  px-4 sm:px-6 lg:px-8 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24">
       {error && (
         <div className="text-center text-red-500 mb-8 bg-red-50 p-4 rounded-lg max-w-xl mx-auto font-semibold">
-          Unauthorized: Please login to view certificates from the backend.
+          {error?.response?.data?.message || error?.message || String(error)}
         </div>
       )}
       <div className=" mx-[1%] sm:mx-[6%]">

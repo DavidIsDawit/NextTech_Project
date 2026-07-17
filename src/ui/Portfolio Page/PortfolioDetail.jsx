@@ -39,7 +39,7 @@ export default function PortfolioDetail() {
       <div className="py-20">
         {error && (
           <div className="text-center text-red-500 mb-8 bg-red-50 p-4 rounded-lg max-w-xl mx-auto font-semibold">
-            Error loading portfolio: {error.message}
+            {error?.response?.data?.message || error?.message || String(error)}
           </div>
         )}
         <NotFoundMessage itemType="Portfolio" backPath="/portfolio" />
@@ -64,7 +64,7 @@ export default function PortfolioDetail() {
         {/* Hero */}
         <div className="mb-8 xs:mb-10 sm:mb-12 md:mb-16 lg:mb-10 xl:mb-16 2xl:mb-16">
           <img
-            src={project.image}
+            src={project.thumbinal}
             alt={project.title}
             className="w-full md:h-96 lg:h-[26rem] xl:h-[34rem] object-cover rounded-xl shadow-lg" />
         </div>
@@ -117,9 +117,9 @@ export default function PortfolioDetail() {
         <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 xs:gap-7 sm:gap-8 md:gap-6 lg:gap-0 xl:gap-8 mb-10 xs:mb-12 sm:mb-14 md:mb-10 lg:mb-8 xl:mb-14 2xl:mb-14">
           {[
             { label: "Client:", value: project.client },
-            { label: "Date:", value: project.monthYear || project.date },
+            { label: "Date:", value: project.happingDate },
             { label: "Sector:", value: project.sector },
-            { label: "Category:", value: project.category },
+            { label: "Category:", value: project.catagory },
           ].map((item, i) => (
             <div key={i} className="flex gap-2 xs:gap-3 items-center text-base xs:text-base sm:text-lg md:text-base lg:text-sm xl:text-lg 2xl:text-lg">
               <span className="font-semibold text-gray-900">
@@ -186,11 +186,11 @@ export default function PortfolioDetail() {
         )}
 
         {/* Requirements */}
-        {project.requirements?.length > 0 && (
+        {project.requirement?.length > 0 && (
           <div className="mb-12 lg:mb-16 xl:mb-20 2xl:mb-24">
             <h2 className="text-3xl lg:text-2xl xl:text-3xl md:ml-4 font-bold mb-6 md:mb-8 xl:mb-8 text-gray-900">Project Requirement</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 ml-3 md:ml-0 gap-6">
-              {project.requirements.map((req, idx) => (
+              {project.requirement.map((req, idx) => (
                 <div key={idx} className="flex gap-3 items-start">
                   <VscStarFull className="w-4 h-4 text-cyan-500" />
                   <p className="text-gray-700 text-sm xs:text-base sm:text-lg md:text-base lg:text-sm xl:text-base 2xl:text-lg leading-relaxed">{req}</p>
@@ -201,13 +201,13 @@ export default function PortfolioDetail() {
         )}
 
         {/* Results */}
-        {project.results?.length > 0 && (
+        {[project.resultOne, project.resultTwo, project.resultThere].filter(Boolean).length > 0 && (
           <div className="mb-12 xs:mb-14 sm:mb-16 md:mb-20 lg:mb-24">
             <h2 className="text-3xl lg:text-2xl xl:text-3xl  font-bold mb-6 xs:mb-7 sm:mb-8 md:mb-10 lg:mb-6 xl:mb-10 text-gray-900">
               Results
             </h2>
             <div className="space-y-5 xs:space-y-6 sm:space-y-7 md:space-y-8 text-gray-500 leading-relaxed text-base xs:text-base sm:text-lg  md:text-lg lg:text-sm xl:text-base 2xl:text-base whitespace-pre-line">
-              {project.results.map((paragraph, index) => (
+              {[project.resultOne, project.resultTwo, project.resultThere].filter(Boolean).map((paragraph, index) => (
                 <p key={index}>
                   {paragraph}
                 </p>

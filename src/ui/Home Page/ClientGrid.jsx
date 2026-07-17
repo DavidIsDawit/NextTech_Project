@@ -19,8 +19,8 @@ const LogoCard = ({ logo }) => (
       p-1 "
   >
     <img
-      src={logo.src || logo.image}
-      alt={logo.alt || logo.name || "client logo"}
+      src={logo.partnerImage}
+      alt={logo.partnerName}
       className="max-w-[100%] max-h-[100%]"
     />
   </div>
@@ -28,11 +28,9 @@ const LogoCard = ({ logo }) => (
 
 LogoCard.propTypes = {
   logo: PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    src: PropTypes.string,
-    image: PropTypes.string,
-    alt: PropTypes.string,
-    name: PropTypes.string,
+    _id: PropTypes.string,
+    partnerImage: PropTypes.string,
+    partnerName: PropTypes.string,
   }).isRequired,
 };
 
@@ -100,7 +98,7 @@ const Clients = () => {
 
         {error && (
           <div className="text-center text-red-500 mb-8 bg-red-50 p-4 rounded-lg max-w-xl mx-auto">
-            Unauthorized: Please login to view partners data from the backend.
+            {error?.response?.data?.message || error?.message || String(error)}
           </div>
         )}
 
@@ -109,16 +107,16 @@ const Clients = () => {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {!logos || logos.length === 0 ? (
+          {(!logos || logos.length === 0) && !error ? (
             <div className="text-center text-gray-400 py-10">
               No partners found in the backend.
             </div>
-          ) : (
+          ) : !error ? (
             <>
               {/* MOBILE VIEW */}
               <div className={`grid grid-cols-2 md:grid-cols-3 gap-4 lg:hidden justify-items-center transition-all duration-700 ease-in-out ${loading ? 'opacity-0 translate-x-10' : 'opacity-100 translate-x-0'}`}>
                 {logos.map((logo, index) => (
-                  <LogoCard key={logo.id || `mobile-${index}`} logo={logo} />
+                  <LogoCard key={logo._id || `mobile-${index}`} logo={logo} />
                 ))}
               </div>
 
@@ -127,21 +125,21 @@ const Clients = () => {
                 {/* Row 1 (4 logos) */}
                 <div className="flex justify-center gap-8 w-full">
                   {logos.slice(0, 4).map((logo, index) => (
-                    <LogoCard key={logo.id || `row1-${index}`} logo={logo} />
+                    <LogoCard key={logo._id || `row1-${index}`} logo={logo} />
                   ))}
                 </div>
 
                 {/* Row 2 (5 logos) */}
                 <div className="flex justify-center gap-8 w-full">
                   {logos.slice(4, 9).map((logo, index) => (
-                    <LogoCard key={logo.id || `row2-${index}`} logo={logo} />
+                    <LogoCard key={logo._id || `row2-${index}`} logo={logo} />
                   ))}
                 </div>
 
                 {/* Row 3 (4 logos) */}
                 <div className="flex justify-center gap-8 w-full">
                   {logos.slice(9, 13).map((logo, index) => (
-                    <LogoCard key={logo.id || `row3-${index}`} logo={logo} />
+                    <LogoCard key={logo._id || `row3-${index}`} logo={logo} />
                   ))}
                 </div>
               </div>
@@ -161,7 +159,7 @@ const Clients = () => {
                 </div>
               )}
             </>
-          )}
+          ) : null}
         </div>
 
       </div>

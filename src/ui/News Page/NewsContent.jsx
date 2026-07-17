@@ -4,6 +4,7 @@ import {
     MdOutlineCalendarToday,
     MdOutlineFolderOpen,
 } from "react-icons/md";
+import { formatDate } from "../../utils/dataNormalization";
 
 function BlogContent({ post }) {
     if (!post) return null;
@@ -12,7 +13,7 @@ function BlogContent({ post }) {
         <article>
             <div className="relative mb-8 w-full overflow-hidden rounded-xl aspect-[16/10]">
                 <img
-                    src={post.image}
+                    src={post.imageCover}
                     alt={post.title}
                     className="h-full w-full object-cover"
                 />
@@ -25,11 +26,11 @@ function BlogContent({ post }) {
                 </div>
                 <div className="flex items-center font-bold">
                     <MdOutlineCalendarToday className="mr-2 text-sky-500" size={22} />
-                    <span>{post.fullDate || post.date}</span>
+                    <span>{formatDate(post.happenedOn)}</span>
                 </div>
                 <div className="flex items-center font-bold">
                     <MdOutlineFolderOpen className="mr-2 text-sky-500" size={22} />
-                    <span>{post.category}</span>
+                    <span>{post.catagory}</span>
                 </div>
             </div>
 
@@ -38,16 +39,12 @@ function BlogContent({ post }) {
             </h1>
 
             <div className="space-y-6 2xl:space-y-10 text-gray-600 text-lg 2xl:text-xl leading-relaxed">
-                {/* Content - Support both variables and arrays */}
-                {post.content1 && <p>{post.content1}</p>}
-                {post.content2 && <p>{post.content2}</p>}
-                {!post.content1 && (post.content || []).map((para, index) => (
-                    <p key={index}>{para}</p>
-                ))}
+                {post.descriptionOne && <p>{post.descriptionOne}</p>}
+                {post.descriptionTwo && <p>{post.descriptionTwo}</p>}
 
-                {post.detailImages && (
+                {post.images && post.images.length > 0 && (
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 py-2">
-                        {post.detailImages.map((img, index) => (
+                        {post.images.map((img, index) => (
                             <div key={index} className="relative overflow-hidden rounded-lg aspect-[16/10] w-full">
                                 <img
                                     src={img}
@@ -59,12 +56,8 @@ function BlogContent({ post }) {
                     </div>
                 )}
 
-                {/* Bottom Content - Support both variables and arrays */}
-                {post.bottomContent1 && <p>{post.bottomContent1}</p>}
-                {post.bottomContent2 && <p>{post.bottomContent2}</p>}
-                {!post.bottomContent1 && (post.bottomContent || []).map((para, index) => (
-                    <p key={`bottom-${index}`}>{para}</p>
-                ))}
+                {post.discriptionThree && <p>{post.discriptionThree}</p>}
+                {post.discriptionFour && <p>{post.discriptionFour}</p>}
             </div>
         </article>
     );
@@ -72,19 +65,16 @@ function BlogContent({ post }) {
 
 BlogContent.propTypes = {
     post: PropTypes.shape({
-        image: PropTypes.string,
+        imageCover: PropTypes.string,
         title: PropTypes.string,
         author: PropTypes.string,
-        date: PropTypes.string,
-        fullDate: PropTypes.string,
-        category: PropTypes.string,
-        content: PropTypes.arrayOf(PropTypes.string),
-        content1: PropTypes.string,
-        content2: PropTypes.string,
-        detailImages: PropTypes.arrayOf(PropTypes.string),
-        bottomContent: PropTypes.arrayOf(PropTypes.string),
-        bottomContent1: PropTypes.string,
-        bottomContent2: PropTypes.string,
+        happenedOn: PropTypes.string,
+        catagory: PropTypes.string,
+        descriptionOne: PropTypes.string,
+        descriptionTwo: PropTypes.string,
+        images: PropTypes.arrayOf(PropTypes.string),
+        discriptionThree: PropTypes.string,
+        discriptionFour: PropTypes.string,
     }),
 };
 

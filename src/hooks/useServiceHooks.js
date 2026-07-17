@@ -1,32 +1,23 @@
 import { useState, useEffect, useCallback } from 'react';
 import generalService from '../api/generalService';
-import { normalizeArrayResponse, fixObjectMedia, normalizeDataFields } from '../utils/dataNormalization';
+import { normalizeArrayResponse, fixObjectMedia } from '../utils/dataNormalization';
 
 /**
  * SECTION: API FETCHERS
  */
 export const getServices = async (params = {}) => {
     const response = await generalService.getAllServices(params);
-    return normalizeArrayResponse(response.data, 'services');
+    const items = normalizeArrayResponse(response.data, 'services');
+    // Map MongoDB's _id to id so components can always use item.id
+    return items.map(item => ({ ...item, id: item._id }));
 };
 
 export const getServiceById = async (id) => {
     const response = await generalService.getSingleService(id);
-    const result = response.data;
-
-    // Robustly find the service object
-    let item = result?.service ||
-        result?.services ||
-        result?.data?.service ||
-        result?.data?.services ||
-        result?.data ||
-        result;
-
-    if (Array.isArray(item)) {
-        item = item[0];
-    }
-
-    return item ? fixObjectMedia(normalizeDataFields(item)) : null;
+    // Backend returns: { status, data: { service: {...} } }
+    const item = response.data?.data?.service;
+    // Map MongoDB's _id to id
+    return item ? fixObjectMedia({ ...item, id: item._id }) : null;
 };
 
 /**
@@ -37,18 +28,23 @@ export const useServices = (params) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    // Stringify params to avoid infinite re-render when object literal is passed
+    const paramsKey = JSON.stringify(params);
+
     const loadData = useCallback(async () => {
         try {
             setLoading(true);
             const result = await getServices(params);
             setData(Array.isArray(result) ? result : []);
+            setError(null);
         } catch (err) {
             setError(err);
             setData([]);
         } finally {
             setLoading(false);
         }
-    }, [params]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [paramsKey]);
 
     useEffect(() => {
         loadData();
@@ -66,7 +62,10 @@ export const useService = (id) => {
     const [error, setError] = useState(null);
 
     const loadData = useCallback(async () => {
-        if (!id || id === 'undefined') return;
+        if (!id || id === 'undefined') {
+            setLoading(false);  // Guard exit: stop loading, don't fetch
+            return;
+        }
         try {
             setLoading(true);
             const result = await getServiceById(id);

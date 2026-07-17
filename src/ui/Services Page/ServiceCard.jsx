@@ -14,7 +14,7 @@ export default function ServiceCard({ service }) {
     >
       <div className="relative aspect-[4/3]  xs:aspect-[16/10] sm:aspect-[4/3] md:aspect-[16/10] lg:aspect-[15/9] xl:aspect-[15/9] 2xl:aspect-[15/9] overflow-hidden">
         <img
-          src={service.heroImage}
+          src={service.imageCover}
           alt={service.title}
           className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-120"
           loading="lazy"
@@ -35,7 +35,7 @@ export default function ServiceCard({ service }) {
           text-gray-600 mt-2 xs:mt-3 sm:mt-3 md:mt-4 lg:mt-3 xl:mt-4 2xl:mt-4
           line-clamp-2 break-words
         ">
-          {service.subtitle}
+          {service.description}
         </p>
         <div
           className="
@@ -55,9 +55,10 @@ export default function ServiceCard({ service }) {
 
 ServiceCard.propTypes = {
   service: PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    _id: PropTypes.string,
     title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
-    heroImage: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    imageCover: PropTypes.string,
   }).isRequired,
 };

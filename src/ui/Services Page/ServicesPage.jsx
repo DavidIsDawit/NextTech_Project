@@ -22,7 +22,7 @@ export default function ServicesPage() {
 
         {error && (
           <div className="text-center text-red-500 mb-8 bg-red-50 p-4 rounded-lg max-w-xl mx-auto font-semibold">
-            Unauthorized: Please login to view services from the backend.
+            {error?.response?.data?.message || error?.message || String(error)}
           </div>
         )}
         {/* Header */}
@@ -42,7 +42,7 @@ export default function ServicesPage() {
         {/* Services Grid - Now uses currentServices from state */}
         <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:px-3 gap-5 xs:gap-6 sm:gap-7 md:gap-8 lg:gap-4 lg:gap-y-9 xl:gap-y-12 xl:gap-6 ">
           {currentServices.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+            <ServiceCard key={service.id || service._id} service={service} />
           ))}
         </div>
         <div className="mt-10 xs:mt-12 sm:mt-14 md:mt-16 lg:mt-20">

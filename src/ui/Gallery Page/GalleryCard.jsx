@@ -6,27 +6,20 @@ import LeftArrow from "/GalleryPageImage/LeftArrow.png";
 export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Extract images array: handle both string (single image) and object (multi-image)
+  // Extract images array directly from backend object
   const allImages = useMemo(() => {
-    if (typeof src === 'string') return [src];
-    if (Array.isArray(src)) return src;
-    if (src && typeof src === 'object') {
-      const combinedImages = [];
-      if (src.coverImage) combinedImages.push(src.coverImage);
-      if (Array.isArray(src.images)) {
-        src.images.forEach(img => {
-          if (img && img !== src.coverImage) combinedImages.push(img);
-        });
-      }
-      // Fallback if no coverImage or images array is found in the object
-      if (combinedImages.length === 0) {
-        if (src.image) combinedImages.push(src.image);
-        else if (src.src) combinedImages.push(src.src);
-        else if (src.coverImage) combinedImages.push(src.coverImage); // As a last resort, if coverImage was the only thing
-      }
-      return combinedImages.length > 0 ? combinedImages : [];
+    if (!src || typeof src !== 'object') return [];
+
+    const combinedImages = [];
+    if (src.coverImage) combinedImages.push(src.coverImage);
+
+    if (Array.isArray(src.images)) {
+      src.images.forEach(img => {
+        if (img && img !== src.coverImage) combinedImages.push(img);
+      });
     }
-    return [];
+
+    return combinedImages;
   }, [src]);
 
   const hasMultipleImages = allImages.length > 1;
@@ -147,7 +140,10 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
 }
 
 GalleryCard.propTypes = {
-  src: PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.array]).isRequired,
+  src: PropTypes.shape({
+    coverImage: PropTypes.string,
+    images: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
   alt: PropTypes.string,
   onClick: PropTypes.func,
 };

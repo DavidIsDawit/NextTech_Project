@@ -27,11 +27,10 @@ export const usePartners = (params) => {
             setLoading(true);
             const response = await generalService.getAllPartners(params);
             
-            // Log response data to the console for debugging
-            console.log('Partners API Response:', response.data);
 
             const result = normalizeArrayResponse(response.data, 'partners');
-            setData(Array.isArray(result) ? result : []);
+            const activePartners = (Array.isArray(result) ? result : []).filter(item => item.status === 'Active');
+            setData(activePartners);
             
             // Extract total count from various potential keys and nested objects
             const total = response.data?.totalPartners ?? 

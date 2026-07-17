@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 export default function PortfolioCard({ item }) {
   return (
     <Link
-      to={`/portfolio/${item.id}`}
+      to={`/portfolio/${item._id}`}
       className="
         group relative block overflow-hidden 
         rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl 
@@ -14,7 +14,7 @@ export default function PortfolioCard({ item }) {
     >
       {/* Background Image */}
       <img
-        src={item.image || "/placeholder.svg"}
+        src={item.thumbinal}
         alt={item.title}
         className="
           w-full object-cover 
@@ -63,7 +63,7 @@ export default function PortfolioCard({ item }) {
     mb-1 text-sm xs:text-base sm:text-base md:text-lg  lg:text-base xl:text-lg 
     font-medium opacity-90 tracking-wider
   ">
-          {item.category}
+          {item.catagory}
         </p>
         <h3 className="
     text-lg xs:text-xl sm:text-xl md:text-lg lg:text-base xl:text-2xl 2xl:text-xl 
@@ -86,9 +86,10 @@ export default function PortfolioCard({ item }) {
 
 PortfolioCard.propTypes = {
   item: PropTypes.shape({
-    image: PropTypes.string.isRequired,
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    category: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
+    thumbinal: PropTypes.string,
+    _id: PropTypes.string,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    catagory: PropTypes.string,
+    title: PropTypes.string,
   }).isRequired,
 }
