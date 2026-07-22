@@ -1,13 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
 import generalService from '../api/generalService';
-import { normalizeArrayResponse } from '../utils/dataNormalization';
 
-/**
- * SECTION: API FETCHERS
- */
 export const getFAQs = async (params = {}) => {
     const response = await generalService.getAllFAQs(params);
-    return normalizeArrayResponse(response.data, 'faqs');
+    return response.data?.data || [];
 };
 
 /**
@@ -22,7 +18,9 @@ export const useFAQs = (params) => {
         try {
             setLoading(true);
             const result = await getFAQs(params);
-            setData(Array.isArray(result) ? result : []);
+            const arrayResult = Array.isArray(result) ? result : [];
+            const publishedFAQs = arrayResult.filter(faq => faq.status === "published");
+            setData(publishedFAQs);
         } catch (err) {
             setError(err);
             setData([]);

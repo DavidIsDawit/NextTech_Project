@@ -1,11 +1,8 @@
 import { useState } from "react";
 import PropTypes from 'prop-types';
 
-export default function CertificateHero({ images = [], certificateImage }) {
-  // Ensure images is always an array, and include certificateImage if provided
-  const safeImages = Array.isArray(images) && images.length > 0
-    ? images
-    : (certificateImage ? [certificateImage] : []);
+export default function CertificateHero({ certificateImage }) {
+  const safeImages = certificateImage ? [certificateImage] : [];
 
   const IMAGES_PER_PAGE = 2;
   const [currentPage, setCurrentPage] = useState(0);
@@ -51,10 +48,5 @@ export default function CertificateHero({ images = [], certificateImage }) {
   );
 }
 CertificateHero.propTypes = {
-
-  images: PropTypes.arrayOf(PropTypes.string),
   certificateImage: PropTypes.string,
-  img_icon: PropTypes.string,
-  description: PropTypes.string,
-  index: PropTypes.number,
 };

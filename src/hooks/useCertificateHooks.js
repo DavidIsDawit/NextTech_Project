@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import axiosInstance from '../api/axiosInstance';
 import generalService from '../api/generalService';
-import { normalizeArrayResponse, fixObjectMedia, normalizeDataFields } from '../utils/dataNormalization';
 
 /**
  * SECTION: API FETCHERS
@@ -10,15 +9,13 @@ export const fetchAllCertificates = async ({ page = 1, sort = "recent" } = {}) =
     const response = await axiosInstance.get("/getAllCertificates", {
         params: { page, sort },
     });
-    return normalizeArrayResponse(response.data, 'certificates');
+    return response.data?.certificates;
 };
 
 export const getCertificateById = async (id) => {
     const response = await generalService.getSingleCertificate(id);
     const result = response.data;
-    let item = result?.certificate || result?.certificates || result?.data?.certificate || result?.data?.certificates || result?.data || result;
-    if (Array.isArray(item)) item = item[0];
-    return fixObjectMedia(normalizeDataFields(item));
+    return result?.data?.certificate;
 };
 
 /**
@@ -33,7 +30,9 @@ export const useCertificates = (params) => {
         try {
             setLoading(true);
             const result = await fetchAllCertificates(params);
-            setData(Array.isArray(result) ? result : []);
+            const arrayResult = Array.isArray(result) ? result : [];
+            const activeCertificates = arrayResult.filter(item => item.status === "Active");
+            setData(activeCertificates);
         } catch (err) {
             setError(err);
             setData([]);

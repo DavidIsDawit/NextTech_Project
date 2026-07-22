@@ -9,7 +9,9 @@ export const getServices = async (params = {}) => {
     const response = await generalService.getAllServices(params);
     const items = normalizeArrayResponse(response.data, 'services');
     // Map MongoDB's _id to id so components can always use item.id
-    return items.map(item => ({ ...item, id: item._id }));
+    const mapped = items.map(item => ({ ...item, id: item._id }));
+    // Filter to only show published (active) services
+    return mapped.filter(item => item.status === "active");
 };
 
 export const getServiceById = async (id) => {

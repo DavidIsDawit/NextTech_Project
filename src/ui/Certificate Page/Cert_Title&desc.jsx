@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-export default function CertificateContent({ certificateName, certificateType }) {
+export default function CertificateContent({ certificateName, certificateDescription }) {
   return (
     <div className=" lg:w-full flex flex-col justify-between ">
       {/* Title */}
@@ -9,16 +9,18 @@ export default function CertificateContent({ certificateName, certificateType })
         </h1>
         {/* Description */}
         <div className="text-lg md:text-sm lg:text-lg 2xl:text-xl w-full text-gray-600  leading-relaxed mb-10 whitespace-pre-line">
-          {(certificateType || "")
-            .split(/ {2,}/)
-            .map((text, i) => (
+          {certificateDescription &&
+            certificateDescription.split(/ {2,}/).map((text, i) => (
               <p key={i} className="mb-6">
                 {text}
               </p>
-            ))}</div></div></div>
+            ))}
+        </div>
+      </div>
+    </div>
   );
 }
 CertificateContent.propTypes = {
   certificateName: PropTypes.string,
-  certificateType: PropTypes.string,
+  certificateDescription: PropTypes.string,
 };

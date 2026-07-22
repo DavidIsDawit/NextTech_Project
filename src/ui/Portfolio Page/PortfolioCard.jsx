@@ -88,7 +88,6 @@ PortfolioCard.propTypes = {
   item: PropTypes.shape({
     thumbinal: PropTypes.string,
     _id: PropTypes.string,
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     catagory: PropTypes.string,
     title: PropTypes.string,
   }).isRequired,

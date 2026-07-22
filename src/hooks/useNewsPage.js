@@ -101,8 +101,10 @@ function useBlog() {
     const categories = useMemo(() => {
         const safePosts = Array.isArray(posts) ? posts : [];
         const categoryCounts = safePosts.reduce((acc, post) => {
-            const cat = post.catagory || "Uncategorized";
-            acc[cat] = (acc[cat] || 0) + 1;
+            const cat = post.catagory;
+            if (cat) {
+                acc[cat] = (acc[cat] || 0) + 1;
+            }
             return acc;
         }, {});
 

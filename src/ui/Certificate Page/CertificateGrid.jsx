@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import CertificateCard from './CertificateCard .jsx';
 
-export default function CertificateGrid({ items, onItemClick }) {
+export default function CertificateGrid({ items }) {
   return (
     <div className="
       grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 
@@ -10,10 +10,8 @@ export default function CertificateGrid({ items, onItemClick }) {
     ">
       {items.map((item, index) => (
         <CertificateCard
-          key={item.id || index}
+          key={item._id || index}
           item={item}
-          index={index}
-          onClick={() => onItemClick(item.images[0])}
         />
       ))}
     </div>
@@ -22,5 +20,4 @@ export default function CertificateGrid({ items, onItemClick }) {
 
 CertificateGrid.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
-  onItemClick: PropTypes.func,
 };

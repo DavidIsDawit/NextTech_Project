@@ -1,32 +1,17 @@
 import { useState, useEffect, useCallback } from 'react';
 import generalService from '../api/generalService';
-import { normalizeArrayResponse, fixObjectMedia, normalizeDataFields } from '../utils/dataNormalization';
 
 /**
  * SECTION: API FETCHERS
  */
 export const getPortfolio = async (params = {}) => {
     const response = await generalService.getAllPortfolio(params);
-    return normalizeArrayResponse(response.data, 'portfolios');
+    return response.data?.portfolios || response.data?.data?.portfolios || [];
 };
 
 export const getPortfolioById = async (id) => {
     const response = await generalService.getSinglePortfolio(id);
-    const result = response.data;
-
-    // Robustly find the portfolio object
-    let item = result?.portfolio ||
-        result?.portfolios ||
-        result?.data?.portfolio ||
-        result?.data?.portfolios ||
-        result?.data ||
-        result;
-
-    if (Array.isArray(item)) {
-        item = item[0];
-    }
-
-    return item ? fixObjectMedia(normalizeDataFields(item)) : null;
+    return response.data?.data?.portfolio || response.data?.portfolio;
 };
 
 /**
@@ -41,7 +26,9 @@ export const usePortfolio = (params) => {
         try {
             setLoading(true);
             const result = await getPortfolio(params);
-            setData(Array.isArray(result) ? result : []);
+            const arrayResult = Array.isArray(result) ? result : [];
+            const activePortfolios = arrayResult.filter(item => item.status === "Active");
+            setData(activePortfolios);
         } catch (err) {
             setError(err);
             setData([]);

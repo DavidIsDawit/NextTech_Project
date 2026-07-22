@@ -135,6 +135,18 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
         </div>
       )}
 
+      {/* Description Div */}
+      <div className="p-5 flex flex-col gap-2 flex-grow bg-white border-t border-gray-50">
+        <h3 className="font-semibold text-lg text-gray-800 group-hover:text-[#00A3E0] transition-colors duration-300">
+          {src.title}
+        </h3>
+        {src.description && (
+          <p className="text-sm text-gray-500 leading-relaxed">
+            {src.description}
+          </p>
+        )}
+      </div>
+
     </div>
   );
 }
@@ -143,6 +155,8 @@ GalleryCard.propTypes = {
   src: PropTypes.shape({
     coverImage: PropTypes.string,
     images: PropTypes.arrayOf(PropTypes.string),
+    title: PropTypes.string,
+    description: PropTypes.string,
   }).isRequired,
   alt: PropTypes.string,
   onClick: PropTypes.func,

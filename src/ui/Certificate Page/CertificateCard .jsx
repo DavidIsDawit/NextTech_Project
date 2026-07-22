@@ -7,7 +7,7 @@ export default function CertificateCard({ item }) {
   const [currentIndex] = useState(0);
   const navigate = useNavigate();
   const images = item.certificateImage ? [item.certificateImage] : [];
-  const description = item.certificateType;
+  const description = item.certificateDescription;
   const title = item.certificateName;
   const goToDetail = () => {
     navigate(`/certificate/${item._id}`);
@@ -66,10 +66,8 @@ CertificateCard.propTypes = {
     images: PropTypes.arrayOf(PropTypes.string),
     _id: PropTypes.string.isRequired,
     certificateImage: PropTypes.string,
-    img_icon: PropTypes.string,
-    title: PropTypes.string,
     certificateName: PropTypes.string,
-    description: PropTypes.string,
+    certificateDescription: PropTypes.string,
     certificateType: PropTypes.string,
   }).isRequired,
 };

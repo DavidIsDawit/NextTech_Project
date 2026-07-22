@@ -43,7 +43,7 @@ export default function Faq() {
           <div className="space-y-4 ">
             {faqData.map((item, index) => (
               <div
-                key={index}
+                key={item._id || index}
                 className="bg-white overflow-hidden  transition-all duration-300"
               >
                 <button

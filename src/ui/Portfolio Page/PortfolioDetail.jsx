@@ -99,15 +99,6 @@ export default function PortfolioDetail() {
               </div>
             )}
 
-            {/* Fallback to normalized description if specific fields are missing */}
-            {(!project.descriptionOne && project.description?.length > 0) && project.description.map((para, index) => (
-              <p
-                key={index}
-                className="text-gray-500 text-base md:text-lg lg:text-sm xl:text-lg 2xl:text-xl font-sans leading-relaxed whitespace-pre-line"
-              >
-                {para}
-              </p>
-            ))}
           </div>
         </div>
 

@@ -144,7 +144,7 @@ export default function PortfolioSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-5 mb-14 md:mb-24">
         {currentItems.map((item, index) => (
-          <PortfolioCard key={`${item.id}-${index}`} item={item} />
+          <PortfolioCard key={item._id || index} item={item} />
         ))}
       </div>
 

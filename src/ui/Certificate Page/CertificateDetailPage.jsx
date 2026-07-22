@@ -38,22 +38,21 @@ export default function CertificateDetailPage() {
         {/* Hero Slider */}
         <div className="w-full lg:w-full">
           <CertificateHero
-            images={certificate.images}
             certificateImage={certificate.certificateImage}
-            title={certificate.certificateName || certificate.title}
+            title={certificate.certificateName}
           />
         </div>
         {/* Right Column */}
         <div className="flex flex-col lg:flex-row  justify-between gap-x-5 2xl:gap-x-10 ">
           <CertificateContent
             certificateName={certificate.certificateName}
-            certificateType={certificate.certificateType}
+            certificateDescription={certificate.certificateDescription}
           />
           <CertificateInfo
             certificateFrom={certificate.certificateFrom}
             project={certificate.project}
             catagory={certificate.catagory}
-            IssueDate={formatDate(certificate.createdDate)}
+            IssueDate={formatDate(certificate.IssueDate)}
           />
         </div>
       </div>
