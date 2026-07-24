@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTestimonials } from "../../hooks/useTestimonialHooks";
+import LoadingSpinner from "../LoadingSpinner";
 
 const Testimonials = () => {
   // Static headers
@@ -21,15 +22,8 @@ const Testimonials = () => {
   if (windowWidth >= 1024) itemsPerPage = 3;
   else if (windowWidth >= 768) itemsPerPage = 2;
 
-  // Logic to handle backend mismatch (Backend limit is fixed at 3)
-  const backendLimit = 3;
-  // Calculate which backend page contains the items for our current frontend page
-  const backendPage = Math.floor((currentPage * itemsPerPage) / backendLimit) + 1;
-
-  const { data: items, totalTestimonials, loading, error } = useTestimonials({
-    page: backendPage,
-    limit: backendLimit
-  });
+  // Fetch ALL active testimonials at once — carousel slicing is done on the frontend
+  const { data: items, loading, error } = useTestimonials({ limit: 50, page: 1 });
 
   const safeItems = Array.isArray(items) ? items : [];
 
@@ -39,7 +33,7 @@ const Testimonials = () => {
     }
   }, [loading, hasInitialLoaded]);
 
-  const totalPages = totalTestimonials > 0 ? Math.ceil(totalTestimonials / itemsPerPage) : 1;
+  const totalPages = safeItems.length > 0 ? Math.ceil(safeItems.length / itemsPerPage) : 1;
 
   useEffect(() => {
     if (!isPaused && totalPages > 1) {
@@ -50,8 +44,8 @@ const Testimonials = () => {
     }
   }, [isPaused, totalPages]);
 
-  // Use slicing within the fetched backend page to show the correct items for the frontend page
-  const offset = (currentPage * itemsPerPage) % backendLimit;
+  // Slice the correct items for the current carousel page
+  const offset = currentPage * itemsPerPage;
   const currentItems = safeItems.slice(offset, offset + itemsPerPage);
 
   return (
@@ -77,8 +71,8 @@ const Testimonials = () => {
         {/* Testimonials Container */}
         <div className="flex justify-center min-h-[400px]" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
           {loading && !hasInitialLoaded ? (
-            <div className="flex items-center justify-center py-20 text-[#00AEEF] font-bold">
-              Loading...
+            <div className="py-20 h-[300px]">
+              <LoadingSpinner text="Loading Testimonials..." />
             </div>
           ) : safeItems.length === 0 && !loading && !error ? (
             <div className="flex items-center justify-center py-20 text-gray-400">

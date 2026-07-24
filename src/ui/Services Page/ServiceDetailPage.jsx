@@ -6,6 +6,7 @@ import Faq from "../Faq Page/Faq";
 import { useService, useServices } from "../../hooks/useServiceHooks";
 import Button from "../Button.jsx";
 import NotFoundMessage from "../NotFoundMessage";
+import LoadingSpinner from "../LoadingSpinner";
 
 export default function ServiceDetail() {
   const { id } = useParams();
@@ -32,20 +33,11 @@ export default function ServiceDetail() {
   }, []);
 
   if (loading) {
-    return <div className="flex justify-center py-40 font-bold text-primary">Loading Service Details...</div>;
+    return <LoadingSpinner text="Loading Service Details..." />;
   }
 
   if (error || !service) {
-    return (
-      <div className="py-20">
-        {error && (
-          <div className="text-center text-red-500 mb-8 bg-red-50 p-4 rounded-lg max-w-xl mx-auto font-semibold">
-            {error?.response?.data?.message || error?.message || String(error)}
-          </div>
-        )}
-        <NotFoundMessage itemType="Service" backPath="/Service" />
-      </div>
-    );
+    return <NotFoundMessage itemType="Service" backPath="/Service" />;
   }
 
   const totalMembers = (service.images || []).length;

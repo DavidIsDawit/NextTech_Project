@@ -24,11 +24,12 @@ export const useTestimonials = (params) => {
     const loadData = useCallback(async () => {
         try {
             setLoading(true);
-            const response = await generalService.getAllTestimonials(params);
+            const parsedParams = paramsKey ? JSON.parse(paramsKey) : {};
+            const response = await generalService.getAllTestimonials(parsedParams);
             const result = normalizeArrayResponse(response.data, 'testimonials');
             const activeItems = (Array.isArray(result) ? result : []).filter(item => item.status === 'Active');
             setData(activeItems);
-            setTotalTestimonials(response.data?.totalTestimonials || response.data?.totalCount || result.length || 0);
+            setTotalTestimonials(Number(response.data?.totalTestimonials ?? 0));
         } catch (err) {
             setError(err);
             setData([]);

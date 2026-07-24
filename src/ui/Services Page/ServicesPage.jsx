@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useServices } from "../../hooks/useServiceHooks";
 import ServiceCard from "./ServiceCard";
 import Pagination from "../Pagination";
+import LoadingSpinner from "../LoadingSpinner";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -14,7 +15,7 @@ export default function ServicesPage() {
     setCurrentPage(page);
   };
 
-  if (loading) return <div className="flex justify-center py-20 font-bold text-primary">Loading services...</div>;
+  if (loading) return <LoadingSpinner text="Loading services..." />;
 
   return (
     <section className="py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 bg-gray-50">

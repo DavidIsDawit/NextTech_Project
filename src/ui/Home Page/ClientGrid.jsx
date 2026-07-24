@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import { usePartners } from "../../hooks/usePartnerHooks";
 import { clientsData } from "../../data/HomePageData";
+import LoadingSpinner from "../LoadingSpinner";
 
 const LogoCard = ({ logo }) => (
   <div
@@ -39,9 +40,16 @@ const Clients = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [hasInitialLoaded, setHasInitialLoaded] = useState(false);
   const { subtitle, title, blogTitle } = clientsData;
-  const { data: logos, totalPartners, loading, error } = usePartners({ page: currentPage + 1 });
+  const PAGE_LIMIT = 10;
+  // Fetch all active partners at once so the auto-carousel doesn't constantly hit the backend
+  const { data: allLogos, totalPartners, loading, error } = usePartners({ limit: 100, page: 1 });
 
-  const totalPages = Math.ceil((totalPartners || 0) / 13);
+  const safeLogos = Array.isArray(allLogos) ? allLogos : [];
+  const totalPages = safeLogos.length > 0 ? Math.ceil(safeLogos.length / PAGE_LIMIT) : 1;
+
+  // Slice the correct logos for the current carousel page
+  const offset = currentPage * PAGE_LIMIT;
+  const logos = safeLogos.slice(offset, offset + PAGE_LIMIT);
 
   // Auto-slide effect
   useEffect(() => {
@@ -75,11 +83,9 @@ const Clients = () => {
 
   // Only show the global loading screen on the very first visit
   // Subsequent pages will use the opacity fade transition instead of replacing the whole UI
-  if (loading && !hasInitialLoaded) return (
-    <div className="flex justify-center py-20 text-primary font-bold">
-      Loading Partners...
-    </div>
-  );
+  if (loading && !hasInitialLoaded) {
+    return <LoadingSpinner text="Loading Partners..." />;
+  }
 
   return (
     <section id="partners-section" className="py-10 md:py-24 lg:py-32 bg-[#FCFDFF] overflow-hidden">
@@ -120,25 +126,25 @@ const Clients = () => {
                 ))}
               </div>
 
-              {/* DESKTOP VIEW: Exact 4-5-4 Staggered Layout */}
+              {/* DESKTOP VIEW: Exact 3-4-3 Staggered Layout */}
               <div className={`hidden lg:flex flex-col items-center gap-8 lg:gap-10 transition-all duration-700 ease-in-out ${loading ? 'opacity-0 translate-x-10' : 'opacity-100 translate-x-0'}`}>
-                {/* Row 1 (4 logos) */}
+                {/* Row 1 (3 logos) */}
                 <div className="flex justify-center gap-8 w-full">
-                  {logos.slice(0, 4).map((logo, index) => (
+                  {logos.slice(0, 3).map((logo, index) => (
                     <LogoCard key={logo._id || `row1-${index}`} logo={logo} />
                   ))}
                 </div>
 
-                {/* Row 2 (5 logos) */}
+                {/* Row 2 (4 logos) */}
                 <div className="flex justify-center gap-8 w-full">
-                  {logos.slice(4, 9).map((logo, index) => (
+                  {logos.slice(3, 7).map((logo, index) => (
                     <LogoCard key={logo._id || `row2-${index}`} logo={logo} />
                   ))}
                 </div>
 
-                {/* Row 3 (4 logos) */}
+                {/* Row 3 (3 logos) */}
                 <div className="flex justify-center gap-8 w-full">
-                  {logos.slice(9, 13).map((logo, index) => (
+                  {logos.slice(7, 10).map((logo, index) => (
                     <LogoCard key={logo._id || `row3-${index}`} logo={logo} />
                   ))}
                 </div>

@@ -23,10 +23,12 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
   }, [src]);
 
   const hasMultipleImages = allImages.length > 1;
-  const prev = () => {
+  const prev = (e) => {
+    e.stopPropagation();
     setCurrentIndex((i) => (i === 0 ? allImages.length - 1 : i - 1));
   };
-  const next = () => {
+  const next = (e) => {
+    e.stopPropagation();
     setCurrentIndex((i) => (i === allImages.length - 1 ? 0 : i + 1));
   };
 
@@ -55,85 +57,81 @@ export default function GalleryCard({ src, alt = "Gallery image", onClick }) {
     // >
     <div
       className="
-    group relative overflow-hidden rounded-xl 
+    group flex flex-col overflow-hidden rounded-xl 
     shadow-lg hover:shadow-2xl transition-all duration-500 
     cursor-pointer bg-gray-100 
-
-    /* Standard width for the grid column */
-    w-full 
-
-    /* The Aspect Ratio Replacement */
-    /* This creates the same 'tall' proportion as 27vw width and 60vh height */
-    aspect-[1.04/1] 
+    w-full h-full
   "
       onClick={onClick}
     >
-
-      <img
-        src={allImages[currentIndex]}
-        alt={alt}
-        className="
+      {/* Image & Carousel Wrapper */}
+      <div className="relative w-full h-[260px] sm:h-[280px] xl:h-[320px] shrink-0">
+        <img
+          src={allImages[currentIndex]}
+          alt={alt}
+          className="
           w-full  h-full object-cover object-top
           transition-transform duration-700"
-        loading="lazy"
-      />
-      {/* Prev / Next buttons */}
-      {hasMultipleImages && (
-        <button
-          onClick={prev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 bg-[#00A3E0] hover:bg-[#0097a7]  text-white pt-2 px-1  "
-        >
-          <img src={LeftArrow}
-            className="h-6 w-6 lg:h-5 lg:w-5 xl:w-7 xl:h-8 object-cover"
-            alt="" />
-        </button>
-      )}
-      {hasMultipleImages && (
-        <button
-          onClick={next}
-          className="absolute right-3 top-1/2 -translate-y-1/2 hover:bg-[#0097a7] bg-[#00A3E0]   text-white pt-2 px-1    "
-        >
-          <img src={RightArrow}
-            className=" h-6 w-6 lg:h-5 lg:w-5 xl:w-8 xl:h-8 object-cover "
-            alt="" />
-        </button>
-      )}
+          loading="lazy"
+        />
+        {/* Prev / Next buttons */}
+        {hasMultipleImages && (
+          <button
+            onClick={prev}
+            className="absolute left-3 top-1/2 -translate-y-1/2 bg-[#00A3E0] hover:bg-[#0097a7]  text-white pt-2 px-1  "
+          >
+            <img src={LeftArrow}
+              className="h-6 w-6 lg:h-5 lg:w-5 xl:w-7 xl:h-8 object-cover"
+              alt="" />
+          </button>
+        )}
+        {hasMultipleImages && (
+          <button
+            onClick={next}
+            className="absolute right-3 top-1/2 -translate-y-1/2 hover:bg-[#0097a7] bg-[#00A3E0]   text-white pt-2 px-1    "
+          >
+            <img src={RightArrow}
+              className=" h-6 w-6 lg:h-5 lg:w-5 xl:w-8 xl:h-8 object-cover "
+              alt="" />
+          </button>
+        )}
 
 
-      {/* Subtle hover overlay */}
-      {/* THUMBNAIL OVERLAY */}
-      {hasMultipleImages && (
-        <div
-          className="
+        {/* Subtle hover overlay */}
+        {/* THUMBNAIL OVERLAY */}
+        {hasMultipleImages && (
+          <div
+            className="
             absolute bottom-0 left-0 right-0 z-10
             bg-black/60 
             px-3 pb-5 pt-3 
           "
-        >
-          <div className=" flex justify-start gap-2 overflow-x-auto flex-nowrap scrollbar-hide ">
-            {allImages.map((img, index) => (
-              <button
-                key={index}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setCurrentIndex(index);
-                }}
-                className={`h-[10vh] w-[12vh] sm:h-[10vh] flex-shrink-0  rounded-sm overflow-hidden border
+          >
+            <div className=" flex justify-start gap-2 overflow-x-auto flex-nowrap scrollbar-hide ">
+              {allImages.map((img, index) => (
+                <button
+                  key={index}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setCurrentIndex(index);
+                  }}
+                  className={`h-[10vh] w-[12vh] sm:h-[10vh] flex-shrink-0  rounded-sm overflow-hidden border
                   ${index === currentIndex
-                    ? "border-blue-500"
-                    : "border-white/30"
-                  }`}
-              >
-                <img
-                  src={img}
-                  className="h-[10vh] w-[12vh]  sm:h-[10vh]  object-cover"
-                  alt=""
-                />
-              </button>
-            ))}
+                      ? "border-blue-500"
+                      : "border-white/30"
+                    }`}
+                >
+                  <img
+                    src={img}
+                    className="h-[10vh] w-[12vh]  sm:h-[10vh]  object-cover"
+                    alt=""
+                  />
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
 
       {/* Description Div */}
       <div className="p-5 flex flex-col gap-2 flex-grow bg-white border-t border-gray-50">

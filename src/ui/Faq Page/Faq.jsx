@@ -2,16 +2,17 @@ import { useState } from "react";
 import { useFAQs } from "../../hooks/useFAQHooks";
 import { faqImage } from "../../data/FaqPageData";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
+import LoadingSpinner from "../LoadingSpinner";
 
 export default function Faq() {
-  const { data: faqData, loading, error } = useFAQs();
+  const { data: faqData, loading, error } = useFAQs({ limit: 5 });
   const [openIndex, setOpenIndex] = useState(0);
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  if (loading) return <div className="flex justify-center py-20">Loading FAQs...</div>;
+  if (loading) return <LoadingSpinner text="Loading FAQs..." />;
   if (error) return <div className="flex justify-center py-20 text-red-500">Error loading FAQs.</div>;
 
   return (

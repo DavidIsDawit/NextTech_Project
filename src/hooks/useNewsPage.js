@@ -66,7 +66,7 @@ function useBlog() {
             try {
                 setLoading(true);
                 // Use the centralized getNews helper which handles basic normalization and media fixing
-                const result = await getNews();
+                const result = await getNews({ limit: 100, page: 1 });
 
                 // Filter to only show published posts
                 const publishedPosts = result.filter(post => post.status === "published");

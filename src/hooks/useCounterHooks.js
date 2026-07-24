@@ -18,18 +18,22 @@ export const useCounters = (params) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const paramsKey = JSON.stringify(params);
+
     const loadData = useCallback(async () => {
         try {
             setLoading(true);
-            const result = await getCounters(params);
+            const parsedParams = paramsKey ? JSON.parse(paramsKey) : {};
+            const result = await getCounters(parsedParams);
             setData(Array.isArray(result) ? result : []);
+            setError(null);
         } catch (err) {
             setError(err);
             setData([]);
         } finally {
             setLoading(false);
         }
-    }, [params]);
+    }, [paramsKey]);
 
     useEffect(() => {
         loadData();

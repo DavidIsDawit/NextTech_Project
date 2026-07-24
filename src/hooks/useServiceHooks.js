@@ -36,7 +36,8 @@ export const useServices = (params) => {
     const loadData = useCallback(async () => {
         try {
             setLoading(true);
-            const result = await getServices(params);
+            const parsedParams = paramsKey ? JSON.parse(paramsKey) : {};
+            const result = await getServices(parsedParams);
             setData(Array.isArray(result) ? result : []);
             setError(null);
         } catch (err) {
@@ -45,7 +46,6 @@ export const useServices = (params) => {
         } finally {
             setLoading(false);
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [paramsKey]);
 
     useEffect(() => {

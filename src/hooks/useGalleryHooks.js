@@ -18,19 +18,23 @@ export const useGallery = (params) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const paramsKey = JSON.stringify(params);
+
     const loadData = useCallback(async () => {
         try {
             setLoading(true);
-            const result = await getGallery(params);
+            const parsedParams = paramsKey ? JSON.parse(paramsKey) : {};
+            const result = await getGallery(parsedParams);
             const activeGallery = (Array.isArray(result) ? result : []).filter(item => item.status === "Active");
             setData(activeGallery);
+            setError(null);
         } catch (err) {
             setError(err);
             setData([]);
         } finally {
             setLoading(false);
         }
-    }, [params]);
+    }, [paramsKey]);
 
     useEffect(() => {
         loadData();

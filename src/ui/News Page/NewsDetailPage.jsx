@@ -6,10 +6,15 @@ import BlogTags from "./NewsTags";
 import BlogContent from "./NewsContent";
 import NotFoundMessage from "../NotFoundMessage";
 import useBlog from "../../hooks/useNewsPage";
+import LoadingSpinner from "../LoadingSpinner";
 
 function BlogDetail() {
   const { id } = useParams();
-  const { posts, categories, tags, recentPosts, searchQuery, setSearchQuery } = useBlog();
+  const { posts, categories, tags, recentPosts, searchQuery, setSearchQuery, loading } = useBlog();
+
+  if (loading) {
+    return <LoadingSpinner text="Loading News Details..." />;
+  }
 
   const post = posts.find((p) => String(p._id) === String(id));
 

@@ -1,11 +1,12 @@
-import { useState, useRef, useEffect, useMemo } from "react" // Added useMemo
+import { useState, useRef, useEffect, useMemo } from "react"
 import PortfolioCard from "./PortfolioCard"
 import Pagination from "../Pagination";
 import { usePortfolio } from "../../hooks/usePortfolioHooks";
+import LoadingSpinner from "../LoadingSpinner";
 
 export default function PortfolioSection() {
   const scrollRef = useRef(null);
-  const { data: portfolioProjects, loading, error } = usePortfolio();
+  const { data: portfolioProjects, loading, error } = usePortfolio({ limit: 100, page: 1 });
 
   // FIXED: Wrapped in useMemo to prevent unnecessary re-renders and fix the warning
   const projectCategories = useMemo(() => {
@@ -81,7 +82,7 @@ export default function PortfolioSection() {
   const activeDotIndex = Math.floor(categoryIndex / 3)
   const totalDots = Math.ceil(projectCategories.length / 3)
 
-  if (loading) return <div className="flex justify-center py-20 font-bold text-primary">Loading portfolio...</div>;
+  if (loading) return <LoadingSpinner text="Loading portfolio..." />;
 
   return (
     <div className="font-sans px-5 xs:px-6 md:px-12 lg:px-20 xl:px-20 2xl:px-28 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24">

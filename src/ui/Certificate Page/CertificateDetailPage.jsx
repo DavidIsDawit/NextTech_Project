@@ -5,6 +5,7 @@ import CertificateContent from "./Cert_Title&desc";
 import CertificateInfo from "./CertInfo";
 import NotFoundMessage from "../NotFoundMessage";
 import { formatDate } from "../../utils/dataNormalization";
+import LoadingSpinner from "../LoadingSpinner";
 
 export default function CertificateDetailPage() {
   const { id } = useParams();
@@ -15,20 +16,10 @@ export default function CertificateDetailPage() {
   }
 
   if (loading) return (
-    <div className="flex justify-center py-20 font-bold text-primary">
-      Loading certificate details...
-    </div>
+    <LoadingSpinner text="Loading certificate details..." />
   );
 
-  if (error) return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
-      <div className="text-center text-red-500 bg-red-50 p-6 rounded-lg max-w-xl mx-auto font-semibold shadow-md">
-        Unauthorized: Please login to view certificate details from the backend.
-      </div>
-    </div>
-  );
-
-  if (!certificate) {
+  if (error || !certificate) {
     return <NotFoundMessage itemType="Certificate" backPath="/certificates" />;
   }
 

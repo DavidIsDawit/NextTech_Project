@@ -2,16 +2,17 @@ import { useState } from 'react';
 import { useGallery } from '../../hooks/useGalleryHooks';
 import GalleryGrid from './GallaryGrid';
 import Pagination from "../Pagination";
+import LoadingSpinner from "../LoadingSpinner";
 
 const ITEMS_PER_PAGE = 6;
 
 export default function GalleryUI() {
-  const { data: galleryItems, loading, error } = useGallery();
-  const [setSelectedImage] = useState(null);
+  const { data: galleryItems, loading, error } = useGallery({ limit: 100, page: 1 });
+  const [ setSelectedImage] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentItems, setCurrentItems] = useState([]);
 
-  if (loading) return <div className="flex justify-center py-20 font-bold text-primary">Loading gallery...</div>;
+  if (loading) return <LoadingSpinner text="Loading gallery..." />;
 
   return (
     <div className="bg-gray-50/50 px-4 sm:px-6 lg:px-8 py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24">

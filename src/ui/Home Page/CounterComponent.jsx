@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useCounters } from "../../hooks/useCounterHooks";
 import { FaChartLine, FaBriefcase, FaAward } from 'react-icons/fa';
 import { HiMiniUserGroup } from "react-icons/hi2";
+import LoadingSpinner from "../LoadingSpinner";
 
 const iconMap = {
   'HiMiniUserGroup': HiMiniUserGroup,
@@ -44,11 +45,9 @@ StatCard.propTypes = {
 const CounterComponent = () => {
   const { data: statsData, loading, error } = useCounters();
 
-  if (loading) return (
-    <div className="flex justify-center py-10 text-primary font-bold bg-white">
-      Loading Counters...
-    </div>
-  );
+  if (loading && (!statsData || statsData.length === 0)) {
+    return <LoadingSpinner text="Loading Counters..." />;
+  }
 
   return (
     <section className="py-8 lg:py-10 bg-white shadow-2xl">

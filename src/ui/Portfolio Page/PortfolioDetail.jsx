@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { VscStarFull } from "react-icons/vsc"
 import { usePortfolioDetail } from "../../hooks/usePortfolioHooks";
 import NotFoundMessage from "../NotFoundMessage";
+import LoadingSpinner from "../LoadingSpinner";
 
 export default function PortfolioDetail() {
   const { id } = useParams()
@@ -31,20 +32,11 @@ export default function PortfolioDetail() {
   }, [])
 
   if (loading) {
-    return <div className="flex justify-center py-40 font-bold text-primary">Loading Portfolio Details...</div>;
+    return <LoadingSpinner text="Loading Portfolio Details..." />;
   }
 
   if (error || !project) {
-    return (
-      <div className="py-20">
-        {error && (
-          <div className="text-center text-red-500 mb-8 bg-red-50 p-4 rounded-lg max-w-xl mx-auto font-semibold">
-            {error?.response?.data?.message || error?.message || String(error)}
-          </div>
-        )}
-        <NotFoundMessage itemType="Portfolio" backPath="/portfolio" />
-      </div>
-    );
+    return <NotFoundMessage itemType="Portfolio" backPath="/portfolio" />;
   }
 
   // Gallery items (using images array)
